@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce_zinnia",
+  "version": "1.0.0",
+  "description": "Aplicación de E-commerce",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaime190598/grupo_8_Zinnia.git"
+  },
+  "author": "Equipo_8",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaime190598/grupo_8_Zinnia/issues"
+  },
+  "homepage": "https://github.com/jaime190598/grupo_8_Zinnia#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
