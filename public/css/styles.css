@@ -1,0 +1,64 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb ;
+}
+header{
+    background-color:#fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 10px;
+    padding-top: 15px;
+}
+header nav{
+    display: none;
+}
+header div.input-search {
+   padding: 6px;
+}
+header div.input-search input{
+    width: 60vw;
+    height: 4vh;
+}
+header div.burger-menu button{
+    width: 10vw;
+    height: 6vh;
+    background-color: rgb(0, 89, 255);
+    color: white;
+    border-radius: 10px;
+}
+
+footer{
+    padding-top: 0;
+    background-color: white;
+    text-align: center;
+}
+
+@media (min-width: 361px){
+
+    
+    
+}
+@media (min-width: 769px){
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav{
+        display: block;
+    }
+    header nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

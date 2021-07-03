@@ -1,0 +1,28 @@
+main.buy{
+    width: 100vw;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 0%;
+    border: dashed 1px coral;  
+}
+section.bodyBuycar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: dashed 1px coral;
+}
+main section article.bodycar{
+    background-color: #fff;    
+    border: solid 2px rgb(139, 137, 137);
+    border-radius: 10px;
+    /*margin-bottom: 5vh;*/
+    border: dashed 1px coral;
+}
+div.img-clots img{
+ width: 20vw;
+}
+form.formBuyCar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -10,8 +10,11 @@ app.listen(3000, () =>{
     console.log('Servidor corriendo en el puerto 3000');
 });
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, './views/index.html'));
+    res.sendFile(path.join(__dirname, './views/home.html'));
 })
 app.get('/registro', (req, res)=>{
     res.sendFile(path.join(__dirname, './views/registro.html'));
+})
+app.get('/carrito', (req, res)=>{
+    res.sendFile(path.join(__dirname, './views/carrito_compras.html'));
 })
