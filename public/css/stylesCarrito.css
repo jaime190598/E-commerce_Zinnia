@@ -1,28 +1,242 @@
-main.buy{
+h1{
+  font-size: 25px;  
+}
+main{
     width: 100vw;
     margin: 0 auto;
     margin-top: 15px;
-    padding: 0%;
-    border: dashed 1px coral;  
+    padding: 0%; 
 }
 section.bodyBuycar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: dashed 1px coral;
+    margin-bottom: 15px;
 }
+
 main section article.bodycar{
     background-color: #fff;    
     border: solid 2px rgb(139, 137, 137);
     border-radius: 10px;
     /*margin-bottom: 5vh;*/
-    border: dashed 1px coral;
 }
-div.img-clots img{
- width: 20vw;
+article div.formBuyCar{
+    margin: 5px;
+}
+div.clothes{
+    display: flex;
+    margin: 5px;
+}
+div.clothes img{
+ width: 25vw;
+ height: 18vh;
+}
+div.clothes div{
+    width: 65vw;
+    text-align: justify;
+    margin: 5px;
+}
+form div.title-bar{
+    display: none;
 }
 form.formBuyCar{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+form div.container-article{
+   border-bottom: solid 1px rgb(139, 137, 137);
+   border-top: solid 1px rgb(139, 137, 137);
+   margin-top: 10px;
+  }
+form div.container-send{
+    border: solid 1px rgb(139, 137, 137);
+    margin-top: 15px;
+}
+
+form div.container-send .send{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   border-bottom: solid 1px rgb(139, 137, 137);
+   font-size: 18px;
+   height: 5vh;
+}
+div.price{
+    padding-top: 5px;
+    padding-right: 15px;
+}
+div.price div.increment-button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px rgb(139, 137, 137);
+    border-radius: 5px;
+    margin-right: 25px;
+    
+}
+div.price div.increment-button button{
+   width: 10vw;
+   height: 3vh;
+   border: none;
+}
+div.edit-buttons{
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+div.edit-buttons button{
+   width: 15vw;
+   height: 3vh;
+}
+div.total-cost div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 18px;
+    height: 5vh;
+}
+form div.container-article div.price{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+div.total-cost div.button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 8vh;
+}
+div.total-cost div.button button{
+    background-color: rgb(0, 89, 255);
+    border-radius: 5px;
+    width: 50vw;
+    height: 5vh;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (min-width: 361px){
+    div.details-send{
+        display: none;
+    }
+    
+}
+@media (min-width: 769px){
+    main section article.bodycar{
+        background-color: #fff;    
+        border: none;
+        border-radius: 0%;
+    }
+    form div.title-bar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 85vw;
+        padding-left: 5vw;
+        padding-right: 3vw;
+    } 
+    div.Details-clothes{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    div.clothes{
+        width: 45vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    div.clothes img{
+        width: 8vw;
+        height: 20vh;
+        margin: 10px;
+        margin-left: 20px;
+       }
+    div.clothes div{
+         width: 25vw;
+         text-align: justify;
+         margin: 10px;
+         margin-left: 15px;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+    }
+    form div.container-article div.price{
+        width: 32vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        padding-right: 35px;
+    }
+    div.price div.increment-button button{
+        width: 4vw;
+        height: 4vh;
+        border: none;
+
+     }
+     div.edit-buttons button.details{
+      background-color: rgb(161, 156, 156);
+      border: none;
+      border-radius: 5px;
+    }
+    div.edit-buttons button.delet{
+        border:solid 0.5px rgb(161, 156, 156);
+        color: rgb(161, 156, 156);
+        border-radius: 5px;
+      }
+     div.edit-buttons{
+         margin-top: 0%;
+       padding-left: 15vw;
+     }
+     div.edit-buttons button{
+        width: 8vw;
+        height: 3vh;
+     }
+     form div.container-send{
+        border:none;
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    form div.container-send .send{
+       display: block;
+       border-bottom: none;
+       padding: 10px;
+       font-size: 18px;
+       height: 20vh;
+    }
+    div.details-send{
+        display: block;
+        width: 25vw;
+        font-size: 15px;
+        text-align: justify;
+    }
+    div.edit{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    div.total-cost{
+        padding-right: 35px;
+    }
+    div.total-cost div.button{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 8vh;
+    }
+    div.total-cost div.button button{
+        background-color: rgb(0, 89, 255);
+        border-radius: 5px;
+        width: 15vw;
+        height: 5vh;
+        font-size: 15px;
+        font-weight: bold;
+    }
 }
