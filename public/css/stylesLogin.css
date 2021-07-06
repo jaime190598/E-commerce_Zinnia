@@ -21,7 +21,10 @@ main{
     width: 90%;
     margin: 0 auto;
     margin-top: 25px;
-    padding: 0%;  
+    padding: 0%; 
+    background-image:url("../images/login-img.jpeg");
+    background-repeat:no-repeat;
+    background-size: 100% 100vh;
 }
 
 header div.burger-menu button{
