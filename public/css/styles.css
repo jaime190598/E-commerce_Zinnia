@@ -13,10 +13,16 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 10vh;
     padding: 10px;
     padding-top: 15px;
 }
+
+header div img{
+    width:50px;
+    height:40px;
+    margin-left: 20px;
+}
+
 header nav{
     display: none;
 }
@@ -37,8 +43,12 @@ header div.burger-menu button{
 
 footer{
     padding-top: 0;
-    background-color: white;
+    background-color:rgb(158, 152, 133);
     text-align: center;
+}
+
+footer div img{
+    width:70px;
 }
 
 @media (min-width: 361px){
