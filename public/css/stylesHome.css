@@ -1,0 +1,263 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+top-header{
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+/* ENCABEZADO */
+header{
+    width: 100%;
+    height: 130px;
+    background-color: white;
+}
+
+.logo{
+    padding: 0;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 850px;
+    margin-left: 390px;
+    margin-top: -80px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #4f4737;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu a:hover{
+    color:#18140e;
+}
+
+/* FIN DE ENCABEZADO */
+
+
+/* BANNER */
+.banner{
+    width: 100%;
+    height: 900px;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/5aba5ad231d4df528f07968b/1563222686405-PBMP866PY188PS4F6PVZ/5J2A7009site.jpg?format=2500w) ;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner > div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(158, 152, 133, .6)
+}
+
+.contenedor-cta{
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.contenedor-cta h2{
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    padding: 35px 0;
+    max-width: 800px;
+    margin-top: 30px;
+    font-weight:700;
+}
+
+.contenedor-cta a{
+    font-size: 27px;
+    text-decoration: none;
+    color: white;
+    padding-top: 0 50px;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* FIN DE BANNER */
+
+/* SECCION POPULARES AHORA */
+.middle-section{
+    height: 600px;
+    color: #4f4f4f;
+    margin-top: 0;
+}
+
+.center-section{
+    background-color: #fdf8f2;
+    height: 570px;
+}
+
+.center-section .contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contenedor h2{
+    font-size: 30px;
+    width: 100%;
+    font-weight:700; 
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.center-section .img-populares {
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: #4f4737;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
+.img-populares img{
+    width: 300px;
+}
+
+
+.img-populares h4{
+    padding-top: 17px;
+    padding-bottom: 5px;
+    font-weight:600;
+}
+
+.img-populares p{
+    line-height: 1.7em;
+    font-size: 13px;
+}
+
+/* FIN DE SECCION POPULARES AHORA */
+
+/* SECCION FRASE */
+.frase{
+    width: 100%;
+    height: 250px;
+    background-color: #9e9885;
+    padding-top: 65px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -50px;
+}
+/* FIN DE SECCION FRASE */
+
+/* SECCION SUSCRIBE */
+.suscribe{
+    width: 100%;
+    height: 250px;
+    background-color: #fdf8f2;
+    padding-top: 40px;
+    color: #4f4737;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: -50px;
+    text-align: center;
+    padding-left: 35px;
+    font-size: 20px;
+}
+
+
+
+.button-suscribe button{
+    color: white;
+    background-color: #4f4737;
+    border-style:solid;
+    border-width: thin;
+    border-radius: 5px;
+    padding: 10px 50px;
+    margin-left: 0%;
+    margin-top: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+/* .button-contact button{
+    color: white;
+    background-color: #4f4737;
+    border-style:solid;
+    border-width: thin;
+    border-radius: 5px;
+    padding: 10px 37px;
+    margin-left: 30%;
+    margin-top: -73%;
+} */
+
+/* FIN DE SECCION SUSCRIBE */
+
+/* FOOTER */
+footer{
+    background-color: #9e9885;
+}
+
+.nav-footer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 90%;
+        margin-top: -60px;
+}
+
+.nav-footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 15px;
+    margin-left: 75px;
+}
+
+.nav-footer a:hover{
+    color: #dfdfdf;
+}
+
+.footer-logo img{
+    width: 150px;
+}
+
+.sm-icons img{
+    width: 20px;
+    text-align: center;
+}
+
+.copyright{
+    color: white;
+    font-size: 11px;
+    width: 100%;
+    font-weight:700; 
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
