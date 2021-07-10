@@ -10,6 +10,16 @@ main{
     color:#fdf8f2;
 }
 
+main section article.row{
+    background-color: transparent;    
+    margin: 20px;
+    margin-bottom: 5vh;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 header div.burger-menu button{
   background-color: rgb(158, 152, 133);
 }
@@ -81,10 +91,11 @@ form div.button-login button{
     font-weight: bold;
     background-color: rgb(41, 30, 17);
     border-radius: 2px;
+    color:white;
 }
 
 button font{
-    color:#fdf8f2;
+    color: white;
 }
 
 div.button-register button{
@@ -96,8 +107,7 @@ div.button-register button{
     font-weight: bold;
     background-color: rgb(158, 152, 133);
     border-radius: 5px;
-  	border-color:rgb(158, 152, 133);
-    
+  	border-color:rgb(158, 152, 133);    
 }
 
 @media (min-width: 361px){
@@ -128,14 +138,14 @@ div.button-register button{
 }
 @media (min-width: 769px){
     main section article.row{
-        width: 550px;
+        width: 800px;
     }
 
-section div.article{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    section div.article{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     form div.input-email input{
         width: 500px;
@@ -150,7 +160,7 @@ section div.article{
     form div.button-login{
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         width: 100%;
         padding-left: 10px;
     }
@@ -158,8 +168,5 @@ section div.article{
         width: 200px;
         height: 7vh;
         font-size: 18px;
-    }
-    section{
-        display: block;
     }
 }
