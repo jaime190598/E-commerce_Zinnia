@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinnia</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/stylesLogin.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--header-->
+   <%- include('./partials/head.ejs') %>
+    <main>
+        <section>
+            <div class="text-login">
+                <h2>
+                    Bienvenido de vuelta!
+                </h2>
+ 
+            </div>
+            <article class="row">
+                <form action="">                  
+                  <div class="input-email">
+                       <input type="email" placeholder="Email">
+                  </div>
+                  <div class="input-password">
+                    <input type="password" placeholder="Contraseña">
+                  </div>
+                  <div class="button-login">
+                      <button>Iniciar sesión</button>
+                  </div>
+                </form> 
+                  <div class="text-forget">
+                	<p> Olvidaste tu contraseña?
+                  </div>
+              	  <div class="button-register">
+                    <button> Registrate </button>
+            	  </div>
+            </article>
+
+        </section>
+       </main>
+   <!--footer-->
+   <%- include('./partials/footer.ejs') %>
+</body>
+</html>
