@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinnia</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/stylesForm.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--header-->
+    <%- include('./partials/head.ejs') %>
+   <main>
+    <section>
+        <div class="text-hello">
+            <h3>
+                ¡Hola Administrador! 
+            </h3>
+        </div>
+        <div class="artic">
+        <article class="row">
+            <div class="text-form">
+                <h4>Crea un nuevo producto o edita alguno</h4>
+            </div>
+            <form action="">
+                <div class="input-name">
+                   <input type="text" placeholder="Nombre del producto">
+                </div>
+                <div class="input-description">
+                    <input type="text" cols="20" rows="4" placeholder="Descripción del producto">
+                </div>
+                <div class="img">
+                <p> Elige la imagen del producto </p>
+                <input type="file" id="img" name="img" accept="image/png, image/jpeg"/>
+                <div class="input-category">
+                <input type="text" placeholder="Categoría">
+                </div>
+                <div class="input-cost">
+                    <input type="texto" placeholder="Precio">
+                </div>
+                <div class="input-size">
+                    <input type="texto" placeholder="Talla">
+                </div>
+                <div class="button-save">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>                      
+        </article>
+    </div>
+    </section>
+   </main>
+  <!--footer-->
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

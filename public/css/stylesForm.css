@@ -1,0 +1,176 @@
+main{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;  
+    padding-top: 25px;
+    background-image: url('../images/form-img.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    color: white;
+}
+
+h3{
+    font-size:32px;
+}
+
+h4{
+    font-size:28px;
+}
+
+main section article.row{
+    background-color: transparent;    
+    margin: 20px;
+    margin-bottom: 5vh;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 80vw;
+    margin-top:10vh;
+    margin-bottom: 8vh;
+}
+main section div.text{
+    text-align: center;
+}
+.title-form{
+    margin: 10px;
+    font-size: 18px;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form div.input-name{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+form div.input-description{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+form div #img{
+    margin-bottom:1px;
+    border:none;
+  }
+
+form div.input-category{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+form div.input-cost{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+form div.input-size{
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+input{
+    font-size: 15px;
+    padding: 5px;
+    width: 80vw;
+    height: 5vh;
+    border-radius: 5px;
+    border: solid 1px rgb(139, 137, 137);
+}
+form div.button-save{
+    margin: 10px;
+    margin-bottom: 20px;
+}
+form div.button-login button{
+    margin-top: 10px;
+    width: 80vw;
+    height: 4vh;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #4f4737;
+    color: #fff;
+    border-radius: 10px;
+    
+}
+
+@media (min-width: 361px){
+    main section article.row{
+        width: 92vw;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0%;
+    }
+   section div.text-form, section div.text-hello{
+        font-size: 10vw;
+    }
+    form input{
+        width: 83vw;
+        height: 6vh;
+        margin-bottom: 10px;
+    }
+    form div.button-save button{
+        width: 70vw;
+        height: 5vh;
+    }
+    
+    
+}
+@media (min-width: 769px){
+    main section article.row{
+        width: 550px;
+    }
+    section div.text-form, section div.text-hello{
+        font-size: 5vw;
+    }
+    section div.artic{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    article div.text-form{
+        text-align: center;
+    }
+    form div.to-name{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 38vw;
+    }
+    form div.input-name input{
+        height: 5vh;
+        font-size: 18px;
+    }
+    form div.input-description input{
+        height: 5vh;
+        font-size: 18px;
+    }
+
+    form div.button-save{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding-left: 10px;
+    }
+    form div.button-save button{
+        width: 200px;
+        height: 5vh;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    section{
+        display: block;
+    }
+}
