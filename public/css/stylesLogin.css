@@ -67,6 +67,7 @@ div.text-forget{
  	margin-bottom:15px;
     text-align: center;
     margin-top: 8px;
+    margin-right: 10px;
 }
 
 input{
@@ -74,9 +75,10 @@ input{
     padding-left: 5px;
     width: 80vw;
     height: 5vh;
-    border-radius: 2px;
-    border: solid 2px rgb(139, 137, 137);
+    border-radius: 5px;
+    border: solid 1px rgb(139, 137, 137);
 }
+
 form div.button-login{
     margin: 10px;
     margin-bottom: 20px;
@@ -85,10 +87,10 @@ form div.button-login button{
     margin-top: 10px;
     width: 80vw;
     height: 5vh;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
-    background-color: rgb(41, 30, 17);
-    border-radius: 2px;
+    background-color:#4f4737;
+    border-radius: 10px;
     color:white;
 }
 
@@ -119,20 +121,19 @@ div.button-register button{
         padding: 0%;
     }
     form div.input-email input{
-        width: 60vw;
-        height: 4vh;
+        width: 83vw;
+        height: 6vh;
     }
   
   	form div.input-password input{
-    	width:60vw;
-    	height: 4vh;
+    	width:83vw;
+    	height: 6vh;
  	 }
     form div.button-login button{
-        width: 60vw;
-        height: 4vh;
+        width: 70vw;
+        height: 8vh;
     }
-    
-    
+      
 }
 @media (min-width: 769px){
     main section article.row{

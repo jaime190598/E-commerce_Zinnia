@@ -71,13 +71,12 @@ form div.button-login{
 form div.button-login button{
     margin-top: 10px;
     width: 80vw;
-    height: 4vh;
+    height: 5vh;
     font-size: 24px;
     font-weight: bold;
     background-color: #4f4737;
     color: #fff;
     border-radius: 10px;
-    
 }
 
 @media (min-width: 361px){
@@ -143,7 +142,7 @@ form div.button-login button{
     form div.button-login{
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         width: 100%;
         padding-left: 10px;
     }
