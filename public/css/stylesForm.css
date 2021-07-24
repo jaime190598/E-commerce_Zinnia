@@ -5,7 +5,7 @@ main{
     padding-top: 25px;
     background-image: url('../images/form-img.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100vh;
+    background-size: 100% 110vh;
     color: white;
 }
 
@@ -78,6 +78,11 @@ form div.input-size{
     margin-top: 20px;
 }
 
+form div.input-color{
+    margin-bottom: 0px;
+    margin-top: 20px;
+    }
+
 input{
     font-size: 15px;
     padding: 5px;
@@ -90,16 +95,15 @@ form div.button-save{
     margin: 10px;
     margin-bottom: 20px;
 }
-form div.button-login button{
+form div.button-save button{
     margin-top: 10px;
     width: 80vw;
-    height: 4vh;
+    height: 5vh;
     font-size: 24px;
     font-weight: bold;
-    background-color: #4f4737;
-    color: #fff;
+    background-color:#4f4737;
     border-radius: 10px;
-    
+    color: white;
 }
 
 @media (min-width: 361px){
@@ -122,10 +126,8 @@ form div.button-login button{
     }
     form div.button-save button{
         width: 70vw;
-        height: 5vh;
+        height: 8vh;
     }
-    
-    
 }
 @media (min-width: 769px){
     main section article.row{
@@ -149,13 +151,30 @@ form div.button-login button{
         width: 38vw;
     }
     form div.input-name input{
+        width: 70vh;
         height: 5vh;
         font-size: 18px;
     }
     form div.input-description input{
+        width: 70vh;
         height: 5vh;
         font-size: 18px;
     }
+
+    p{
+        font-size:20px;
+    }
+
+    form div #img {
+        font-size:18px;
+    }
+
+    form input{
+        width: 70vh;
+        height: 5vh;
+        font-size: 18px; 
+    }
+
 
     form div.button-save{
         display: flex;
