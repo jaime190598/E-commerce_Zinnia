@@ -142,7 +142,7 @@ form div.button-login button{
     form div.button-login{
         display: flex;
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         width: 100%;
         padding-left: 10px;
     }

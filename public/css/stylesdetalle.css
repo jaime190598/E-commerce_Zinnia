@@ -1,0 +1,436 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdf8f2;
+}
+
+
+/* ENCABEZADO */
+header{
+    background-color:#fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    padding-top: 15px;
+}
+
+header div img{
+    width: 50px;
+    margin-left: auto;
+}
+
+header nav{
+    display: none;
+}
+header div.input-search {
+   padding: 6px;
+}
+header div.input-search input{
+    width: 60vw;
+    height: 4vh;
+    font-size: 10px;
+}
+header div.burger-menu button{
+    width: 10vw;
+    height: 6vh;
+    background-color: #4F4737;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+}
+/* FIN DE ENCABEZADO */
+
+/* SECTION */
+article{
+    background-color:#fdf8f2;
+    border: #fdf8f2 5px solid;
+}
+
+.spacing{
+    word-spacing: 30px;
+}
+
+.section-img{
+    width: 80%;
+    display: block;
+    margin: auto; 
+    margin-top: 20px;   
+}
+
+.detalle-h3{
+    color: #4F4737;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.detalle-h4{
+    color: #4f4737;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.detalle-p{
+    color: #4f4737;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 20px;
+}
+
+.talla-h4{
+    color: #4f4737;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tallas{
+    text-align: center;
+}
+
+.tallas div{
+    display: inline-block;
+    width: 60px;
+}
+
+.button-talla-xs, .button-talla-s, .button-talla-m{
+    color: white;
+    background-color: #939885;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    border-style: none;
+}
+
+.button-talla-l, .button-talla-xl{
+    background-color: lightgray;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    border-style: none;
+}
+
+.detalle-cta{
+    text-align: center;
+}
+
+.detalle-cta div{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.button-add{
+    color: white;
+    background-color: #4f4737;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    font-size: 10px;
+    border-style: none;
+}
+
+.button-love{
+    color: #939885;
+    border-radius: 5px;
+    border-style: none;
+    width: 50px;
+    height: 30px;
+    font-size: 10px;
+    border: #939885 1px solid;
+    background-color: white;
+    margin-right: 20px;
+}
+/* FIN DE SECTION */
+
+/* INICIO COMPRA SIMILARES */
+.section-compra-similares{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.section-compra-similares h2{
+    font-weight: 500;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    color: #4f4737;
+}
+
+.dress-responsive1, .dress-responsive2, .dress-responsive3, .dress-responsive4{
+    width: 80%;
+    margin: auto;
+    display: block;
+    padding: 15px;
+}
+
+/* FIN COMPRA SIMILARES */
+
+/* FOOTER */ 
+footer{
+    padding-top: 0;
+    background-color:rgb(158, 152, 133);
+    text-align: center;
+}
+
+footer div img{
+    width: 13%;
+}
+
+.footer-p{
+    color: white;
+    font-size: 10px;
+    margin-top: 0;
+    padding-bottom: 10px;
+    font-weight: 300;
+}
+/* FIN FOOTER */ 
+
+/* MEDIA QUERIES */
+@media (min-width: 361px){
+
+}
+
+@media (min-width: 768px){
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav{
+        display: block;
+    }
+    header nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    header div.burger-menu button{
+        width: 10vw;
+        height: 6vh;
+        background-color: #4F4737;
+        color: white;
+        border-radius: 10px;
+        border-style: none;
+        display: none;
+    }
+    .section-compra-similares h2{
+        font-weight: 500;
+        text-align: center;
+        font-size: 40px;
+        color: #4f4737;
+        margin-top: 90px;
+    }
+    .container-dress{
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .dress-responsive1, .dress-responsive2, .dress-responsive3, .dress-responsive4{
+        height: 290px;
+        width: 230px;
+    }
+    .detalle-h3{
+        font-size: 35px;
+    }
+    .detalle-h4{
+        font-size: 25px;
+    }
+    .detalle-p{
+        font-size: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .talla-h4{
+        font-size: 20px;
+    }
+
+    .tallas{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;       
+    }
+
+    .button-talla-xs, .button-talla-s, .button-talla-m, .button-talla-l, .button-talla-xl{
+        width: 60px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .detalle-cta{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .button-love{
+        width: 60px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 30px;
+    }
+
+    .button-add{
+        width: 160px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+
+    }
+
+    footer div img{
+        width: 17%;
+    }
+    .footer-p{
+        font-size: 15px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav{
+        display: block;
+    }
+    header nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .top-header img{
+        width: 100px;
+        padding-left: 0;
+    }
+
+    .input-search{
+        width: -30px;
+    }
+
+    .section-img{
+        width: 50%;
+        display: block;
+        margin: auto; 
+        margin-top: 20px;
+        float: left;   
+        margin-left: 50px;
+    }
+
+    .detalle-h4{
+        color: #4f4737;
+        font-size: 50px;
+        font-weight: 600;
+    }
+    
+    .detalle-p{
+        color: #4f4737;
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .section-compra-similares h2{
+        font-weight: 500;
+        text-align: left;
+        font-size: 40px;
+        color: #4f4737;
+        margin-top: 90px;
+        margin-left: 50px;
+    }
+    .container-dress{
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: purple 1px solid; 
+    }
+    .dress-responsive1, .dress-responsive2, .dress-responsive3, .dress-responsive4{
+        height: 290px;
+        width: 230px;
+    }
+    .detalle-h3{
+        font-size: 35px;
+        margin-bottom: 15px;
+        text-align: left;
+        margin-left: 50px;
+    }
+    .detalle-h4{
+        margin-top: 40px;
+        font-size: 25px;
+        text-align: left;
+    }
+    .detalle-p{
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: left;
+    }
+    .talla-h4{
+        font-size: 23px;
+        text-align: left;
+    }
+
+    .tallas{
+        width: 70%;
+        margin: auto;
+        display: block;
+        justify-content: right;     
+    }
+
+    .button-talla-xs, .button-talla-s, .button-talla-m, .button-talla-l, .button-talla-xl{
+        width: 60px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .detalle-cta{
+        width: 70%;
+        margin: auto;
+        display: block;
+        justify-content: right;
+        margin-bottom: 270px;
+
+    }
+
+    .button-love{
+        width: 60px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        margin-right: 30px;
+    }
+
+    .button-add{
+        width: 160px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    footer div img{
+        width: 17%;
+    }
+    .footer-p{
+        font-size: 17px;
+        margin-bottom: 0px;
+        padding-bottom: 25px;
+    }
+}

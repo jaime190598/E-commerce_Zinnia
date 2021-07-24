@@ -4,121 +4,92 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Zinnia</title>
-        <link rel="stylesheet" href="/css/stylesHome.css"/>
-        <link rel="stylesheet" href="/css/stylesRegister.css"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Zinnia</title>
+        <script src="https://kit.fontawesome.com/0537a6077e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/styles.css"/>
+        <link rel="stylesheet" href="/css/stylesHome.css">
     </head>
     <body>
+
 <!-- ENCABEZADO -->
-        <header>
-            <div class= "top-header">
-                <div class="logo">
-                    <img src="/images/zinniacolor.png" alt="logo">
-                </div>
-            <nav class="menu">
-                    <a href="#">Ropa</a>
-                    <a href="#">Calzado</a>
-                    <a href="#">Accesorios</a>
-                    <a href="#">Colecciones</a>
-                <div class="input-search">
-                    <input type="text" placeholder="Buscar">
-                </div>
-                <div class="burger-menu">
-                    <button class="menu"><i class="fas fa-bars"></i></button>
-                </div>
-            </nav>
-        </div>
-        </header>
+<%- include('./partials/header.ejs') %>
+<!-- FIN HEADER -->
 
 <!-- BANNER -->
-                <section class="banner">
-                    <div class="contenedor-cta">
-                        <h2>El Futuro es la Moda Sostenible</h2>
-                        <a href="#">Compra Ahora</a>
-                    </div>
-                </section>
+    <section class="section-banner">
+        <div class="banner">
+            <img src="/images/img-banner.jpeg" class="img-banner" alt="Imagen Banner">
+            <h2 class="text-banner">El Futuro es la Moda Sostenible</h2>
+            <div class="cta">
+                <button>Compra Ahora</button>
+            </div>
+        </div>
+    </section>
+
+<!-- FIN BANNER -->
 
   <!-- SECCION POPULARES -->
-  <section class="middle-section">
-    <div class="center-section">       
-<div class="contenedor">
-    <h2>POPULARES AHORA</h2>
-    <div class="img-populares">
-        <img src="/images/img-1.png" alt="Cropped Jacket">
-        <h4>Cropped Jacket</h4>
-        <p>$499 mxn <br>
-        4 colores</p>
-    </div>  
-    <div class="img-populares">
-        <img src="/images/img-2.png" alt="White Crop Top">
-        <h4>White Crop Top</h4>
-        <p>$229 mxn <br>
-        9 colores</p>
-    </div> 
-    <div class="img-populares">
-        <img src="/images/img-3.png" alt="B&W Houndstooth Tweed">
-        <h4>Black & White Houndstooth Tweed</h4>
-        <p>$295 mxn <br>
-        2 colores</p>
-    </div> 
-    <div class="img-populares">
-        <img src="/images/img-4.png" alt="Printed Shirt Dress">
-        <h4>Printed Shirt Dress</h4>
-        <p>$495 mxn <br>
-        Unico color</p>
-    </div>    
-    </div>  
-    </div>
-</section>
+  <main>
+        <section class="section-popular-ahora"> 
+            <h2>POPULAR AHORA</h2>
+                <div class="text-popular">
+                    <div class=img-1>
+                    <img src="/images/img-1.png" class="section-img" alt="Cropped Jacket">
+                    <h4 class="popular-h4">Cropped Jacket</h4>
+                    <p class="popular-p">$499 mxn <br> 4 colores</p>
+                  </div>
+               
+                    <div class="img-2">
+                    <img src="/images/img-2.png" class="section-img" alt="White Crop Top">
+                    <h4 class="popular-h4">White Crop Top</h4>
+                    <p class="popular-p">$229 mxn <br> 9 colores</p>
+                    </div>
+                
+                    <div class="img-3">
+                    <img src="/images/img-3.png" class="section-img" alt="B&W Houndstooth Tweed">
+                    <h4 class="popular-h4">Black & White Tweed</h4>
+                    <p class="popular-p">$295 mxn <br> 2 colores</p>
+                    </div>
+
+                    <div class="img-4">
+                    <img src="/images/img-4.png" class="section-img" alt="Printed Shirt Dress">
+                    <h4 class="popular-h4">Printed Shirt Dress</h4>
+                    <p class="popular-p">$495 mxn <br> Unico color</p>
+                    </div>
+                </div>
+        </section>
+    </main>
 <!-- FIN DE SECCION POPULARES AHORA-->
 
 <!-- SECCION FRASE-->
-    <section class="frase">
-        <div class="contenedor">
+    <section>
+        <div class="frase">
             <p>En Zinnia promovemos la moda sostenible. Defendemos 
-                la evolución integral <br> del sector textil hacia una
-            industria ecológica, respetuosa y justa.</p>
+                la evolución integral del sector textil hacia una
+                industria ecológica, respetuosa y justa.</p>
         </div>
     </section>
 <!-- FIN SECCION FRASE-->
 
 <!-- SECCION SUSCRIBETE-->
-<section class="suscribe">
-    <div class="contenedor">
-        <p>Suscríbete y recibe 10% de descuento en tu primer compra</p>
-    </div>
-    <div class="buttons-suscribe">
-    <div class="button-suscribe">
-        <button>Suscribirse</button>
-    </div>
-
+<section>
+    <div class=suscribe>
+        <p>Suscríbete y recibe 10% descuento</p>
+        <div class="button-suscribe">
+            <button>Suscribirse</button>
+        </div>
+        <div class="button-contacto">
+            <button>Contacto</button>
+        </div>
     </div>
 </section>
 <!-- FIN SECCION SUSCRIBETE-->
 
 
 <!-- FOOTER -->
-        <footer>
-            <nav class="nav-footer">
-                    <a href="#">Productos</a>
-                    <a href="#">Servicios</a>
-                    <a href="#">Envíos</a>
-                    <a href="#">Sobre nosotros</a>
-                    <a href="#">Contacto</a>
-            </nav>
-<br>
-            <div class="sm-icons">
-                <a href="https://www.facebook.com"><img src="/images/fb-img.png"></a>
-            <a href="https://www.instagram.com"><img src="/images/insta-img.png"></a>
-            </div>
-            <p class="copyright">Zinnia © 2021 Pre-loved fashion</p>
-        </footer>
+<%- include('./partials/footer.ejs') %>
 <!-- FIN DE FOOTER -->
 
     </body>
 </html>
-
