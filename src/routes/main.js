@@ -5,11 +5,13 @@ const registroController=require('../controllers/registroController');
 const loginController=require('../controllers/loginController');
 const carritoController=require('../controllers/carritoController');
 const formController=require('../controllers/formController');
+const detalleMenu=require('../controllers/detalleMenuController')
 
 router.get('/',homeController.home);
 router.get('/registro',registroController.registro);
 router.get('/login', loginController.login);
 router.get('/carrito',carritoController.carrito);
 router.get('/form',formController.formulario)
+router.get('/detalleMenu',detalleMenu.detalle)
 
 module.exports=router;

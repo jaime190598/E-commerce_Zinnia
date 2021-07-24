@@ -20,9 +20,7 @@ main section article.row{
     justify-content: center;
 }
 
-header div.burger-menu button{
-  background-color: rgb(158, 152, 133);
-}
+
 
 section{
     display: flex;
