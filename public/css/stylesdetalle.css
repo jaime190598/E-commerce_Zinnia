@@ -8,42 +8,6 @@ body{
 }
 
 
-/* ENCABEZADO */
-header{
-    background-color:#fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-    padding-top: 15px;
-}
-
-header div img{
-    width: 50px;
-    margin-left: auto;
-}
-
-header nav{
-    display: none;
-}
-header div.input-search {
-   padding: 6px;
-}
-header div.input-search input{
-    width: 60vw;
-    height: 4vh;
-    font-size: 10px;
-}
-header div.burger-menu button{
-    width: 10vw;
-    height: 6vh;
-    background-color: #4F4737;
-    color: white;
-    border-radius: 10px;
-    border-style: none;
-}
-/* FIN DE ENCABEZADO */
-
 /* SECTION */
 article{
     background-color:#fdf8f2;
@@ -174,27 +138,7 @@ article{
 
 /* FIN COMPRA SIMILARES */
 
-/* FOOTER */ 
-footer{
-    padding-top: 0;
-    background-color:rgb(158, 152, 133);
-    text-align: center;
-}
 
-footer div img{
-    width: 13%;
-}
-
-.footer-p{
-    color: white;
-    font-size: 10px;
-    margin-top: 0;
-    padding-bottom: 10px;
-    font-weight: 300;
-}
-/* FIN FOOTER */ 
-
-/* MEDIA QUERIES */
 @media (min-width: 361px){
 
 }

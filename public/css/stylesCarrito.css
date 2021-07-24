@@ -89,6 +89,9 @@ div.price div.increment-button button{
    height: 3vh;
    border: none;
 }
+div.details-send{
+    display: none;
+}
 div.edit-buttons{
     padding-left: 15px;
     margin-bottom: 10px;

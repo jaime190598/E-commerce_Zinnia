@@ -157,27 +157,6 @@ div.suscribe p{
 }
 
 
-/* FOOTER */ 
-footer{
-    padding-top: 0;
-    background-color:rgb(158, 152, 133);
-    text-align: center;
-}
-
-footer div img{
-    width:13%;
-}
-
-.footer-p{
-    color: white;
-    font-size: 10px;
-    margin-top: 0;
-    padding-bottom: 10px;
-    font-weight: 300;
-}
-/* FIN FOOTER */ 
-
-
 /* MEDIA QUERIES */
 @media (min-width: 361px){
     .suscribe{
