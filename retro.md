@@ -9,3 +9,17 @@ El tiempo de este sprint lo ocupamos en primer lugar, para realizar la PLANIFICA
 Durante la revisión, verificamos que terminamos todo el trabajo del primer sprint, principalmente se dieron retroalimentaciones al Wireframe. 
 
 En conclusión, el equipo está compuesto por personas con diferente carrera profesional, diferente experiencia en programación Web, diferente ubicación geográfica y a pesar de ello hemos podido trabajar de forma colaborativa, alcanzando los objetivos planteados. 
+
+
+CONCLUSIONES DEL SEGUNDO SPRINT
+
+Durante el Segundo sprint seguimos utilizando el tablero de Trello para tener en orden nuestras actividades, pero principalmente continuamos con la comunicación por Whats App. 
+
+Para la asignación de las actividades seguimos planificando de manera que se asignan los responsables para cada tarea del sprint, basado en las habilidades de cada uno de los integrantes y cada fin de semana nos reunimos para la reunión semanal donde vemos avances y/o dudas de cómo van las asignaciones. De igual manera mantenemos comunicación por WhatsApp y actualización del tablero de Trello.
+En las revisiones semanales podríamos revisar las dudas o detalles más a fondo, para ver que todo esté marchando bien, compartir pantalla con el proyecto y ver qué hay que trabajar o mejorar, y así evitar atrasarnos con alguna entrega.
+
+1.	Comenzar a hacer: Tener más comunicación a medida que vamos trabajando en las asignaciones.
+2.	Hacer más: Exponer y trabajar las dudas en equipo.
+3.	Seguir haciendo: Cumplir con las asignaciones individuales en tiempo y forma.
+4.	Hacer menos: -
+5.	Dejar de hacer: No atrasarnos y si es así, avisar con tiempo para poder organizar bien los tiempos

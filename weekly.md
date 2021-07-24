@@ -15,3 +15,21 @@ Pamela: Requiere terminar el inicio y detalle del producto. Por asuntos personal
 *Posterior a los cambios realizados contactará a Jaime para que coloquen los cambios en el repositorio 
 
 *La comunicación se mantendrá por WA
+
+
+WEEKLY 24 DE JULIO
+
+Realizamos las páginas html y css de nuestro sitio web, terminamos con los siguientes archivos:
+•	Home.html
+•	Carrito_compras.html
+•	Detalleproducto.html
+•	Login.html
+•	Registro.html
+•	Styles.css
+•	Stylescarrito.css
+•	Styleshome.css
+•	Styleslogin.css
+•	Stylesregister.css
+•	Stylesdetalle.css
+
+Las complicaciones que surgieron durante este sprint fue que hubo atrasos, sin embargo se estableció un plazo para cumplir con las entregas pendientes (home y detalle del producto) y se trabaja en conjunto para tener los archivos completos y organizados en el repositorio.
