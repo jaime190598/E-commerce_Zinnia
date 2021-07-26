@@ -23,3 +23,11 @@ En las revisiones semanales podríamos revisar las dudas o detalles más a fondo
 3.	Seguir haciendo: Cumplir con las asignaciones individuales en tiempo y forma.
 4.	Hacer menos: -
 5.	Dejar de hacer: No atrasarnos y si es así, avisar con tiempo para poder organizar bien los tiempos
+
+CONCLUSIONES DEL TERCER SPRINT
+
+Dentro del tercer sprint se pudo notar una mejor interacción entre participantes, se mantuvo un régimen de comunicación constante, de tal forma que todos pudiéramos estar a la par de las actividades. Se realizo como siempre reuniones mediante Zoom los fines de semana para dividir actividades, y manifestar dudas de temas o problemas que se tuvieron durante el sprint pasado.
+
+Una ves divididas las tareas se mantuvo comunicación por problemas que se desarrollaron al momento de estar trabajando en cada actividad, cabe mencionar que la mayoría de estas consultas fueron hechas por medio de la aplicación de Whatsapp, donde se tiene un grupo el cual nos ayuda a mantenernos en contacto de manera mas sencilla y eficiente, debido a que nos permite compartir fotos y videos rápidamente.
+
+Algunos problemas que se pudieron notar, es la falta de tiempo y comprensión de temas, ya que se pudieron observar retrasos al momento de entregar las actividades en las fechas indicadas, dicho esto, quedaría a consideración el manejo de tiempo de cada individuo para mejorar los tiempos de entrega y así no retrasar actividades.

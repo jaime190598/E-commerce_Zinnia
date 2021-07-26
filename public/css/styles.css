@@ -9,50 +9,89 @@ body{
     background-color: #ebebeb ;
 }
 
-h2{
-    font-size:40px;
-    font-weight: bold;
-}
-
-h3{
-    font-size:32px;
-}
-
-h4{
-    font-size:28px;
-}
-
 header{
     background-color:#fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    padding-top: 15px;
+    padding-top: 2vh;
 }
 
 header div img{
-    width:50px;
-    height:40px;
-    margin-left: 20px;
+    width:18vw;
+    height:28px;
 }
-
+/*nav desplegable*/
 header nav{
     display: none;
 }
+ul, ol {
+    list-style:none;
+}
+nav > li{
+    float:left;
+}
+nav ul li a{
+    background-color:#fdf8f2;
+    padding: 10px 12px;
+    text-decoration:none;
+	display:block;
+}
+nav ul li a:hover{
+   background-color: #4F4737;
+}
+nav ul li ul {
+    display:none;
+    position: absolute;
+    min-width: 140px;
+}
+nav ul li:hover >ul{
+    display: block;
+}
+nav ul li ul li{
+    position: relative;
+    z-index: 10;
+}
+nav ul li ul li ul{
+    right: -140px;
+    top: 0px;
+}
 header div.input-search {
-   padding: 6px;
+   height: 28px;
+   border-radius: 5px;
+   border: solid 1px #9e9885;
+   outline: orchid;
+   padding-right: 8px;
+   display: flex;
+   align-items: center;
 }
 header div.input-search input{
-    width: 60vw;
-    height: 4vh;
+    background-color: transparent;
+    margin: 0px;
+    width: 49vw;
+    height: 28px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-left: 8px;
+    color: #9e9885;
+}
+header div.input-search i{
+    font-size: 18px;
+    color: #9e9885;
+}
+header div.buttons-section{
+    display: none;
 }
 header div.burger-menu button{
-    width: 10vw;
-    height: 6vh;
-    background-color: rgb(0, 89, 255);
+    width: 11vw;
+    height: 35px;
+    background-color: #4F4737;
     color: white;
     border-radius: 10px;
+   
 }
 
 /* FOOTER */ 
@@ -76,20 +115,92 @@ footer div img{
 /* FIN FOOTER */ 
 
 @media (min-width: 361px){
-    
+    header div.input-search {
+        height: 35px;
+     }
+     header div.input-search input{
+         width: 47vw;
+         height: 35px;
+         font-size: 18px;
+     }
+    header div.burger-menu button{
+        width: 9vw;
+        height: 42px;
+       
+    }
+    header div img{
+        width:25vw;
+        height:38px;
+    }
 }
 @media (min-width: 769px){
     header{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
     }
+    header div.input-search {
+        height: 35px;
+     }
+     header div.input-search input{
+         width: 38vw;
+         height: 35px;
+         font-size: 18px;
+     }
+    header div.burger-menu button{
+        width: 5vw;
+        height: 42px;
+       
+    }
+   
+}
+@media (min-width: 1200px){
     header nav{
-        display: block;
+        display: inline;
+        width: 30vw;
     }
     header nav ul{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        color: #9e9885;
+    }
+    header nav ul li a{
+        color: #9e9885;
+    }
+    header div.input-search input{
+        width: 20vw;
+        height: 35px;
+        font-size: 18px;
+    }
+    header div.burger-menu button{
+        display: none;
+        
+    }
+    header div img{
+        margin-left: 5vw;
+        width:8vw;
+        height:7vh;
+    }
+    header div.buttons-section{
+        margin-right: 2.5vw;
+        width: 17vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    header div.buttons-section button{
+        border: solid 1px #9e9885;
+        border-radius: 5px;
+        width: 8vw;
+        height: 25px;
+        font-size: 14px;  
+    }
+    button.session{
+        background-color: #fff;
+        color: #9e9885;
+    }
+    button.registration{
+        background-color: #4f4737;
+        color: #fff;
     }
 }

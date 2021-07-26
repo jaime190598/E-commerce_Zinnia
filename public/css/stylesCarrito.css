@@ -1,6 +1,9 @@
 h1{
   font-size: 25px;  
 }
+h4{
+
+}
 body{
     background-color: #fdf8f2;
 }
@@ -11,6 +14,7 @@ main{
     padding: 0%; 
     
 }
+/*carrito de compras*/
 section.bodyBuycar{
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +48,7 @@ div.clothes div{
     margin: 5px;
     padding: 20px;
 }
+/*formulario*/
 form div.title-bar{
     display: none;
 }
@@ -52,29 +57,18 @@ form.formBuyCar{
     flex-wrap: wrap;
     justify-content: center;
 }
+/*contenedor de articulo*/
 form div.container-article{
    margin-bottom: 5vh;
   }
-form div.container-send{
-    border: solid 1px rgb(139, 137, 137);
-    margin-top: 15px;
-}
-
-form div.container-send .send{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px;
-   border-bottom: solid 1px rgb(139, 137, 137);
-   font-size: 18px;
-   height: 5vh;
-}
-div.price{
+form div.container-article div.price{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     padding-top: 5px;
     padding-right: 15px;
-}
-div.price div.increment-button{
+  }
+  div.price div.increment-button{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -85,20 +79,36 @@ div.price div.increment-button{
     
 }
 div.price div.increment-button button{
-   width: 10vw;
-   height: 3vh;
-   border: none;
-}
-div.details-send{
-    display: none;
-}
-div.edit-buttons{
+    width: 10vw;
+    height: 3vh;
+    border: none;
+ }
+ div.edit-buttons{
     padding-left: 15px;
     margin-bottom: 10px;
 }
 div.edit-buttons button{
    width: 15vw;
    height: 3vh;
+}
+/*contenedor de detalles de compra*/
+form div.container-details{
+    border: solid 1px rgb(139, 137, 137);
+    margin-top: 15px;
+}
+
+form div.container-details .send{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   border-bottom: solid 1px rgb(139, 137, 137);
+   font-size: 18px;
+   height: 5vh;
+}
+div.details-send{
+    display: none;
 }
 div.total-cost div{
     display: flex;
@@ -108,11 +118,7 @@ div.total-cost div{
     font-size: 18px;
     height: 5vh;
 }
-form div.container-article div.price{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
+
 div.total-cost div.button{
     display: flex;
     flex-wrap: wrap;
@@ -140,12 +146,14 @@ div.total-cost div.button button{
         border-radius: 5px;
         
       }
+      /*edicion de boton de elmininar*/
       div.edit-buttons button.delet{
           border:solid 0.5px rgb(161, 156, 156);
           color: rgb(161, 156, 156);
           background-color: #fdf8f2;
           border-radius: 5px;
         }
+    /*edicion de precio*/
         div.price p{
             font-size: 18px;
         }
@@ -187,11 +195,6 @@ div.total-cost div.button button{
         padding-left: 15px;
         margin-bottom: 25px;
     }
-    form div.container-article{
-        border-bottom: none;
-        border-top: none;
-        margin-top: 10px;
-       }
     form div.title-bar{
         display: flex;
         flex-wrap: wrap;
@@ -199,7 +202,14 @@ div.total-cost div.button button{
         width: 85vw;
         padding-left: 5vw;
         padding-right: 3vw;
-    } 
+    }
+    /*contenedor de articulo*/
+    form div.container-article{
+        border-bottom: none;
+        border-top: none;
+        margin-top: 10px;
+       }
+     
     div.Details-clothes{
         display: flex;
         flex-wrap: wrap;
@@ -213,8 +223,8 @@ div.total-cost div.button button{
         justify-content: space-between;
     }
     div.clothes img{
-        width: 8vw;
-        height: 20vh;
+        width: 12vw;
+        height: 18vh;
         margin: 10px;
         margin-left: 20px;
        }
@@ -280,24 +290,25 @@ div.total-cost div.button button{
         width: 6.5vw;
         height: 3vh;
      }
-     form div.container-send{
+     /* contenedor de detalles de carrito*/
+     form div.container-details{
         border:none;
         margin-top: 15px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    form div.container-send .send{
+    form div.container-details .send{
        display: block;
        border-bottom: none;
        padding: 10px;
-       font-size: 18px;
+       font-size: 20px;
        height: 20vh;
     }
     div.details-send{
         display: block;
         width: 25vw;
-        font-size: 15px;
+        font-size: 20px;
         text-align: justify;
     }
     div.edit{
@@ -307,29 +318,51 @@ div.total-cost div.button button{
     }
     div.total-cost{
         padding-right: 25px;
-        width: 22vw;
+        width: 32vw;
+    }
+    div.total-cost div{
+       margin-top: 10px;
     }
     div.total-cost div.button{
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
-        height: 8vh;
+        height: 10vh;
     }
     div.total-cost div.button button{
         border-radius: 5px;
-        width: 15vw;
-        height: 5vh;
-        font-size: 15px;
+        width: 18vw;
+        height: 4vh;
+        font-size: 18px;
         font-weight: bold;
         color: #fff;
     }
 }
-@media (min-width: 1200px){
+@media (min-width: 1150px){
+    div.clothes img{
+        width: 9vw;
+        height: 20vh;
+       }
     form div.title-bar{
         width: 80vw;
     } 
     div.clothes{
         width: 40vw;
-    }    
+    }  
+    form div.container-details .send{
+        font-size: 19px;
+        height: 20vh;
+     }
+     div.details-send{
+         font-size: 16px;
+     }
+    div.total-cost{
+        width: 23vw;
+    }
+    div.total-cost div.button button{
+        width: 15vw;
+        height: 5vh;
+        font-size: 15px;
+    }
     
 }
