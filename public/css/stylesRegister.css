@@ -8,6 +8,10 @@ main{
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     color: #fdf8f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0%;
 }
 main section article.row{
     background-color: transparent;    
@@ -90,7 +94,7 @@ form div.button-login button{
         padding: 0%;
     }
     section div.text-register{
-        font-size: 10vw;
+        font-size: 5vw;
     }
     form input{
         width: 83vw;
@@ -108,7 +112,7 @@ form div.button-login button{
         width: 550px;
     }
     section div.text-register{
-        font-size: 5vw;
+        font-size: 3vw;
     }
     section div.artic{
         display: flex;

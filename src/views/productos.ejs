@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/stylesHome.css"/>
+</head>
+<body>
+    <!-- ENCABEZADO -->
+        <%- include('./partials/header.ejs') %>
+    <!-- FIN HEADER -->
+    <main>
+        <section class="section-popular-ahora"> 
+            <h2><%= products[0].category %></h2>
+                <div class="text-popular">
+                    <% products.forEach(product=>{ %>
+                    <div class=img-1>
+                    <img src="/images/img-1.png" class="section-img" alt="Cropped Jacket">
+                    <h4 class="popular-h4"><%= product.name %></h4>
+                    <p class="popular-p"><%= product.cost %> <br> <%= product.color %> <%= product.size %></p>
+                    </div>
+                    <% }) %>
+               
+                </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <%- include('./partials/footer.ejs') %>
+    <!-- FIN DE FOOTER -->
+
+</body>
+</html>

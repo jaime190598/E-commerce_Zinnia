@@ -8,6 +8,10 @@ main{
     background-repeat:no-repeat;
     background-size: 100% 100vh;
     color:#fdf8f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0%;
 }
 
 main section article.row{
@@ -35,11 +39,6 @@ section{
 main section div.text-login{
   	margin-top:10px;
     text-align: center;
-}
-
-h2{
-    margin-top: 5vh;
-    font-size: 2.5em;
 }
 
 form{
@@ -120,6 +119,9 @@ div.button-register button{
         justify-content: center;
         padding: 0%;
     }
+    section div.text-login{
+        font-size: 5vw;
+    }
     form div.input-email input{
         width: 83vw;
         height: 6vh;
@@ -139,7 +141,9 @@ div.button-register button{
     main section article.row{
         width: 800px;
     }
-
+    section div.text-login{
+        font-size: 3vw;
+    }
     section div.article{
         display: flex;
         flex-wrap: wrap;
