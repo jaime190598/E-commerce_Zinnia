@@ -34,13 +34,13 @@ nav > li{
     float:left;
 }
 nav ul li a{
-    background-color:#fdf8f2;
+    background-color:#ffffff;
     padding: 10px 12px;
     text-decoration:none;
 	display:block;
 }
 nav ul li a:hover{
-   background-color: #4F4737;
+   background-color: #fdf8f2;
 }
 nav ul li ul {
     display:none;
@@ -166,7 +166,7 @@ footer div img{
         color: #9e9885;
     }
     header nav ul li a{
-        color: #9e9885;
+        color: #4f4737;
     }
     header div.input-search input{
         width: 20vw;
