@@ -40,7 +40,8 @@ nav ul li a{
 	display:block;
 }
 nav ul li a:hover{
-   background-color: #fdf8f2;
+   background-color: #9e9885;
+   color: #fff;
 }
 nav ul li ul {
     display:none;
