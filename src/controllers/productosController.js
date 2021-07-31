@@ -58,7 +58,23 @@ const controlador = {
         res.render('productos',{products:list});
     },
     addProduct:(req,res)=>{
-        res.render('home');
+        let lastId =products[products.length - 1].id;
+        const newProduct={
+        "id": (lastId+1),
+        "name": req.body.name,
+        "description": req.body.description,
+        "image": req.file.filename,
+        "category": req.body.category,
+        "cost": req.body.cost,
+        "size": req.body.size,
+        "color": req.body.color,
+        }
+        products.push(newProduct);
+		productsJSON=JSON.stringify(products, null, 2);
+		fs.writeFileSync(productsFilePath, productsJSON);
+        
+        console.log(newProduct)
+        res.redirect('/form');
     }
     
 }
