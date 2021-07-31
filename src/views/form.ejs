@@ -27,7 +27,7 @@
             <div class="text-form">
                 <p>Crea un nuevo producto o edita alguno</p>
             </div>
-            <form action="">
+            <form action="/formulario" method="POST" enctype="multipart/form-data">
                 <div class="input-name">
                    <input type="text" placeholder="Nombre del producto">
                 </div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="img">
                 <p> Elige la imagen del producto </p>
-                <input type="file" id="img" name="img" accept="image/png, image/jpeg"/>
+                <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg"/>
                 <div class="input-category">
                 <input type="text" placeholder="Categoría">
                 </div>

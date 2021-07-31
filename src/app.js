@@ -17,6 +17,12 @@ server.set('views','./src/views');
 //coneccion a rutas 
 server.use(mainRouter);
 server.use(productsRouter);
+
+//middleware error 404
+server.use((req,res,next)=>{
+    res.status(404).render('404-page');
+    next();
+})
 //correr servidor 
 server.listen(PORT, function(){
     console.log('Servidor corriendo en el puerto '+ PORT);

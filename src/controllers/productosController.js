@@ -57,7 +57,9 @@ const controlador = {
         const list=products.filter(data=>data.category == 'Accesorios');
         res.render('productos',{products:list});
     },
-    
+    addProduct:(req,res)=>{
+        res.render('home');
+    }
     
 }
 //join

@@ -5,7 +5,7 @@
     <nav>
         <ul type="nav">
             <li>
-                <a href="">Ropa</a>
+                <a>Ropa</a>
                 <ul>
                     <li><a href="/tops|camisas">Tops | Camisas</a></li>
                     <li><a href="/pantalones|jeans">Pantalones | Jeans</a></li>
@@ -16,7 +16,7 @@
             </li>
             <li><a href="/accesorios">Accesorios</a></li>
             <li>
-                <a href="">Colecciones</a>
+                <a>Colecciones</a>
                 <ul>
                     <li><a href="/verano">Verano</a></li>
                     <li><a href="/primavera">Primavera</a></li>
@@ -25,7 +25,7 @@
                 </ul>
             </li>
             <li>
-                <a href="">Ofertas</a>
+                <a>Ofertas</a>
                 <ul>
                     <li><a href="/mas_vendido">Lo más vendido</a></li>
                     <li><a href="/ofertas">Ofertas</a></li>
@@ -35,8 +35,10 @@
         </ul>
     </nav>
     <div class="input-search">
-        <input type="text" placeholder="Buscar producto">
-        <i class="fas fa-search-plus"></i>
+        <form action="/" method="GET">
+            <input type="text" placeholder="Buscar producto">
+            <button type="submit"><i class="fas fa-search-plus"></i></button>
+        </form>
     </div>
     <div class="burger-menu">
         <button class="menu"><i class="fas fa-bars"></i></button>

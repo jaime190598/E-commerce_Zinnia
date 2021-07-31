@@ -42,6 +42,8 @@ nav ul li a{
 nav ul li a:hover{
    background-color: #9e9885;
    color: #fff;
+   cursor: pointer;
+
 }
 nav ul li ul {
     display:none;
@@ -65,9 +67,9 @@ header div.input-search {
    border-radius: 5px;
    border: solid 1px #9e9885;
    outline: orchid;
-   padding-right: 8px;
    display: flex;
    align-items: center;
+   
 }
 header div.input-search input{
     background-color: transparent;
@@ -80,9 +82,18 @@ header div.input-search input{
     padding-left: 8px;
     color: #9e9885;
 }
+header div.input-search button{
+    margin: 0px;
+    height: 33px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 header div.input-search i{
     font-size: 18px;
     color: #9e9885;
+    cursor: pointer;
 }
 header div.buttons-section{
     display: none;
