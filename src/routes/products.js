@@ -48,7 +48,7 @@ router.get('/pijamas', productosController.pijamas);
 router.get('/mas_vendido', productosController.masvendido);
 router.get('/ofertas', productosController.ofertas);
 router.get('/accesorios', productosController.accesorios);
-router.get('/formRegister',formController.formulario);
+router.get('/formProduct',formController.formulario);
 //GET:ID
 router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
 router.get('/product/:id/edit?',formController.geteditform);
