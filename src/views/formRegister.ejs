@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinnia</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/stylesForm.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--header-->
+    <%- include('./partials/header.ejs') %>
+   <main>
+    <section>
+        <div class="text-hello">
+            <h3>
+                ¡Hola Administrador! 
+            </h3>
+        </div>
+        <div class="artic">
+        <article class="row">
+            <div class="text-form">
+                <p>Crea un nuevo producto o edita alguno</p>
+            </div>
+            <% if(idProduct != undefined ){ %>
+            <form action="/edit?_method=put" method="POST" enctype="multipart/form-data">
+            <%}else{%>
+            <form action="/products"  method="POST" enctype="multipart/form-data">   
+            <%}%>   
+            <input type="hidden" name="id" value="<%= product && product[0].id? product[0].id:''%>">
+            <input type="hidden" name="image" value="<%= product && product[0].image? product[0].image:''%>">
+            <div class="input-name">
+                <input type="text" name="name" placeholder="Nombre del producto" value="<%= product && product[0].name? product[0].name:''%>" required>
+             </div>
+             <div class="input-description">
+                 <input type="text" name="description" cols="20" rows="4" placeholder="Descripción del producto" value="<%= product && product[0].description? product[0].description:''%>" required>
+             </div>
+             <div class="img">
+                 <p> Elige la imagen del producto </p>
+                 <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
+             </div>
+             <div class="input-category">
+             <input type="text" name="category" placeholder="Categoría" value="<%= product && product[0].category? product[0].category:''%>">
+             </div>
+             <div class="input-cost">
+                 <input type="texto" name="cost" placeholder="Precio" value="<%= product && product[0].cost? product[0].cost:''%>">
+             </div>
+             <div class="input-size">
+                 <input type="texto" name="size" placeholder="Talla" value="<%= product && product[0].size? product[0].size:''%>">
+             </div>
+             <div class="input-color">
+                 <input type="texto" name="color" placeholder="Color" value="<%= product && product[0].color? product[0].color:''%>">
+             </div>
+             <div class="button-save">
+                 <button type="submit">Guardar</button>
+             </div>
+            </form>                  
+        </article>
+    </div>
+    </section>
+   </main>
+  <!--footer-->
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

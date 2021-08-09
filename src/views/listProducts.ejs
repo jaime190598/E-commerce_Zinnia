@@ -8,7 +8,7 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/0537a6077e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css"/>
-    <link rel="stylesheet" href="/css/stylesHome.css"/>
+    <link rel="stylesheet" href="/css/stylesList.css"/>
 </head>
 <body>
     <!-- ENCABEZADO -->
@@ -16,17 +16,23 @@
     <!-- FIN HEADER -->
     <main>
         <section class="section-popular-ahora"> 
-            <h2><%= products[0].category %></h2>
-                <div class="text-popular">
-                    <% products.forEach(product=>{ %>
-                    <div class=img-1>
-                    <img src="/images/img-1.png" class="section-img" alt="Cropped Jacket">
-                    <h4 class="popular-h4"><%= product.name %></h4>
-                    <p class="popular-p"><%= product.cost %> <br> <%= product.color %> <%= product.size %></p>
-                    </div>
-                    <% }) %>
-               
-                </div>
+            <h2><%= title %></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagen</th><th>Nombre</th><th>Costo</th><th>Editar</th><th>Eliminar</th>
+                    </tr>
+                </thead>
+                <% products.forEach(product=>{ %>
+                <tr>
+                    <td class="imageProduct"><img src="/images/img-1.png" class="section-img" alt="Cropped Jacket"></td>
+                    <td class="name"><%= product.name %></td>
+                    <td class="cost"><%= product.cost %></td>
+                    <td class="edit"><a href="/product/<%= product.id %>/edit">Editar</a></td>
+                    <td class="delet">$ 3,000</td>
+                </tr>
+                <% }) %>                    
+            </table>
         </section>
     </main>
     <!-- FOOTER -->

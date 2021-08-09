@@ -21,25 +21,24 @@
 
     <article>
         <h3 class="detalle-h3">Detalle de producto</h3>
-        <img src="/images/img-4.png" class="section-img" alt="Printed Dress">
-        <div class="text-detalle">
-            <h4 class="detalle-h4">Printed Shirt <span class="spacing">Dress  $495</span> mxn</h4>
-            <p class="detalle-p">Vestido camisero suelto con estampado de animal
-                print en color azul de manga tres cuartos.
-            </p>
-            </div>
-            <h4 class="talla-h4">Elige tu talla</h4>
-        <div class="tallas">
-            <div><button type="button" class="button-talla-xs">XS</button></div>
-            <div><button type="button" class="button-talla-s">S</button></div>
-            <div><button type="button" class="button-talla-m">M</button></div>
-            <div><button type="button" class="button-talla-l">L</button></div>
-            <div><button type="button" class="button-talla-xl">XL</button></div>
-        </div>
+        <div class="container">
+            <img src="/images/img-4.png" class="section-img" alt="Printed Dress">
+            <div class="container-detalles">
+                <div class="text-detalle">
+                    <h4 class="detalle-h4"><%= product[0].name %> <span class="spacing">Dress  <%= product[0].cost %></span> mxn</h4>
+                    <p class="detalle-p"><%= product[0].description %>
+                    </p>
+                    </div>
+                    <h4 class="talla-h4">Talla: <%= product[0].size %></h4><br>
+                   
+                    <h4 class="talla-h4">Color: <%= product[0].color %></h4><br>
+    
 
-        <div class="detalle-cta">
-            <div><button type="button" class="button-love"> < 3 </button></div>
-            <div><button type="button" class="button-add">Agregar al carrito</button></div>
+                <div class="detalle-cta">
+                    <div><i class="fas fa-heart button-love"></i></div>
+                    <div><button type="button" class="button-add">Agregar al carrito</button></div>
+                </div>
+            </div>
         </div>
     </article>
 <!-- FIN MAIN SECTION -->

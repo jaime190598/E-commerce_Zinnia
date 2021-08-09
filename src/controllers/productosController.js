@@ -7,75 +7,70 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controlador = {
     productos: (req, res)=>{
         const listProduct=products;
-        res.render('productos',{products:listProduct});
+        const title='Mis Products';
+        res.render('listProducts',{products:listProduct, title:title});
     },
     verano: (req, res)=>{
         const list=products.filter(data=>data.category == 'Verano');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     otono: (req, res)=>{
         const list=products.filter(data=>data.category == 'Otoño');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     primavera: (req, res)=>{
         const list=products.filter(data=>data.category == 'Primavera');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list,title:title});
     },
     invierno: (req, res)=>{
         const list=products.filter(data=>data.category == 'Invierno');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     tops: (req, res)=>{
         const list=products.filter(data=>data.category == 'Tops|Camisas');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     pantalones: (req, res)=>{
         const list=products.filter(data=>data.category == 'Pantalones|Jeans');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     vestidos: (req, res)=>{
         const list=products.filter(data=>data.category == 'Vestidos|Faldas');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     abrigos: (req, res)=>{
         const list=products.filter(data=>data.category == 'Abrigos|Trench');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     pijamas: (req, res)=>{
         const list=products.filter(data=>data.category == 'Pijamas');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     masvendido: (req, res)=>{
         const list=products.filter(data=>data.category == 'Lo más vendido');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     ofertas: (req, res)=>{
         const list=products.filter(data=>data.category == 'Ofertas');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
     accesorios: (req, res)=>{
         const list=products.filter(data=>data.category == 'Accesorios');
-        res.render('productos',{products:list});
+        const title=list[0].category;
+        res.render('products',{products:list, title:title});
     },
-    addProduct:(req,res)=>{
-        let lastId =products[products.length - 1].id;
-        const newProduct={
-        "id": (lastId+1),
-        "name": req.body.name,
-        "description": req.body.description,
-        "image": req.file.filename,
-        "category": req.body.category,
-        "cost": req.body.cost,
-        "size": req.body.size,
-        "color": req.body.color,
-        }
-        products.push(newProduct);
-		productsJSON=JSON.stringify(products, null, 2);
-		fs.writeFileSync(productsFilePath, productsJSON);
-        
-        console.log(newProduct)
-        res.redirect('/form');
-    }
+    
     
 }
 //join

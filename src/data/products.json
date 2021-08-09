@@ -20,7 +20,7 @@
     "color": "Teal"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Kimberlee",
     "description": "eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id",
     "image": "product_3.jpg",
@@ -1004,9 +1004,19 @@
     "name": "Falda",
     "description": "falda larga de colores floreados",
     "image": "1627753817743.jpg",
-    "category": "offerta",
-    "cost": "200",
+    "category": "Ofertas",
+    "cost": "$200",
     "size": "XL",
     "color": "rojo, dorado"
+  },
+  {
+    "id": "102",
+    "name": "pantalon",
+    "description": "dos bolsas, tela liza, bordados a mano, ",
+    "image": "1627871411992.jpg",
+    "category": "Ofertas",
+    "cost": "$2500.50",
+    "size": "xl",
+    "color": "negro"
   }
 ]

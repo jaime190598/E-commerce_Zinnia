@@ -104,14 +104,9 @@ article{
 
 .button-love{
     color: #939885;
-    border-radius: 5px;
-    border-style: none;
-    width: 50px;
-    height: 30px;
-    font-size: 10px;
-    border: #939885 1px solid;
-    background-color: white;
-    margin-right: 20px;
+    font-size: 25px;
+    margin-right: 10px;
+    margin-bottom: 25px;
 }
 /* FIN DE SECTION */
 
@@ -220,11 +215,8 @@ article{
     }
 
     .button-love{
-        width: 60px;
-        height: 40px;
-        font-size: 15px;
-        font-weight: 400;
-        margin-right: 30px;
+        font-size: 40px;
+        margin-right: 20px;
     }
 
     .button-add{
@@ -247,20 +239,20 @@ article{
 
 
 @media (min-width: 1200px) {
-    header{
+   
+    article{
+        height: 90vh;
+    }
+    .container{
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
     }
-    header nav{
-        display: block;
+    .container-detalles{
+        width: 40vw;
+        margin-right: 7vw;
     }
-    header nav ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
     .top-header img{
         width: 100px;
         padding-left: 0;
@@ -271,7 +263,7 @@ article{
     }
 
     .section-img{
-        width: 50%;
+        width: 35vw;
         display: block;
         margin: auto; 
         margin-top: 20px;
@@ -303,7 +295,7 @@ article{
         margin: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         border: purple 1px solid; 
     }
@@ -349,17 +341,14 @@ article{
     .detalle-cta{
         width: 70%;
         margin: auto;
-        display: block;
+        display: flex;
         justify-content: right;
         margin-bottom: 270px;
 
     }
 
     .button-love{
-        width: 60px;
-        height: 40px;
-        font-size: 15px;
-        font-weight: 400;
+        font-size: 40px;
         margin-right: 30px;
     }
 
@@ -367,7 +356,6 @@ article{
         width: 160px;
         height: 40px;
         font-size: 15px;
-        font-weight: 400;
     }
     footer div img{
         width: 17%;
