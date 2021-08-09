@@ -62,6 +62,18 @@ const controlador = {
         productsJSON=JSON.stringify(products, null, 2);
 		fs.writeFileSync(productsFilePath, productsJSON);
         res.redirect('/formRegister');
+    },
+    deletProduct:(req,res)=>{
+        let id= req.params.id;
+        for(let i=0; i<products.length;i++){
+            if(products[i].id==id){
+              products.splice(i,1)  
+            }
+        }
+        productsJSON=JSON.stringify(products, null, 2);
+		fs.writeFileSync(productsFilePath, productsJSON);
+        res.redirect('/products');
+        console.log(id);
     }
 }
 //join

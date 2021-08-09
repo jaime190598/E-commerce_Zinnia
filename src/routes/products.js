@@ -9,7 +9,7 @@ const detalleMenuController=require('../controllers/detalleMenuController');
 const formController=require('../controllers/formController');
 
 //method-override
-router.use(methodOverride('_method'));
+router.use(methodOverride('_method', {methods:["POST", "GET"]}));
 
 //////Multer
 const storage= multer.diskStorage({
@@ -53,11 +53,14 @@ router.get('/formRegister',formController.formulario);
 router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
 router.get('/product/:id/edit?',formController.geteditform);
 //Fin metodos GET
-
 //Inicio Metodos POST
 router.post('/products', validations, fileUpLoad.single('imgProduct'), formController.addProduct);
-router.put('/edit', validations, fileUpLoad.single('imgProduct'), formController.editProduct);
 //Fin metodos POST
-
+//Inicio Metodo PUT
+router.put('/edit', validations, fileUpLoad.single('imgProduct'), formController.editProduct);
+//final methodo put 
+//Inicio Metodo DELET
+router.delete('/products/:id/:image?',formController.deletProduct)
+//final metodo delet
 
 module.exports=router;

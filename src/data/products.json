@@ -1,11 +1,11 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Georgena",
     "description": "iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu",
     "image": "product_1.jpg",
     "category": "Verano",
-    "cost": "$2344.70",
+    "cost": "$2340.70",
     "size": "S",
     "color": "Yellow"
   },
@@ -988,35 +988,5 @@
     "cost": "$3681.27",
     "size": "2XL",
     "color": "Orange"
-  },
-  {
-    "id": 100,
-    "name": "Humbert",
-    "description": "metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus",
-    "image": "product_100.jpg",
-    "category": "Ofertas",
-    "cost": "$666.36",
-    "size": "XS",
-    "color": "Turquoise"
-  },
-  {
-    "id": 101,
-    "name": "Falda",
-    "description": "falda larga de colores floreados",
-    "image": "1627753817743.jpg",
-    "category": "Ofertas",
-    "cost": "$200",
-    "size": "XL",
-    "color": "rojo, dorado"
-  },
-  {
-    "id": "102",
-    "name": "pantalon",
-    "description": "dos bolsas, tela liza, bordados a mano, ",
-    "image": "1627871411992.jpg",
-    "category": "Ofertas",
-    "cost": "$2500.50",
-    "size": "xl",
-    "color": "negro"
   }
 ]
