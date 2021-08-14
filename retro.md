@@ -31,3 +31,8 @@ Dentro del tercer sprint se pudo notar una mejor interacción entre participante
 Una ves divididas las tareas se mantuvo comunicación por problemas que se desarrollaron al momento de estar trabajando en cada actividad, cabe mencionar que la mayoría de estas consultas fueron hechas por medio de la aplicación de Whatsapp, donde se tiene un grupo el cual nos ayuda a mantenernos en contacto de manera mas sencilla y eficiente, debido a que nos permite compartir fotos y videos rápidamente.
 
 Algunos problemas que se pudieron notar, es la falta de tiempo y comprensión de temas, ya que se pudieron observar retrasos al momento de entregar las actividades en las fechas indicadas, dicho esto, quedaría a consideración el manejo de tiempo de cada individuo para mejorar los tiempos de entrega y así no retrasar actividades.
+
+CONCLUSIONES DEL CUARTO SPRINT
+Durante el cuarto sprint iniciamos bien con la revisión y asignación de actividades en nuestra reunión semanal y en el tablero de Trello, así como aprovechar para revisar algunas dudas y tiempos de entrega.
+Inicialmente mantuvimos una buena comunicación, sin embargo una de nuestras compañeras tuvo que retirarse del equipo debido a cuestiones laborales, y otra de nuestras compañeras se atrasó con algunos temas debido a temas personales y a falta de comprensión en algunos temas del módulo 5.
+De igual manera, nos hemos comunicado más por WhatsApp para no esperar hasta la reunión del fin de semana para aclarar dudas, así como intentar reunirnos entre semana para mejorar la comprensión de algunos temas o ejercicios tanto de Playground como de los sprints.
