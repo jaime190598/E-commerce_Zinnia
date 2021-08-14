@@ -33,3 +33,6 @@ Realizamos las páginas html y css de nuestro sitio web, terminamos con los sigu
 •	Stylesdetalle.css
 
 Las complicaciones que surgieron durante este sprint fue que hubo atrasos, sin embargo se estableció un plazo para cumplir con las entregas pendientes (home y detalle del producto) y se trabaja en conjunto para tener los archivos completos y organizados en el repositorio.
+
+WEEKLY 7 AGOSTO
+Se trabajó en los campos para productos y usuarios que posteriormente serán de utilidad para nuestra base de datos, con las categorías específicas que manejamos en la página. De igual manera se realizó el CRUD con 7 rutas de cada uno de los productos para poder utilizar los diferentes procesamientos para crear, leer, modificar y borrar elementos específicos de la base de datos generada con JSON.
