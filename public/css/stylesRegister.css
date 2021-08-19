@@ -5,7 +5,7 @@ main{
     margin: 0 auto;  
     padding-top: 25px;
     background-image: url('../images/registro-img.jpeg');
-    background-repeat: no-repeat;
+    background-repeat: round;
     background-size: 100% 100vh;
     color: #fdf8f2;
     display: flex;
@@ -42,6 +42,31 @@ form{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+form div.image-user{
+    text-align: center;
+    font-size: 22px;
+}
+form div.image-user input{
+    width: 250px;
+    height: 30px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+form div.image-user div{
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    margin-left: 38px;
+    border: solid 1px white;
+    border-radius: 50px;
+    background-color: #fdf8f2;
+}
+form div.image-user img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50px;
 }
 form div.input-re{
     margin: 10px;
@@ -121,6 +146,9 @@ form div.button-login button{
     }
     article div.text-form{
         text-align: center;
+    }
+    form div.image-user input{
+        width: 250px;
     }
     form div.to-name{
         display: flex;

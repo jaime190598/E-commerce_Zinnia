@@ -10,7 +10,7 @@ const controlador = {
         let id= req.params.id;
         const product=products.filter(data=>data.id == id);
         console.log(product);
-        res.render('detalleProducto',{product:product});
+        res.render('productDetail',{product:product});
        // res.send('hola'+req.params.id);
     }
 }

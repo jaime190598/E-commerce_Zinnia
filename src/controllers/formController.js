@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { productos } = require('./productosController');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 function getProductsJSON(){
