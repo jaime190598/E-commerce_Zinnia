@@ -7,6 +7,8 @@ const productsRoute = require('./routes/products');
 const accountsRoute= require('./routes/accounts');
 const PORT = process.env.PORT || 3000;
 const methodOverride= require('method-override');
+
+server.use(express.urlencoded({extended:false}));
 //carpeta compartida
 const publicPath= path.resolve(__dirname, '../public');
 server.use(express.static(publicPath));

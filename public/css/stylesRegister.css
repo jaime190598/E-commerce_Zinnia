@@ -34,6 +34,15 @@ section{
 main section div.text{
     text-align: center;
 }
+/*danger mensaje and box  */
+.text-danger{
+    font-size: 17px;
+    color: red;
+}
+.is-invalid{
+    border-color: red;
+}
+/* end danger */
 .title-form{
     margin: 10px;
     font-size: 18px;
@@ -54,7 +63,10 @@ form div.image-user input{
     background-color: transparent;
     border: none;
 }
-form div.image-user div{
+form div.image-user div.preview{
+    background-image: url('../images/users/newUsers.png');
+    background-repeat: round;
+    background-size: 100% 100vh;
     margin-top: 20px;
     width: 180px;
     height: 180px;
@@ -148,27 +160,27 @@ form div.button-login button{
         text-align: center;
     }
     form div.image-user input{
-        width: 250px;
+        width: 300px;
     }
     form div.to-name{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 38vw;
+        width: 35vw;
     }
     form div.input-name input{
-        width: 18vw;
-        height: 5vh;
+        width: 16.5vw;
+        height: 45px;
         font-size: 18px;
     }
     form div.input-apellido input{
-        width: 18vw;
-        height: 5vh;
+        width: 16.5vw;
+        height: 45px;
         font-size: 18px;
     }
     form div.input-re input{
-        width: 38vw;
-        height: 5vh;
+        width: 35vw;
+        height: 45px;
         font-size: 18px;
     }
     form div.button-login{

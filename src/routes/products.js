@@ -1,38 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const multer= require('multer');
-const {body} = require('express-validator');
 const methodOverride= require('method-override');
 const productosController=require('../controllers/productosController');
 const detalleMenuController=require('../controllers/detalleMenuController');
 const formController=require('../controllers/formController');
-
+const productsMiddleware=require('../middlewares/products');
 //method-override
 router.use(methodOverride('_method', {methods:["POST", "GET"]}));
 
-//////Multer
-const storage= multer.diskStorage({
-    destination: function(req,file,cb){
-        cb(null,'./public/images/productos');
-    },
-    filename: function(req,file,cb){
-        let imageName= Date.now()+path.extname(file.originalname);
-        cb(null, imageName);
-    }
-})
-let fileUpLoad=multer({storage:storage});
-///////Fin multer
-///////Validator
-const validations=[
-    body('name').notEmpty().withMessage('Ingresa tu nombre'),
-    body('description').notEmpty().withMessage('Ingresa la descripción'),
-    body('imgProduct').optional({checkFalsy: true}),
-    body('category').notEmpty().withMessage('Seleccione categoria'),
-    body('cost').notEmpty(),
-    body('size').notEmpty(),
-    body('color').notEmpty()
-]
+
 ///////Fin validator
 //Inicio Metodos GET
 router.get('/products', productosController.productos);
@@ -54,10 +30,10 @@ router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
 router.get('/product/:id/edit?',formController.geteditform);
 //Fin metodos GET
 //Inicio Metodos POST
-router.post('/products', validations, fileUpLoad.single('imgProduct'), formController.addProduct);
+router.post('/products', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.addProduct);
 //Fin metodos POST
 //Inicio Metodo PUT
-router.put('/edit', validations, fileUpLoad.single('imgProduct'), formController.editProduct);
+router.put('/edit', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.editProduct);
 //final methodo put 
 //Inicio Metodo DELET
 router.delete('/products/:id/:image?',formController.deletProduct)

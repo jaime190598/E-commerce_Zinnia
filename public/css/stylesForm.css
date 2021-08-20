@@ -4,7 +4,7 @@ main{
     margin: 0 auto;  
     padding-top: 25px;
     background-image: url('../images/form-img.jpg');
-    background-repeat: no-repeat;
+    background-repeat: round;
     background-size: 100% 110vh;
     color: white;
 }
@@ -23,12 +23,18 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    width: 80vw;
+    width: 100%;
     margin-top:10vh;
     margin-bottom: 8vh;
 }
 main section div.text{
     text-align: center;
+}
+.text-danger{
+    margin: 0%;
+    padding: 0%;
+    font-size: 17px;
+    color: red;
 }
 .title-form{
     margin: 10px;
@@ -79,7 +85,23 @@ input{
     font-size: 15px;
     padding: 5px;
     width: 80vw;
-    height: 5vh;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px rgb(139, 137, 137);
+}
+select{
+    font-size: 15px;
+    padding: 5px;
+    width: 80vw;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px rgb(139, 137, 137);
+}
+textarea{
+    font-size: 15px;
+    padding: 5px;
+    width: 80vw;
+    height: 80px;
     border-radius: 5px;
     border: solid 1px rgb(139, 137, 137);
 }
@@ -99,6 +121,9 @@ form div.button-save button{
 }
 
 @media (min-width: 361px){
+    section{
+        width: 80vw;
+    }
     main section article.row{
         width: 92vw;
     }
@@ -108,11 +133,15 @@ form div.button-save button{
         justify-content: center;
         padding: 0%;
     }
-
-    form input{
+    form input,select{
         width: 83vw;
-        height: 6vh;
-        margin-bottom: 10px;
+        height: 45px;
+        margin-bottom: 1px;
+    }
+    form textarea{
+        width: 83vw;
+        height: 80px;
+        margin-bottom: 1px;
     }
     form div.button-save button{
         width: 70vw;
@@ -120,6 +149,7 @@ form div.button-save button{
     }
 }
 @media (min-width: 769px){
+ 
     main section article.row{
         width: 550px;
     }
@@ -148,13 +178,15 @@ form div.button-save button{
     form div #img {
         font-size:18px;
     }
-
-    form input{
-        width: 70vh;
-        height: 5vh;
+    form input,select{
+        width: 50vw;
         font-size: 18px; 
     }
-
+    form textarea{
+        width: 50vw;
+        height: 80px;
+        font-size: 18px; 
+    }
 
     form div.button-save{
         display: flex;
@@ -171,5 +203,19 @@ form div.button-save button{
     }
     section{
         display: block;
+        width: 80vw;
     }
+    
+}
+@media (min-width: 1200px){
+    form input,select{
+        width: 33vw;
+        height: 45px;
+        font-size: 18px; 
+    }
+    form textarea{
+        width: 33vw;
+        height: 80px;
+        font-size: 18px; 
+    }  
 }

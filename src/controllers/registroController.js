@@ -1,32 +1,28 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
-
-const usersFilePath = path.join(__dirname, '../data/users.json');
-function getUsersJSON(){
-    //const productsFilePath = path.join(__dirname, '../data/products.json');
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    return users;
-}
+const user=require('../models/Users')
 
 const controlador = {
     registro: (req, res)=>{
         res.render('checkIn');
     },
-    create: (req,res)=>{
-        const users=getUsersJSON();
-        let lastId =users[users.length - 1].id;
-        const newUser={
-        "id": (lastId+1),
-        "name": req.body.name,
-        "lastName": req.body.lastName,
-        "email": req.body.email,
-        "password": req.body.password,
-        "image": req.file.filename,
+    create: (req,res)=>{ 
+        const resulValidation= validationResult(req);
+        if(resulValidation.errors.length >0){
+            return res.render('checkIn',{
+                errors: resulValidation.mapped(),
+                oldData:req.body
+            })
         }
-        users.push(newUser);
-		usersJSON=JSON.stringify(users, null, 2);
-		fs.writeFileSync(usersFilePath, usersJSON);
-        res.redirect("/login")
+        let newUser={
+        ...req.body,
+        avatar: req.file.filename,
+        };
+        
+        user.create(newUser);
+        //console.log(req.body);
+        return res.send('OK, se guardo el usuario');
     }
 }
 //join

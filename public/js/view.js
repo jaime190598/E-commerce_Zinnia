@@ -1,4 +1,4 @@
-document.getElementById('imgUser').onchange=function(e){
+document.getElementById('avatar').onchange=function(e){
     let reader=new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload=function(){

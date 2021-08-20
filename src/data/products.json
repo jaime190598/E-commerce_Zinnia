@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Georgena",
+    "name": "George",
     "description": "iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu",
     "image": "product_1.jpg",
     "category": "Verano",
@@ -988,5 +988,35 @@
     "cost": "$3681.27",
     "size": "2XL",
     "color": "Orange"
+  },
+  {
+    "id": 100,
+    "name": "mi producto",
+    "description": "mi producto",
+    "image": "1629399423872.jpg",
+    "category": "Ofertas",
+    "cost": "2000",
+    "size": "M",
+    "color": "red"
+  },
+  {
+    "id": 101,
+    "name": "MI",
+    "description": "MI",
+    "image": "1629406821232.jpg",
+    "category": "DAE",
+    "cost": "250",
+    "size": "45",
+    "color": "RED"
+  },
+  {
+    "id": 102,
+    "name": "my prod",
+    "description": "jdakjsdbkabbdkbaedkbakdkae",
+    "image": "1629439741271.jpg",
+    "category": "Otoño",
+    "cost": "25000",
+    "size": "dae",
+    "color": "rojo intenso"
   }
 ]

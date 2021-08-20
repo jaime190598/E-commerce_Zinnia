@@ -29,23 +29,55 @@
             </div>
             <form action="/register" method="POST" enctype="multipart/form-data">
               <div class="image-user">
-                <div id="preview"></div>
+                <div class="preview" id="preview"></div>
                 <p>Subir foto de perfil</p> 
-                <input type="file" id="imgUser" name="imgUser" accept="image/png, image/jpeg"><br/> 
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"><br/>
+                <% if (locals.errors && errors.avatar){ %> 
+                <p class="text-danger">
+                      <%= errors.avatar.msg %>
+                </p>
+                <% } %>
               </div>
               <div class="to-name">
                 <div class="input-name">
-                    <input type="text" name="name" placeholder="Nombre">
+                    <input type="text" name="name" 
+                    placeholder="Nombre" class=" <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.name : null %>">
+                    <% if (locals.errors && errors.name){ %> 
+                      <div class="text-danger">
+                            <%= errors.name.msg %>
+                      </div>
+                    <% } %>
                 </div>
                 <div class="input-apellido">
-                    <input type="text" name="lastName" placeholder="Apellido">
+                    <input type="text" name="lastName" 
+                    placeholder="Apellido" class=" <%= locals.errors && errors.lastName ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.lastName : null %>" >
+                    <% if (locals.errors && errors.lastName){ %> 
+                      <div class="text-danger">
+                            <%= errors.lastName.msg %>
+                      </div>
+                    <% } %>
                 </div>
               </div>
               <div class="input-re">
-                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="email" 
+                placeholder="Email" class=" <%= locals.errors && errors.email ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email){ %> 
+                  <div class="text-danger">
+                        <%= errors.email.msg %>
+                  </div>
+                <% } %>
               </div>
               <div class="input-re">
-                <input type="password" name="password" placeholder="Contraseña">
+                <input type="password" name="password" 
+                placeholder="Contraseña" class=" <%= locals.errors && errors.password? 'is-invalid': null %>">
+                <% if (locals.errors && errors.password){ %> 
+                  <div class="text-danger">
+                        <%= errors.password.msg %>
+                  </div>
+                <% } %>
               </div>
               <div class="button-login">
                 <button>Crear cuenta</button>

@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 
@@ -7,12 +8,18 @@ function getProductsJSON(){
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     return products;
 }
+function getcategorys(){
+    const categorysFilePath = path.join(__dirname, '../data/categorys.json');
+    const categorys = JSON.parse(fs.readFileSync(categorysFilePath, 'utf-8'));
+    return categorys;
+}
 
 const controlador = {
     formulario: (req, res)=>{
+        let categorys=getcategorys();
         let id=req.params.id;
-        console.log(id);
-        res.render('formProduct',{idProduct:id, product:undefined});
+        //console.log(categorys);
+        res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys});
     },
     geteditform:(req,res)=>{
         const products=getProductsJSON();
@@ -23,6 +30,18 @@ const controlador = {
 
     },
     addProduct:(req,res)=>{
+        let id=req.params.id;
+        let categorys=getcategorys();
+        const resulValidation= validationResult(req);
+        if(resulValidation.errors.length >0){
+            return res.render('formProduct',{
+                errors: resulValidation.mapped(),
+                oldData:req.body,
+                idProduct:id,
+                product:undefined,
+                categorys:categorys
+            })
+        }
         const products=getProductsJSON();
         let lastId =products[products.length - 1].id;
         const newProduct={
@@ -38,9 +57,7 @@ const controlador = {
         products.push(newProduct);
 		productsJSON=JSON.stringify(products, null, 2);
 		fs.writeFileSync(productsFilePath, productsJSON);
-        
-        //console.log(newProduct)
-        res.redirect('/products');
+        //res.redirect('/products');
     },
     editProduct:(req,res)=>{
         const products=getProductsJSON();

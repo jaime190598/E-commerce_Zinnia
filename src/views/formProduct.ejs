@@ -35,27 +35,39 @@
             <input type="hidden" name="id" value="<%= product && product[0].id? product[0].id:''%>">
             <input type="hidden" name="image" value="<%= product && product[0].image? product[0].image:''%>">
             <div class="input-name">
-                <input type="text" name="name" placeholder="Nombre del producto" value="<%= product && product[0].name? product[0].name:''%>" required>
+                <input type="text" name="name" placeholder="Nombre del producto" value="<%= product && product[0].name? product[0].name:''%>">
+                <% if (locals.errors && errors.name){ %> 
+                    <p class="text-danger">
+                          <%= errors.name.msg %>
+                    </p>
+                <% } %>
              </div>
              <div class="input-description">
-                 <input type="text" name="description" cols="20" rows="4" placeholder="Descripción del producto" value="<%= product && product[0].description? product[0].description:''%>" required>
+                 <textarea type="text" name="description" cols="20" rows="4" placeholder="Descripción del producto" value="<%= product && product[0].description? product[0].description:''%>"></textarea>
              </div>
              <div class="img">
                  <p> Elige la imagen del producto </p>
                  <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
              </div>
              <div class="input-category">
-             <input type="text" name="category" placeholder="Categoría" value="<%= product && product[0].category? product[0].category:''%>">
+             <select name="category">
+                    <option value=""></option>
+                    <% categorys.forEach(category=>{ %>
+                    <option value="<%= category.name %>"><%= category.name %></option>
+                    <% }) %>
+                </select>
              </div>
              <div class="input-cost">
-                 <input type="texto" name="cost" placeholder="Precio" value="<%= product && product[0].cost? product[0].cost:''%>">
+                 <input type="number" name="cost" placeholder="Precio" value="<%= product && product[0].cost? product[0].cost:''%>">
              </div>
+             <div class="size-color">
              <div class="input-size">
                  <input type="texto" name="size" placeholder="Talla" value="<%= product && product[0].size? product[0].size:''%>">
              </div>
              <div class="input-color">
                  <input type="texto" name="color" placeholder="Color" value="<%= product && product[0].color? product[0].color:''%>">
              </div>
+            </div>
              <div class="button-save">
                  <button type="submit">Guardar</button>
              </div>
