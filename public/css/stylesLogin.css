@@ -5,7 +5,7 @@ main{
     margin-top: 0px;
     padding: 0%; 
     background-image:url("../images/login-img.jpeg");
-    background-repeat:no-repeat;
+    background-repeat: round;
     background-size: 100% 100vh;
     color:#fdf8f2;
     display: flex;
@@ -16,7 +16,7 @@ main{
 
 main section article.row{
     background-color: transparent;    
-    margin: 20px;
+    margin: 5px;
     margin-bottom: 5vh;
     text-align: center;
     display: flex;
@@ -24,21 +24,21 @@ main section article.row{
     justify-content: center;
 }
 
-
-
 section{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     width:80vw;
+    height: 80vh;
     margin-top:10vh;
-    margin-top:8vh;
 
 }
 main section div.text-login{
   	margin-top:10px;
     text-align: center;
+    margin-bottom: 0px;
+    font-size: 40px;
 }
 
 form{
@@ -49,7 +49,7 @@ form{
 form div.input-email{
     margin: 10px;
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 1px;
 }
 
 form div.input-password{
@@ -57,6 +57,17 @@ form div.input-password{
     margin-bottom: 0px;
     margin-top: 10px;
 }
+form div.input-remember{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+form div.input-remember input{
+    width: 20px;
+    height: 24px;
+  }
 
 div.text-forget{
  	font-size:15px;
@@ -70,10 +81,10 @@ div.text-forget{
 }
 
 input{
-    font-size: 15px;
+    font-size: 24px;
     padding-left: 5px;
     width: 80vw;
-    height: 5vh;
+    height: 40px;
     border-radius: 5px;
     border: solid 1px rgb(139, 137, 137);
 }
@@ -85,8 +96,8 @@ form div.button-login{
 form div.button-login button{
     margin-top: 10px;
     width: 80vw;
-    height: 5vh;
-    font-size: 24px;
+    height: 40px;
+    font-size: 20px;
     font-weight: bold;
     background-color:#4f4737;
     border-radius: 10px;
@@ -95,18 +106,6 @@ form div.button-login button{
 
 button font{
     color: white;
-}
-
-div.button-register button{
-  	width: 20vw;
-  	height: 5vh;
-  	margin-right:50px;
-  	float:right;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: rgb(158, 152, 133);
-    border-radius: 5px;
-  	border-color:rgb(158, 152, 133);    
 }
 
 @media (min-width: 361px){
@@ -119,8 +118,8 @@ div.button-register button{
         justify-content: center;
         padding: 0%;
     }
-    section div.text-login{
-        font-size: 5vw;
+    section div.text-login p{
+        font-size: 50px;
     }
     form div.input-email input{
         width: 83vw;
@@ -131,9 +130,13 @@ div.button-register button{
     	width:83vw;
     	height: 6vh;
  	 }
+      form div.input-remember input{
+    	width: 20px;
+        height: 24px;
+ 	 }
     form div.button-login button{
         width: 70vw;
-        height: 8vh;
+        height: 65px;
     }
       
 }
@@ -151,14 +154,18 @@ div.button-register button{
     }
 
     form div.input-email input{
-        width: 500px;
+        width: 700px;
         height: 6vh;
-        font-size: 18px;
+        font-size: 34px;
     }
      form div.input-password input{
-        width: 500px;
+        width: 700px;
         height: 6vh;
-        font-size: 18px;
+        font-size: 34px;
+    }
+    form div.input-remember input{
+        width: 40px;
+        height: 24px;
     }
     form div.button-login{
         display: flex;
@@ -168,8 +175,36 @@ div.button-register button{
         padding-left: 10px;
     }
     form div.button-login button{
-        width: 200px;
-        height: 7vh;
+        width: 400px;
+        height: 75px;
         font-size: 18px;
     }
+}
+@media (min-width: 1209px){
+    section{
+        width:30vw;
+        height: 80vh;
+        margin-top:10vh;
+    
+    }
+    form div.input-email input{
+        width: 32vw;
+        height: 6vh;
+        font-size: 20px;
+    }
+     form div.input-password input{
+        width: 32vw;
+        height: 6vh;
+        font-size: 20px;
+    }
+    form div.input-remember input{
+        width: 40px;
+        height: 24px;
+    }
+    form div.button-login button{
+        width: 16vw;
+        height: 40px;
+        font-size: 18px;
+    }
+
 }

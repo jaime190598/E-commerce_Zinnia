@@ -21,12 +21,12 @@ const validations=[
     body('avatar').custom((value,{req})=>{
         let file=req.file;
         let acceptedExtensions=['.jpg', '.png'];
-        if(!file){
+        if(!file){   
             throw new Error('Tienes que subir una imagen');
         }else{
             let fileExtension= path.extname(file.originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error('Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}');
+                throw new Error('Las extensiones de archivo no es permitida');
             }
         }
         return true;

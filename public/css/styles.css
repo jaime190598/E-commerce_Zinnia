@@ -1,13 +1,23 @@
 *{
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 body{ 
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ebebeb ;
+    /* font-family: 'Montserrat', sans-serif; */
+    background-color: #fdf8f2 ;
 }
+/*danger mensaje and box  */
+.text-danger{
+    font-size: 17px;
+    color: red;
+}
+.is-invalid{
+    border-color: red;
+}
+/* end danger */
 /*Inicio Header*/
 header{
     background-color:#fff;
@@ -43,7 +53,7 @@ nav ul li a:hover{
    background-color: #9e9885;
    color: #fff;
    cursor: pointer;
-
+   border-radius: 3px;
 }
 nav ul li ul {
     display:none;
@@ -61,12 +71,12 @@ nav ul li ul li ul{
     right: -140px;
     top: 0px;
 }
+
 /*Fin nav desplegable*/
 header div.input-search {
    height: 28px;
    border-radius: 5px;
    border: solid 1px #9e9885;
-   outline: orchid;
    display: flex;
    align-items: center;
    
@@ -95,9 +105,53 @@ header div.input-search i{
     color: #9e9885;
     cursor: pointer;
 }
+/*  */
 header div.buttons-section{
     display: none;
 }
+div.avatar-user img{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #9e9885;
+}
+div.buttons-section nav{
+    display: none;
+}
+div.buttons-section ul, ol {
+    list-style:none;
+}
+div.buttons-section nav > li{
+    float:left;
+}
+div.buttons-section nav ul li a{
+    background-color:#ffffff;
+    padding: 10px 12px;
+    text-decoration:none;
+	display:block;
+}
+
+div.buttons-section nav ul li a:hover{
+   background-color: #9e9885;
+   color: #fff;
+   cursor: pointer;
+   border-radius: 3px;
+
+}
+div.buttons-section nav ul li ul {
+    display:none;
+    position: absolute;
+    min-width: 140px;
+}
+div.buttons-section nav ul li:hover >ul{
+    display: block;
+}
+div.buttons-section nav ul li ul li{
+    position: relative;
+    z-index: 10;
+}
+/*  */
+
 header div.burger-menu button{
     width: 11vw;
     height: 35px;
@@ -225,10 +279,25 @@ footer div img{
         width:8vw;
         height:7vh;
     }
-     /*Botones de inicio de sesion y registro*/
+/*boton de session de usuario*/
+     div.buttons-section nav ul{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #9e9885;
+    }
+    div.buttons-section nav{
+        display: inline;
+        width: 35vw;
+    }
+    div.buttons-section nav ul li a{
+        color: #4f4737;
+    }
+    /*  */
+    /* Botones de inicio de sesion y registro */
     header div.buttons-section{
         margin-right: 2.5vw;
-        width: 17vw;
+        width: 20vw;
         display: flex;
         justify-content: space-between;
     }

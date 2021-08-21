@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="stylesheet" href="/css/stylesLogin.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -16,30 +16,33 @@
    <%- include('./partials/header.ejs') %>
     <main>
         <section>
-            <div class="text-login">
-                <h2>
-                    Bienvenido de vuelta!
-                </h2>
- 
-            </div>
+          <div class="text-login">
+            <p>
+                Bienvenido de vuelta!
+            </p>
+          </div>
             <article class="row">
-                <form action="">                  
+                <form action="/user/login" method="POST">                  
                   <div class="input-email">
-                       <input type="email" placeholder="Email">
+                       <input type="email" name="email" placeholder="Email">
+                       <% if (locals.errors && errors.email){ %>
+                         <p class="text-danger">
+                           <%= errors.email.msg %>
+                         </p>
+                      <% } %>
                   </div>
                   <div class="input-password">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="password" name="password" placeholder="Contraseña">
+                  </div>
+                  <div class="input-remember">
+                    <input type="checkbox" name="remember_user" id="remember_user">Recordar mi usuario
                   </div>
                   <div class="button-login">
                       <button>Iniciar sesión</button>
                   </div>
+                  
                 </form> 
-                  <div class="text-forget">
-                	<p> Olvidaste tu contraseña?
-                  </div>
-              	  <div class="button-register">
-                    <button> Registrate </button>
-            	  </div>
+                  
             </article>
 
         </section>

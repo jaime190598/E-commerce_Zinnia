@@ -43,8 +43,26 @@
     <div class="burger-menu">
         <button class="menu"><i class="fas fa-bars"></i></button>
     </div>
+   
     <div class="buttons-section">
-        <button onclick="location.href='/login'" class="session">Iniciar sesión</button>
-        <button onclick="location.href='/registro'" class="registration"> Registrarse</button>
+        <% if(locals.isLogged) { %> 
+        <nav>
+            <ul type="nav"> 
+                <div class="avatar-user">
+                    <img src="/images/users/<%= locals.userLogged.avatar %>" alt=""> 
+                </div> 
+                <li>
+                 <a><i class="fas fa-chevron-down"></i> <%= locals.userLogged.name %> </a>
+                <ul>
+                    <li><a href="/user/userprofile">My Profile</a></li>
+                    <li><a href="/logout/">Logout</a></li>
+                </ul>
+            </li>
+            </ul>
+        </nav>
+        <%} else {%>
+        <button onclick="location.href='/user/login'" class="session">Iniciar sesión</button>
+        <button onclick="location.href='/registro'" class="registration"> Loguearme</button>
+        <%}%>
     </div>
 </header>

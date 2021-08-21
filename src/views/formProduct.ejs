@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/stylesForm.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
@@ -35,7 +35,8 @@
             <input type="hidden" name="id" value="<%= product && product[0].id? product[0].id:''%>">
             <input type="hidden" name="image" value="<%= product && product[0].image? product[0].image:''%>">
             <div class="input-name">
-                <input type="text" name="name" placeholder="Nombre del producto" value="<%= product && product[0].name? product[0].name:''%>">
+                <input type="text" name="name" placeholder="Nombre del producto" 
+                value="<%= product && product[0].name? product[0].name: locals.oldData ? oldData.name : null %>">
                 <% if (locals.errors && errors.name){ %> 
                     <p class="text-danger">
                           <%= errors.name.msg %>
@@ -43,30 +44,64 @@
                 <% } %>
              </div>
              <div class="input-description">
-                 <textarea type="text" name="description" cols="20" rows="4" placeholder="Descripción del producto" value="<%= product && product[0].description? product[0].description:''%>"></textarea>
+                 <textarea type="text" name="description" cols="20" rows="4" 
+                 placeholder="Descripción del producto"><%= product && product[0].description? product[0].description: locals.oldData ? oldData.description: null %></textarea>
+                 <% if (locals.errors && errors.description){ %> 
+                    <p class="text-danger">
+                          <%= errors.description.msg %>
+                    </p>
+                <% } %>
              </div>
              <div class="img">
                  <p> Elige la imagen del producto </p>
                  <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
+                 <% if (locals.errors && errors.imgProduct){ %> 
+                    <p class="text-danger">
+                          <%= errors.imgProduct.msg %>
+                    </p>
+                <% } %>
              </div>
              <div class="input-category">
-             <select name="category">
-                    <option value=""></option>
-                    <% categorys.forEach(category=>{ %>
-                    <option value="<%= category.name %>"><%= category.name %></option>
+             <select name="category" >
+                 <option value="" selected>Categoria</option>
+ -->                <% categorys.forEach(category=>{ %>
+                    <option value="<%= category.name %>" <%=locals.oldData && (category.name === oldData.category)?'selected':null %>> <%= category.name %></option>
                     <% }) %>
-                </select>
+             </select>
+             <% if (locals.errors && errors.category){ %> 
+                <p class="text-danger">
+                      <%= errors.category.msg %>
+                </p>
+            <% } %>
              </div>
              <div class="input-cost">
-                 <input type="number" name="cost" placeholder="Precio" value="<%= product && product[0].cost? product[0].cost:''%>">
-             </div>
-             <div class="size-color">
-             <div class="input-size">
-                 <input type="texto" name="size" placeholder="Talla" value="<%= product && product[0].size? product[0].size:''%>">
-             </div>
-             <div class="input-color">
-                 <input type="texto" name="color" placeholder="Color" value="<%= product && product[0].color? product[0].color:''%>">
-             </div>
+                 <input type="number" name="cost" placeholder="Precio" 
+                 value="<%= product && product[0].cost ? product[0].cost: locals.oldData ? oldData.cost : null %>" >
+                 <% if (locals.errors && errors.cost){ %> 
+                    <p class="text-danger">
+                          <%= errors.cost.msg %>
+                    </p>
+                <% } %>
+            </div>
+            <div class="size-color">
+                <div class="input-size">
+                    <input type="texto" name="size" placeholder="Talla" 
+                    value="<%= product && product[0].size? product[0].size: locals.oldData ? oldData.size : null %>">
+                    <% if (locals.errors && errors.size){ %> 
+                        <p class="text-danger">
+                              <%= errors.size.msg %>
+                        </p>
+                    <% } %>
+                </div>
+                <div class="input-color">
+                    <input type="texto" name="color" placeholder="Color" 
+                    value="<%= product && product[0].color? product[0].color: locals.oldData ? oldData.color : null %>">
+                    <% if (locals.errors && errors.color){ %> 
+                        <p class="text-danger">
+                              <%= errors.color.msg %>
+                        </p>
+                    <% } %>
+                </div>
             </div>
              <div class="button-save">
                  <button type="submit">Guardar</button>

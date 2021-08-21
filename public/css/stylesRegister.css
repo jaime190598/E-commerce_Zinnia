@@ -34,15 +34,7 @@ section{
 main section div.text{
     text-align: center;
 }
-/*danger mensaje and box  */
-.text-danger{
-    font-size: 17px;
-    color: red;
-}
-.is-invalid{
-    border-color: red;
-}
-/* end danger */
+
 .title-form{
     margin: 10px;
     font-size: 18px;

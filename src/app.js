@@ -7,6 +7,17 @@ const productsRoute = require('./routes/products');
 const accountsRoute= require('./routes/accounts');
 const PORT = process.env.PORT || 3000;
 const methodOverride= require('method-override');
+const session= require('express-session');
+const userLoggedM= require('./middlewares/userLoggedMiddleware');
+const cookies= require('cookie-parser');
+
+server.use(session({
+    secret:"shhh, it's a secret",
+    resave:false,
+    saveUninitialized:false,
+}));
+server.use(cookies());
+server.use(userLoggedM);
 
 server.use(express.urlencoded({extended:false}));
 //carpeta compartida

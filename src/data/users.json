@@ -714,5 +714,45 @@
   "email": "catellanos@gmail.com",
   "password": "jajsdhjahshd",
   "avatar": "1629431258639_img.jpg"
+ },
+ {
+  "id": 103,
+  "name": "daniel",
+  "lastName": "guillen",
+  "email": "daniel@gmail.com",
+  "password": "$2a$10$q/qKmNGFfO1FxU3ooszqdOEkBgLevsoN2OMPYNb.Z9IQmAGty4rHy",
+  "avatar": "1629491553290_img.jpg"
+ },
+ {
+  "id": 104,
+  "name": "dan",
+  "lastName": "gui",
+  "email": "jaime@gmail.com",
+  "password": "$2a$10$H5a5ZHannWFA/sYmBp3DsOg2oXCV4MujgW1I437mAKPMIJRt6HRXG",
+  "avatar": "1629492156745_img.jpg"
+ },
+ {
+  "id": 105,
+  "name": "silvia",
+  "lastName": "martinez",
+  "email": "martinez@gmail.com",
+  "password": "$2a$10$m5a6Nq5yPk3Gh7z88.ppW.FLqV..z5bdgTX.D289dcBC4XbUrr/9W",
+  "avatar": "1629492363470_img.jpg"
+ },
+ {
+  "id": 106,
+  "name": "jaime",
+  "lastName": "guillen",
+  "email": "gunsjimmy19@gmail.com",
+  "password": "$2a$10$ZOgFpD6hfLCEtBuZGOsAhO6iIaFMab9CH0nzuC3IUtd8c2BjtHcAm",
+  "avatar": "1629503322352_img.png"
+ },
+ {
+  "id": 107,
+  "name": "Jaime",
+  "lastName": "Martinez",
+  "email": "gunsjimmy19jimmy23@gmail.com",
+  "password": "$2a$10$C0N9.Z2QuPexHonMIV2C0uDc7gkDb5L2I9mcLy02PjqukMMQvylTS",
+  "avatar": "1629569862458_img.png"
  }
 ]

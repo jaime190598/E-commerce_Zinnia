@@ -22,11 +22,12 @@ const controlador = {
         res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys});
     },
     geteditform:(req,res)=>{
+        let categorys=getcategorys();
         const products=getProductsJSON();
         let id=req.params.id;
         const product=products.filter(data=>data.id == id);
         //console.log(product)
-        res.render('formProduct',{idProduct:id, product:product});
+        res.render('formProduct',{idProduct:id, product:product,categorys:categorys});
 
     },
     addProduct:(req,res)=>{
@@ -85,7 +86,7 @@ const controlador = {
         }
         productsJSON=JSON.stringify(products, null, 2);
 		fs.writeFileSync(productsFilePath, productsJSON);
-        res.redirect('/products');
+        res.redirect('/product/'+id+'/edit');
     },
     deletProduct:(req,res)=>{
         const products=getProductsJSON();
