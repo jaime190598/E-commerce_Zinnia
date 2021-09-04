@@ -1,3 +1,5 @@
+
+const db = require("../database/models")
 const fs = require('fs');
 const path = require('path');
 //const products=getProductsJSON();
@@ -9,8 +11,11 @@ function getProductsJSON(){
 const controlador = {
     productos: (req, res)=>{
         //const listProduct=products;
-        const title='Mis Products';
-        res.render('listProducts',{products:getProductsJSON(), title:title});
+        /* const title='Mis Products';
+        res.render('listProducts',{products:getProductsJSON(), title:title}); */
+      db.Product.findAll().then(resul=>{
+          res.send(resul);
+      })
     },
     verano: (req, res)=>{
         const products=getProductsJSON();

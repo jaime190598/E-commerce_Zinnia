@@ -754,5 +754,13 @@
   "email": "gunsjimmy19jimmy23@gmail.com",
   "password": "$2a$10$C0N9.Z2QuPexHonMIV2C0uDc7gkDb5L2I9mcLy02PjqukMMQvylTS",
   "avatar": "1629569862458_img.png"
+ },
+ {
+  "id": 108,
+  "name": "adrian",
+  "lastName": "martinez",
+  "email": "adrian@gmail.com",
+  "password": "$2a$10$igsNE4owKUGTzNptsh4sTuU2AtW36U3GsU013vDuq12WWLWIAVtam",
+  "avatar": "1630113604793_img.jpg"
  }
 ]
