@@ -18,7 +18,7 @@ const validations=[
     body('name').notEmpty().withMessage('Ingresa tu nombre'),
     body('description').notEmpty().withMessage('Ingresa la descripción'),
     body('category').notEmpty().withMessage('Seleccione categoria'),
-    body('cost').notEmpty().withMessage('Ingrese costo'),
+    body('sale_price').notEmpty().withMessage('Ingrese costo'),
     body('size').notEmpty().withMessage('Ingrese talla'),
     body('color').notEmpty().withMessage('Ingrese Color'),
     body('imgProduct').custom((value,{req})=>{

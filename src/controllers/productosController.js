@@ -10,86 +10,26 @@ function getProductsJSON(){
 }
 const controlador = {
     productos: (req, res)=>{
-        //const listProduct=products;
-        /* const title='Mis Products';
-        res.render('listProducts',{products:getProductsJSON(), title:title}); */
-      db.Product.findAll().then(resul=>{
-          res.send(resul);
+        const title='Mis Products';
+        //res.render('listProducts',{products:getProductsJSON(), title:title});
+      db.Product.findAll().then(result=>{
+        res.render('listProducts',{products:result, title:title});
       })
     },
-    verano: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Verano');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    otono: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Otoño');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    primavera: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Primavera');
-        const title=list[0].category;
-        res.render('products',{products:list,title:title});
-    },
-    invierno: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Invierno');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    tops: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Tops|Camisas');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    pantalones: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Pantalones|Jeans');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    vestidos: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Vestidos|Faldas');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    abrigos: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Abrigos|Trench');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    pijamas: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Pijamas');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    masvendido: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Lo más vendido');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    ofertas: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Ofertas');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    accesorios: (req, res)=>{
-        const products=getProductsJSON();
-        const list=products.filter(data=>data.category == 'Accesorios');
-        const title=list[0].category;
-        res.render('products',{products:list, title:title});
-    },
-    
+    categorys_clothes: (req, res)=>{
+        console.log(req.params.id);
+        db.Product.findAll({
+            where: {
+                fkidcategory:{[db.Sequelize.Op.eq] : req.params.id}
+            },
+            include:[{association:"category"},{association:"clothing_brand"},{association:"size"}]
+        }).then(products=>{
+            //return res.send(products);
+            res.render('products',{products, title:products[0].category.name});
+          }).catch(error=>{
+            res.status(404).render('404-page');
+          })
+    }
     
 }
 //join

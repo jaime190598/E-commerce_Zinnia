@@ -25,10 +25,10 @@
                 </thead>
                 <% products.forEach(product=>{ %>
                 <tr>
-                    <td class="imageProduct"><img src="/images/img-1.png" class="section-img" alt="Cropped Jacket"></td>
+                    <td class="imageProduct"><img src="/images/productos/<%= product.image %>" class="section-img"></td>
                     <td class="name"><%= product.name %></td>
-                    <td class="cost"><%= product.cost %></td>
-                    <td class="edit"><a href="/product/<%= product.id %>/edit">Editar</a></td>
+                    <td class="cost">$<%= product.sale_price %></td>
+                    <td class="edit"><a href="/product/<%= product.idproduct %>/edit">Editar</a></td>
                     <td class="delet">
                         <a href="/products/<%= product.id %>/<%= product.image %>?_method=delete">eliminar</a>
 

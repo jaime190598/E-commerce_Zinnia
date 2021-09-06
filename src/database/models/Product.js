@@ -33,6 +33,9 @@ module.exports = (sequelize, dataTypes)=>{
         status:{
             type: dataTypes.INTEGER
         },
+        color:{
+            type: dataTypes.STRING
+        },
         fkidcategory:{
             type: dataTypes.INTEGER
         },
@@ -41,15 +44,31 @@ module.exports = (sequelize, dataTypes)=>{
         },
         fkidsize:{
             type: dataTypes.INTEGER
-        },
-        fkidcolor:{
-            type: dataTypes.INTEGER
         }
     };
     let config = {
             tableName: "product",
-            timestamps: false
+            timestamps: true,
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            deletedAt: false
     }
     const Products = sequelize.define(alias,cols,config);
+    
+    Products.associate=(models)=>{
+        Products.belongsTo(models.Category,{
+            foreignKey: "fkidcategory",
+            as:'category'
+        })
+        Products.belongsTo(models.Clothing_brand,{
+            foreignKey: "fkidclothing_brand",
+            as:'clothing_brand'
+        })
+        Products.belongsTo(models.Size,{
+            foreignKey: "fkidsize",
+            as:'size'
+        })
+    }
+
     return Products;
 }

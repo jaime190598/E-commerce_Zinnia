@@ -22,16 +22,16 @@
     <article>
         <h3 class="detalle-h3">Detalle de producto</h3>
         <div class="container">
-            <img src="/images/img-4.png" class="section-img" alt="Printed Dress">
+            <img src="/images/productos/<%= product.image %>" class="section-img" alt="Printed Dress">
             <div class="container-detalles">
                 <div class="text-detalle">
-                    <h4 class="detalle-h4"><%= product[0].name %> <span class="spacing">Dress  <%= product[0].cost %></span> mxn</h4>
-                    <p class="detalle-p"><%= product[0].description %>
+                    <h4 class="detalle-h4"><%= product.name %> <span class="spacing">Dress  <%= product.sale_price %></span> mxn</h4>
+                    <p class="detalle-p"><%= product.description %>
                     </p>
                     </div>
-                    <h4 class="talla-h4">Talla: <%= product[0].size %></h4><br>
+                    <h4 class="talla-h4">Talla: <%= product.size.size %></h4><br>
                    
-                    <h4 class="talla-h4">Color: <%= product[0].color %></h4><br>
+                    <h4 class="talla-h4">Color: <%= product.color %></h4><br>
     
 
                 <div class="detalle-cta">

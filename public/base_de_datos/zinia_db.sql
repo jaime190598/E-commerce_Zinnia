@@ -1,5 +1,5 @@
-create database zinia_db;
-use zinia_db;
+create database zinnia_db;
+use zinnia_db;
 
 create table clothing_brand (
 idclothing_brand int primary key not null auto_increment,
@@ -10,11 +10,7 @@ create table  size (
 idsize int primary key not null auto_increment,
 size varchar(20));
 
-create table color (
-idcolor int primary key not null auto_increment,
-name varchar(70) not null,
-description varchar(225)
-);
+
 create table category (
 idcategory int primary key not null auto_increment,
 name varchar(70) not null,
@@ -24,7 +20,7 @@ status bit);
 create table product (
 idproduct int primary key not null auto_increment,
 created_at timestamp NULL DEFAULT NULL,
-update_at timestamp NULL DEFAULT NULL,
+updated_at timestamp NULL DEFAULT NULL,
 code varchar(50) not null,
 name varchar(100) not null,
 sale_price decimal(11,2) not null,
@@ -32,14 +28,13 @@ stock int not null,
 description varchar(275) not null,
 image varchar(150) not null,
 status bit,
+color varchar(150) not null,
 fkidcategory int,
 fkidclothing_brand int,
 fkidsize int,
-fkidcolor int,
 constraint fk_category_product foreign key (fkidcategory) references category(idcategory),
 constraint fk_clothing_brand_product foreign key (fkidclothing_brand) references clothing_brand(idclothing_brand),
-constraint fk_size_product foreign key (fkidsize) references size(idsize),
-constraint fk_color_product foreign key (fkidcolor) references color(idcolor)
+constraint fk_size_product foreign key (fkidsize) references size(idsize)
 );
 
 create table rol (
@@ -54,7 +49,7 @@ name varchar(75) not null
 create table location(
 idlocation int primary key not null auto_increment,
 created_at timestamp NULL DEFAULT NULL,
-update_at timestamp NULL DEFAULT NULL,
+updated_at timestamp NULL DEFAULT NULL,
 location varchar(70),
 location_maps varchar(120),
 cp varchar(6) not null,
@@ -64,7 +59,7 @@ constraint fk_state_location foreign key (fkidstate) references state(idstate)
 create table provider (
 idprovider int primary key not null auto_increment,
 created_at timestamp NULL DEFAULT NULL,
-update_at timestamp NULL DEFAULT NULL,
+updated_at timestamp NULL DEFAULT NULL,
 name varchar(70) not null,
 tip_doc varchar(100),
 num_doc varchar(100),
@@ -76,7 +71,7 @@ constraint fk_location_provider foreign key (fkidlocation) references location(i
 create table user(
 iduser int primary key not null auto_increment,
 created_at timestamp NULL DEFAULT NULL,
-update_at timestamp NULL DEFAULT NULL,
+updated_at timestamp NULL DEFAULT NULL,
 name varchar(100) not null,
 last_name varchar(100) not null,
 telephone varchar(11) not null unique,
@@ -91,7 +86,7 @@ constraint fk_location_user foreign key (fkidlocation) references location(idloc
 create table entry (
 identry int primary key not null auto_increment,
 created_at timestamp NULL DEFAULT NULL,
-update_at timestamp NULL DEFAULT NULL,
+updated_at timestamp NULL DEFAULT NULL,
 type_voucher varchar(100) not null,
 voucher_series varchar(70) not null,
 voucher_number varchar(70) not null,

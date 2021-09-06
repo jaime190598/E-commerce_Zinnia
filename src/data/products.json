@@ -1,13 +1,12 @@
 [
   {
     "id": "1",
-    "name": "George",
-    "description": "iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu",
-    "image": "product_1.jpg",
-    "category": "Verano",
-    "cost": "2340.70",
-    "size": "S",
-    "color": "Yellow"
+    "name": "Camisa corte V",
+    "description": "camisa de corte en v, manga larga, con estampados",
+    "image": "camisa_v.png",
+    "category": "9",
+    "size": "",
+    "color": ""
   },
   {
     "id": 2,

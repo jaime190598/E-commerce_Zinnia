@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 function getProductsJSON(){
@@ -16,48 +17,56 @@ function getcategorys(){
 
 const controlador = {
     formulario: (req, res)=>{
-        let categorys=getcategorys();
-        let id=req.params.id;
+        db.Category.findAll().then(categorys=>{
+            let id=req.params.id;
+            res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys});
+        })
+        // let categorys=getcategorys();
+        
         //console.log(categorys);
-        res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys});
+        
     },
     geteditform:(req,res)=>{
-        let categorys=getcategorys();
-        const products=getProductsJSON();
-        let id=req.params.id;
-        const product=products.filter(data=>data.id == id);
-        //console.log(product)
-        res.render('formProduct',{idProduct:id, product:product,categorys:categorys});
+        db.Category.findAll().then(categorys=>{
+            db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"clothing_brand"},{association:"size"}]}).then(product=>{
+                let id=req.params.id;
+                res.render('formProduct',{idProduct:id,product,categorys});
+            })
+        })       
 
     },
     addProduct:(req,res)=>{
-        let id=req.params.id;
-        let categorys=getcategorys();
-        const resulValidation= validationResult(req);
-        if(resulValidation.errors.length >0){
-            return res.render('formProduct',{
-                errors: resulValidation.mapped(),
-                oldData:req.body,
-                idProduct:id,
-                product:undefined,
-                categorys:categorys
-            })
-        }
-        const products=getProductsJSON();
-        let lastId =products[products.length - 1].id;
-        const newProduct={
-        "id": (lastId+1),
-        "name": req.body.name,
-        "description": req.body.description,
-        "image": req.file.filename,
-        "category": req.body.category,
-        "cost": req.body.cost,
-        "size": req.body.size,
-        "color": req.body.color,
-        }
-        products.push(newProduct);
-		productsJSON=JSON.stringify(products, null, 2);
-		fs.writeFileSync(productsFilePath, productsJSON);
+        db.Category.findAll().then(categorys=>{
+            const resulValidation= validationResult(req);
+            if(resulValidation.errors.length >0){
+            
+                let id=req.params.id;
+                console.log(req.body);
+                return res.render('formProduct',{
+                    errors: resulValidation.mapped(),
+                    oldData:req.body,
+                    idProduct:id,
+                    product:undefined,
+                    categorys
+                })
+        
+            }
+            const products=getProductsJSON();
+            let lastId =products[products.length - 1].id;
+            const newProduct={
+            "id": (lastId+1),
+            "name": req.body.name,
+            "description": req.body.description,
+            "image": req.file.filename,
+            "category": req.body.category,
+            "cost": req.body.cost,
+            "size": req.body.size,
+            "color": req.body.color,
+            }
+            products.push(newProduct);
+            productsJSON=JSON.stringify(products, null, 2);
+            fs.writeFileSync(productsFilePath, productsJSON);
+        });
         //res.redirect('/products');
     },
     editProduct:(req,res)=>{

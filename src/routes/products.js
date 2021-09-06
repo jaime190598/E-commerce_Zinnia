@@ -12,18 +12,18 @@ router.use(methodOverride('_method', {methods:["POST", "GET"]}));
 ///////Fin validator
 //Inicio Metodos GET
 router.get('/products', productosController.productos);
-router.get('/verano', productosController.verano);
-router.get('/otono', productosController.otono);
-router.get('/primavera', productosController.primavera);
-router.get('/invierno', productosController.invierno);
-router.get('/tops|camisas', productosController.tops);
-router.get('/pantalones|jeans', productosController.pantalones);
-router.get('/vestidos|faldas', productosController.vestidos);
-router.get('/abrigos|trench', productosController.abrigos);
-router.get('/pijamas', productosController.pijamas);
-router.get('/mas_vendido', productosController.masvendido);
-router.get('/ofertas', productosController.ofertas);
-router.get('/accesorios', productosController.accesorios);
+router.get('/verano/:id/products?', productosController.categorys_clothes);
+router.get('/otono/:id/products?', productosController.categorys_clothes);
+router.get('/primavera/:id/products?', productosController.categorys_clothes);
+router.get('/invierno/:id/products?', productosController.categorys_clothes);
+router.get('/topscamisas/:id/products?', productosController.categorys_clothes);
+router.get('/pantalonesjeans/:id/products?', productosController.categorys_clothes);
+router.get('/vestidosfaldas/:id/products?', productosController.categorys_clothes);
+router.get('/abrigostrench/:id/products?', productosController.categorys_clothes);
+router.get('/pijamas/:id/products?', productosController.categorys_clothes);
+router.get('/mas_vendido/:id/products?', productosController.categorys_clothes);
+router.get('/ofertas/:id/products?', productosController.categorys_clothes);
+router.get('/accesorios/:id/products?', productosController.categorys_clothes);
 router.get('/formProduct',formController.formulario);
 //GET:ID
 router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
