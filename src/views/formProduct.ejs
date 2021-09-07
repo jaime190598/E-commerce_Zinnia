@@ -23,7 +23,7 @@
             </h3>
         </div>
         <div class="artic">
-        <article class="row">
+        <article>
             <div class="text-form">
                 <p>Crea un nuevo producto o edita alguno</p>
             </div>
@@ -34,6 +34,15 @@
             <%}%>   
             <input type="hidden" name="id" value="<%= product && product.idproduct? product.idproduct:''%>">
             <input type="hidden" name="image" value="<%= product && product.image? product.image:''%>">
+            <div class="input-name">
+                <input type="text" name="code" placeholder="Codigo del producto" 
+                value="<%= product && product.code? product.code: locals.oldData ? oldData.code : null %>">
+                <% if (locals.errors && errors.code){ %> 
+                    <p class="text-danger">
+                          <%= errors.code.msg %>
+                    </p>
+                <% } %>
+             </div>
             <div class="input-name">
                 <input type="text" name="name" placeholder="Nombre del producto" 
                 value="<%= product && product.name? product.name: locals.oldData ? oldData.name : null %>">
@@ -53,6 +62,11 @@
                 <% } %>
              </div>
              <div class="img">
+                <div class="preview" id="preview">
+                    <% if(product){%>
+                    <img src="/images/productos/<%= product && product.image? product.image: locals.oldData ? oldData.image: null %>" alt="">
+                    <%}%>
+                </div>
                  <p> Elige la imagen del producto </p>
                  <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
                  <% if (locals.errors && errors.imgProduct){ %> 
@@ -64,7 +78,7 @@
              <div class="input-category">
              <select name="category" >
                  <option value="" selected> Categorias</option>
- -->                <% categorys.forEach(category=>{ %>
+                   <% categorys.forEach(category=>{ %>
                     <option value="<%= category.idcategory %>" <%= product && (category.idcategory === product.category.idcategory)?'selected': locals.oldData && ( oldData.category === category.idcategory)?'selected':null %>> <%= category.name %></option>
                     <% }) %>
              </select>
@@ -74,24 +88,54 @@
                 </p>
             <% } %>
              </div>
-             <div class="input-cost">
-                 <input type="number" name="sale_price" placeholder="Precio de venta" 
-                 value="<%= product && product.sale_price? product.sale_price: locals.oldData ? oldData.sale_price : null %>" >
-                 <% if (locals.errors && errors.cost){ %> 
-                    <p class="text-danger">
-                          <%= errors.cost.msg %>
-                    </p>
-                <% } %>
-            </div>
-            <div class="size-color">
-                <div class="input-size">
-                    <input type="texto" name="size" placeholder="Talla" 
-                    value="<%= product && product.size.size? product.size.size: locals.oldData ? oldData.size : null %>">
-                    <% if (locals.errors && errors.size){ %> 
+             <div class="input-category">
+                <select name="clothing_brand" >
+                    <option value="" selected> Marca de ropa</option>
+                      <% clothings_brand.forEach(clothing_brand=>{ %>
+                       <option value="<%= clothing_brand.idclothing_brand %>" <%= product && (clothing_brand.idclothing_brand=== product.clothing_brand.idclothing_brand)?'selected': locals.oldData && ( oldData.clothing_brand === clothing_brand.idclothing_brand)?'selected':null %>> <%= clothing_brand.name %></option>
+                       <% }) %>
+                </select>
+                <% if (locals.errors && errors.clothing_brand){ %> 
+                   <p class="text-danger">
+                         <%= errors.clothing_brand.msg %>
+                   </p>
+               <% } %>
+                </div>
+                <div class="salePrice-stock">
+                    <div class="input-cost">
+                        <input type="number" name="sale_price" placeholder="Precio de venta" 
+                        value="<%= product && product.sale_price? product.sale_price: locals.oldData ? oldData.sale_price : null %>" >
+                        <% if (locals.errors && errors.sale_price){ %> 
+                            <p class="text-danger">
+                                <%= errors.sale_price.msg %>
+                            </p>
+                        <% } %>
+                    </div>
+                    <div class="input-cost">
+                        <input type="number" name="stock" placeholder="stock de venta" 
+                        value="<%= product && product.stock? product.stock: locals.oldData ? oldData.stock : null %>" >
+                        <% if (locals.errors && errors.stock){ %> 
                         <p class="text-danger">
-                              <%= errors.size.msg %>
+                                <%= errors.stock.msg %>
                         </p>
                     <% } %>
+                 </div>
+                </div>
+            <div class="size-color">
+                <div class="input-size">
+                   
+                        <select name="size" >
+                            <option value="" selected> Talla</option>
+                              <% size.forEach(size=>{ %>
+                               <option value="<%= size.idsize %>" <%= product && (size.idsize === product.size.idsize)?'selected': locals.oldData && ( oldData.size=== size.idsize)?'selected':null %>> <%= size.size %></option>
+                               <% }) %>
+                        </select>
+                        <% if (locals.errors && errors.size){ %> 
+                           <p class="text-danger">
+                                 <%= errors.size.msg %>
+                           </p>
+                       <% } %>
+                    
                 </div>
                 <div class="input-color">
                     <input type="texto" name="color" placeholder="Color" 
@@ -106,7 +150,8 @@
              <div class="button-save">
                  <button type="submit">Guardar</button>
              </div>
-            </form>                  
+            </form>  
+            <script src="/js/viewProduct.js"></script>                
         </article>
     </div>
     </section>

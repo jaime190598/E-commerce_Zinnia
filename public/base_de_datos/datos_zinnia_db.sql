@@ -6,11 +6,6 @@ insert into clothing_brand values (0, 'Adidas','Adidas es el segundo mayor fabri
 (0, 'Bershka','Esta es una cadena minorista de moda que pertenece al grupo español Inditex.');
 
 insert into size values (0,'XXS'),(0,'XS'),(0,'S'),(0,'M'),(0,'L'),(0,'XL'),(0,'XXL'),(0,'XXXL'),(0,'Estándar');
-insert into color values(0,'Black','Con figuras de colores'),
-						(0,'Black','Clasico, elegante y sofisticado'),
-                        (0,'White','Con figurass de colores'),
-                        (0,'White','Fino, fresco y luminoso.'),
-                        (0,'Chocol', 'Marrón o chocolate.');
 
 insert into category values(0,'Tops|Camisas','De cualquier tipo de uso general', 1),
 						   (0,'Pantalones|Jeans','De vestir, de tela gruesa o delgada', 1),

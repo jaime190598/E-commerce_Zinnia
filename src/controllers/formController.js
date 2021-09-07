@@ -18,8 +18,12 @@ function getcategorys(){
 const controlador = {
     formulario: (req, res)=>{
         db.Category.findAll().then(categorys=>{
+            db.Clothing_brand.findAll().then(clothings_brand=>{
+                db.Size.findAll().then(size=>{
             let id=req.params.id;
-            res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys});
+            res.render('formProduct',{idProduct:id, product:undefined, categorys:categorys, clothings_brand,size});
+        })
+        })
         })
         // let categorys=getcategorys();
         
@@ -28,15 +32,21 @@ const controlador = {
     },
     geteditform:(req,res)=>{
         db.Category.findAll().then(categorys=>{
+            db.Clothing_brand.findAll().then(clothings_brand=>{
+                db.Size.findAll().then(size=>{
             db.Product.findByPk(req.params.id,{include:[{association:"category"},{association:"clothing_brand"},{association:"size"}]}).then(product=>{
                 let id=req.params.id;
-                res.render('formProduct',{idProduct:id,product,categorys});
+                res.render('formProduct',{idProduct:id,product,categorys,clothings_brand,size});
             })
+        })
+        })
         })       
 
     },
     addProduct:(req,res)=>{
         db.Category.findAll().then(categorys=>{
+            db.Clothing_brand.findAll().then(clothings_brand=>{
+                db.Size.findAll().then(size=>{
             const resulValidation= validationResult(req);
             if(resulValidation.errors.length >0){
             
@@ -47,65 +57,75 @@ const controlador = {
                     oldData:req.body,
                     idProduct:id,
                     product:undefined,
-                    categorys
+                    categorys,
+                    clothings_brand,
+                    size
                 })
         
             }
-            const products=getProductsJSON();
-            let lastId =products[products.length - 1].id;
             const newProduct={
-            "id": (lastId+1),
+            "id": 0,
+            "code":req.body.code,
             "name": req.body.name,
+            "sale_price": req.body.sale_price,
+            "stock":req.body.stock,
             "description": req.body.description,
             "image": req.file.filename,
-            "category": req.body.category,
-            "cost": req.body.cost,
-            "size": req.body.size,
+            "status": 1,
             "color": req.body.color,
+            "fkidcategory": req.body.category,
+            "fkidclothing_brand": req.body.clothing_brand,
+            "fkidsize": req.body.size,
             }
-            products.push(newProduct);
-            productsJSON=JSON.stringify(products, null, 2);
-            fs.writeFileSync(productsFilePath, productsJSON);
+            db.Product.create(newProduct);
+            res.redirect("/products");
+        })
+        })
         });
         //res.redirect('/products');
     },
     editProduct:(req,res)=>{
-        const products=getProductsJSON();
         let id=req.body.id;
         let image;
         if(req.file!=undefined){
             image=req.file.filename;
+            //delete folder public
+        fs.unlink('./public/images/productos/'+req.body.image,(err)=>{
+            if(err){
+                console.log("failed to delete local image :"+ err);
+            }else{
+                console.log('successfully deleted local image');
+            }
+        })
         }else{
             image= req.body.image;
         }
         const editProduct={
             "id": id,
+            "code":req.body.code,
             "name": req.body.name,
+            "sale_price": req.body.sale_price,
+            "stock":req.body.stock,
             "description": req.body.description,
             "image": image,
-            "category": req.body.category,
-            "cost": req.body.cost,
-            "size": req.body.size,
+            "status": 1,
             "color": req.body.color,
+            "fkidcategory": req.body.category,
+            "fkidclothing_brand": req.body.clothing_brand,
+            "fkidsize": req.body.size,
             }
-        for(let i=0; i<products.length;i++){
-            if(products[i].id==id){
-              products.splice(i,1,editProduct)  
-            }
-        }
-        productsJSON=JSON.stringify(products, null, 2);
-		fs.writeFileSync(productsFilePath, productsJSON);
-        res.redirect('/product/'+id+'/edit');
+           db.Product.update(editProduct,{
+               where:{idproduct:id}
+            });
+            res.redirect("/products");
     },
     deletProduct:(req,res)=>{
-        const products=getProductsJSON();
-        let id= req.params.id;
         let image= req.params.image;
-        for(let i=0; i<products.length;i++){
-            if(products[i].id==id){
-              products.splice(i,1)  
-            }
-        }
+        //delete database
+        db.Product.destroy({
+            where:{idproduct:req.params.id}
+        });
+        //delete folder public
         fs.unlink('./public/images/productos/'+image,(err)=>{
             if(err){
                 console.log("failed to delete local image :"+ err);
@@ -113,10 +133,7 @@ const controlador = {
                 console.log('successfully deleted local image');
             }
         })
-        productsJSON=JSON.stringify(products, null, 2);
-		fs.writeFileSync(productsFilePath, productsJSON);
-        res.redirect('/products');
-        console.log(id);
+        res.redirect("/products");
     }
 }
 //join

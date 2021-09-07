@@ -100,6 +100,11 @@ textarea{
     border-radius: 5px;
     border: solid 1px rgb(139, 137, 137);
 }
+div.preview img{
+    margin-top: 20px;
+    width: 180px;
+    margin-left: 38px;
+}
 form div.button-save{
     margin: 10px;
     margin-bottom: 20px;
@@ -114,6 +119,7 @@ form div.button-save button{
     border-radius: 10px;
     color: white;
 }
+
 
 @media (min-width: 361px){
     section{
@@ -182,7 +188,7 @@ form div.button-save button{
         height: 80px;
         font-size: 18px; 
     }
-
+   
     form div.button-save{
         display: flex;
         flex-wrap: wrap;
@@ -212,5 +218,30 @@ form div.button-save button{
         width: 33vw;
         height: 80px;
         font-size: 18px; 
-    }  
+    }
+    .input-cost input,.input-size select, .input-color input{
+        width: 16vw;
+    }
+    .salePrice-stock{
+        width: 33vw;
+        display: flex;
+        justify-content: space-around;
+    }
+    .size-color{
+        width: 33vw;
+        display: flex;
+        justify-content: space-around;
+    }
+   form{
+       display: flex;
+       justify-content: space-around;
+   }
+   div.preview img{
+    margin-top: 20px;
+    width: 120px;
+    margin-left: 38px;
+}
+.input-description textarea{
+    height: 200px;
+}
 }

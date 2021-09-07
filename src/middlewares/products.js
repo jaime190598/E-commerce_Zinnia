@@ -7,7 +7,7 @@ const storage= multer.diskStorage({
         cb(null,'./public/images/productos');
     },
     filename: function(req,file,cb){
-        let imageName= Date.now()+path.extname(file.originalname);
+        let imageName= Date.now()+'_img'+path.extname(file.originalname);
         cb(null, imageName);
     }
 })
@@ -15,10 +15,13 @@ let fileUpLoad=multer({storage:storage});
 ///////Fin multer
 ///////Validator
 const validations=[
+    body('code').notEmpty().withMessage('Ingresa el codigo de producto'),
     body('name').notEmpty().withMessage('Ingresa tu nombre'),
     body('description').notEmpty().withMessage('Ingresa la descripción'),
     body('category').notEmpty().withMessage('Seleccione categoria'),
+    body('clothing_brand').notEmpty().withMessage('Seleccione la marca de ropa'),
     body('sale_price').notEmpty().withMessage('Ingrese costo'),
+    body('stock').notEmpty().withMessage('Ingrese stock de venta'),
     body('size').notEmpty().withMessage('Ingrese talla'),
     body('color').notEmpty().withMessage('Ingrese Color'),
     body('imgProduct').custom((value,{req})=>{

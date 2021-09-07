@@ -16,11 +16,19 @@
     <!-- FIN HEADER -->
     <main>
         <section class="section-popular-ahora"> 
-            <h2><%= title %></h2>
+            <div class="headboard">
+                <h2><%= title %></h2>
+                <a href="/formProduct">
+                    <div class="button">
+                        Ingresar producto
+                    </div>
+                </a>
+            </div>
+            
             <table>
                 <thead>
                     <tr>
-                        <th>Imagen</th><th>Nombre</th><th>Costo</th><th>Editar</th><th>Eliminar</th>
+                        <th class="imageProduct">Imagen</th><th>Nombre</th><th class="cost">Costo</th><th>Editar</th><th>Eliminar</th>
                     </tr>
                 </thead>
                 <% products.forEach(product=>{ %>
@@ -30,7 +38,7 @@
                     <td class="cost">$<%= product.sale_price %></td>
                     <td class="edit"><a href="/product/<%= product.idproduct %>/edit">Editar</a></td>
                     <td class="delet">
-                        <a href="/products/<%= product.id %>/<%= product.image %>?_method=delete">eliminar</a>
+                        <a href="/products/<%= product.idproduct %>/<%= product.image %>?_method=delete">eliminar</a>
 
                     </td>
                 </tr>

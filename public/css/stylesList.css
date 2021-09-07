@@ -1,7 +1,49 @@
-section{
-	margin: 100px auto;
-	width: 850px;
+
+td.cost,th.cost,
+td.imageProduct,th.imageProduct{
+	display: none;
 }
+section{
+	margin: 80px auto;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+table{
+	background-color: white;
+	text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td{
+	padding: 10px;
+}
+thead{
+	background-color: rgb(158, 152, 133);
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: rgb(180, 175, 158);
+	color: white;
+}
+@media (min-width: 361px){
+	
+	th.cost{
+		display: block;
+	}
+	td.cost
+	{
+		display: table-cell;
+
+	}
+	
+}
+@media (min-width: 761px){
+
 
 table{
 	background-color: white;
@@ -10,24 +52,24 @@ table{
 	width: 100%;
 }
 
+td.imageProduct,th.imageProduct{
+	display: block;
+}
 th, td{
+	
 	padding: 20px;
 }
+
 .imageProduct img{
     width: 50px;
 }
 
-thead{
-	background-color: #246355;
-	border-bottom: solid 5px #0F362D;
-	color: white;
-}
 
-tr:nth-child(even){
-	background-color: #ddd;
 }
+@media (min-width: 1200px){
 
-tr:hover td{
-	background-color: #369681;
-	color: white;
+section{
+	margin: 100px auto;
+	width: 850px;
+}
 }
