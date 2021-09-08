@@ -36,3 +36,6 @@ CONCLUSIONES DEL CUARTO SPRINT
 Durante el cuarto sprint iniciamos bien con la revisión y asignación de actividades en nuestra reunión semanal y en el tablero de Trello, así como aprovechar para revisar algunas dudas y tiempos de entrega.
 Inicialmente mantuvimos una buena comunicación, sin embargo una de nuestras compañeras tuvo que retirarse del equipo debido a cuestiones laborales, y otra de nuestras compañeras se atrasó con algunos temas debido a temas personales y a falta de comprensión en algunos temas del módulo 5.
 De igual manera, nos hemos comunicado más por WhatsApp para no esperar hasta la reunión del fin de semana para aclarar dudas, así como intentar reunirnos entre semana para mejorar la comprensión de algunos temas o ejercicios tanto de Playground como de los sprints.
+
+CONCLUSIONES DEL QUINTO SPRINT
+Durante este sprint se trabajó ya con los usuarios que se manejaron en base de datos con los campos que se sugirieron en el sprint anterior (nombre, email, contraseña, etc) y se dividieron los apartados para quienes iniciaron sesión en el sitio y quienes no. Por ejemplo, serán visibles los datos de nombre y usuario para quienes iniciaron sesión en el menu nav fijo.
