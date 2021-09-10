@@ -38,6 +38,4 @@ Inicialmente mantuvimos una buena comunicación, sin embargo una de nuestras com
 De igual manera, nos hemos comunicado más por WhatsApp para no esperar hasta la reunión del fin de semana para aclarar dudas, así como intentar reunirnos entre semana para mejorar la comprensión de algunos temas o ejercicios tanto de Playground como de los sprints.
 
 CONCLUSIONES DEL QUINTO SPRINT
-
-Durante el quinto esprint se dejó la comunicación con los compañeros de equipo por lo que el proyecto paso a ser trabajo de un participante, falto un poco de comunicación en el aspecto de que no tenia claro de si los compañeros de equipo seguirían o lo dejarían por lo que tareas que les tocaban a ellos toco realizarlas desde 0, ya que su partida fue repentina. 
-Por mi parte la forma de llevar el proyecto esta siendo acorde al plan de los sprint ya que, aunque quisiera agregar mas componentes de opcionales que nos piden, no puedo por falta de tiempo, no obstante, los puntos clave se intentan hacer conforme al calendario.
+Durante este sprint se trabajó ya con los usuarios que se manejaron en base de datos con los campos que se sugirieron en el sprint anterior (nombre, email, contraseña, etc) y se dividieron los apartados para quienes iniciaron sesión en el sitio y quienes no. Por ejemplo, serán visibles los datos de nombre y usuario para quienes iniciaron sesión en el menu nav fijo.
