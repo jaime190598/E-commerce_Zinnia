@@ -10,11 +10,11 @@ const authMiddleware= require('../middlewares/authMiddleware');
 router.use(methodOverride('_method', {methods:["POST", "GET"]}));
 
 
-router.get('/registro',guestMiddleware,usersController.registro);
+router.get('/user/register',guestMiddleware,usersController.registro);
 router.get('/user/login',guestMiddleware, usersController.login);
 router.get('/user/userprofile',authMiddleware,usersController.profile);
 router.get('/logout/',usersController.logout);
-router.post('/register', userMiddleware.fileUpLoad.single('avatar'),userMiddleware.validations, usersController.create);
+router.post('/user/register', userMiddleware.fileUpLoad.single('avatar'),userMiddleware.validations, usersController.create);
 router.post('/user/login', usersController.loginProcess);
 
 module.exports=router;

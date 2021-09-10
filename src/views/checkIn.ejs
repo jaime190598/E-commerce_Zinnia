@@ -27,7 +27,7 @@
             <div class="text-form">
                 <p>Crea tu cuenta para guardar tus prendas favoritas y recibir grandes descuentos.</p>
             </div>
-            <form action="/register" method="POST" enctype="multipart/form-data">
+            <form action="/user/register" method="POST" enctype="multipart/form-data">
               <div class="image-user">
                 <div class="preview" id="preview"></div>
                 <p>Subir foto de perfil</p> 
@@ -50,18 +50,28 @@
                     <% } %>
                 </div>
                 <div class="input-apellido">
-                    <input type="text" name="lastName" 
-                    placeholder="Apellido" class=" <%= locals.errors && errors.lastName ? 'is-invalid': null %>"
-                    value="<%= locals.oldData ? oldData.lastName : null %>" >
-                    <% if (locals.errors && errors.lastName){ %> 
+                    <input type="text" name="last_name" 
+                    placeholder="Apellido" class=" <%= locals.errors && errors.last_name ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.last_name : null %>" >
+                    <% if (locals.errors && errors.last_name){ %> 
                       <div class="text-danger">
-                            <%= errors.lastName.msg %>
+                            <%= errors.last_name.msg %>
                       </div>
                     <% } %>
                 </div>
               </div>
               <div class="input-re">
-                <input type="text" name="email" 
+                <input type="text" name="telephone" 
+                placeholder="Telefono" class=" <%= locals.errors && errors.telephone ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.telephone : null %>">
+                <% if (locals.errors && errors.telephone){ %> 
+                  <div class="text-danger">
+                        <%= errors.telephone.msg %>
+                  </div>
+                <% } %>
+              </div>
+              <div class="input-re">
+                <input type="email" name="email" 
                 placeholder="Email" class=" <%= locals.errors && errors.email ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.email : null %>">
                 <% if (locals.errors && errors.email){ %> 

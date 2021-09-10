@@ -54,15 +54,20 @@
                 <li>
                  <a><i class="fas fa-chevron-down"></i> <%= locals.userLogged.name %> </a>
                 <ul>
+                    <% if(locals.userLogged.fkidrol==1){%>
+                        <li><a href="/products">Lista de productos</a></li>
+                        <li><a href="/formProduct">Agregar producto</a></li>
+                    <%}%>
                     <li><a href="/user/userprofile">My Profile</a></li>
                     <li><a href="/logout/">Logout</a></li>
+                    
                 </ul>
             </li>
             </ul>
         </nav>
         <%} else {%>
         <button onclick="location.href='/user/login'" class="session">Iniciar sesión</button>
-        <button onclick="location.href='/registro'" class="registration"> Loguearme</button>
+        <button onclick="location.href='/user/register'" class="registration"> Loguearme</button>
         <%}%>
     </div>
 </header>

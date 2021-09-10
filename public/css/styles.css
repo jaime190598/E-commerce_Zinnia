@@ -73,7 +73,7 @@ nav ul li ul li ul{
 }
 
 /*Fin nav desplegable*/
-header div.input-search {
+ div.input-search {
    height: 28px;
    border-radius: 5px;
    border: solid 1px #9e9885;
@@ -81,7 +81,7 @@ header div.input-search {
    align-items: center;
    
 }
-header div.input-search input{
+ div.input-search input{
     background-color: transparent;
     margin: 0px;
     width: 49vw;
@@ -92,7 +92,7 @@ header div.input-search input{
     padding-left: 8px;
     color: #9e9885;
 }
-header div.input-search button{
+ div.input-search button{
     margin: 0px;
     height: 33px;
     width: 40px;
@@ -100,7 +100,7 @@ header div.input-search button{
     border: none;
     cursor: pointer;
 }
-header div.input-search i{
+ div.input-search i{
     font-size: 18px;
     color: #9e9885;
     cursor: pointer;
@@ -212,10 +212,10 @@ footer div img{
 /*Fin boton Flotante*/
 
 @media (min-width: 361px){
-    header div.input-search {
+     div.input-search {
         height: 35px;
      }
-     header div.input-search input{
+      div.input-search input{
          width: 47vw;
          height: 35px;
          font-size: 18px;
@@ -236,10 +236,10 @@ footer div img{
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    header div.input-search {
+     div.input-search {
         height: 35px;
      }
-     header div.input-search input{
+     div.input-search input{
          width: 38vw;
          height: 35px;
          font-size: 18px;
@@ -265,7 +265,7 @@ footer div img{
     header nav ul li a{
         color: #4f4737;
     }
-    header div.input-search input{
+     div.input-search input{
         width: 20vw;
         height: 35px;
         font-size: 18px;
@@ -316,6 +316,7 @@ footer div img{
     button.session:hover, button.registration:hover{
         background-color: #9e9885;
         color: #fff;
+        cursor: pointer;
     }
     button.registration{
         background-color: #4f4737;

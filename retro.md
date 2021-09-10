@@ -36,3 +36,8 @@ CONCLUSIONES DEL CUARTO SPRINT
 Durante el cuarto sprint iniciamos bien con la revisión y asignación de actividades en nuestra reunión semanal y en el tablero de Trello, así como aprovechar para revisar algunas dudas y tiempos de entrega.
 Inicialmente mantuvimos una buena comunicación, sin embargo una de nuestras compañeras tuvo que retirarse del equipo debido a cuestiones laborales, y otra de nuestras compañeras se atrasó con algunos temas debido a temas personales y a falta de comprensión en algunos temas del módulo 5.
 De igual manera, nos hemos comunicado más por WhatsApp para no esperar hasta la reunión del fin de semana para aclarar dudas, así como intentar reunirnos entre semana para mejorar la comprensión de algunos temas o ejercicios tanto de Playground como de los sprints.
+
+CONCLUSIONES DEL QUINTO SPRINT
+
+Durante el quinto esprint se dejó la comunicación con los compañeros de equipo por lo que el proyecto paso a ser trabajo de un participante, falto un poco de comunicación en el aspecto de que no tenia claro de si los compañeros de equipo seguirían o lo dejarían por lo que tareas que les tocaban a ellos toco realizarlas desde 0, ya que su partida fue repentina. 
+Por mi parte la forma de llevar el proyecto esta siendo acorde al plan de los sprint ya que, aunque quisiera agregar mas componentes de opcionales que nos piden, no puedo por falta de tiempo, no obstante, los puntos clave se intentan hacer conforme al calendario.

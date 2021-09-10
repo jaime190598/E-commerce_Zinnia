@@ -11,9 +11,25 @@ function getProductsJSON(){
 const controlador = {
     productos: (req, res)=>{
         const title='Mis Products';
-        //res.render('listProducts',{products:getProductsJSON(), title:title});
-      db.Product.findAll().then(result=>{
-        res.render('listProducts',{products:result, title:title});
+        let paginado=2;
+      db.Product.findAll({
+        limit:paginado
+      }).then(result=>{
+        res.render('listProducts',{products:result, title:title,paginado,off:paginado});
+      })
+    },
+    paginado:(req,res)=>{
+      console.log(req.params.off)
+       let limite=parseInt(req.params.pag);
+       let pagina=parseInt(req.params.off);
+       let paginaTotal=limite+pagina;
+       const title='Mis Products';
+       console.log(pagina)
+       db.Product.findAll({
+         offset:pagina,
+        limit:limite
+      }).then(result=>{
+        res.render('listProducts',{products:result, title:title,paginado:limite,off:paginaTotal});
       })
     },
     categorys_clothes: (req, res)=>{
@@ -27,7 +43,8 @@ const controlador = {
             //return res.send(products);
             res.render('products',{products, title:products[0].category.name});
           }).catch(error=>{
-            res.status(404).render('404-page');
+            res.render('products',{products:null});
+            // res.status(404).render('404-page');
           })
     }
     

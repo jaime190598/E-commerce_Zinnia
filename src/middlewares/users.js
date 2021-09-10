@@ -15,7 +15,8 @@ let fileUpLoad=multer({storage:storage});
 
 const validations=[
     body('name').notEmpty().withMessage('Ingresa tu nombre'),
-    body('lastName').notEmpty().withMessage('Ingresa tu apellido'),
+    body('last_name').notEmpty().withMessage('Ingresa tu apellido'),
+    body('telephone').notEmpty().withMessage('Ingrese numero de telefono'),
     body('email').notEmpty().withMessage('Ingresa un email').bail().isEmail().withMessage('Debes de escribir un correo válido'),
     body('password').notEmpty().withMessage('Ingresa una contraseña'),
     body('avatar').custom((value,{req})=>{

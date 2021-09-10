@@ -13,6 +13,7 @@ table{
 	text-align: center;
 	border-collapse: collapse;
 	width: 100%;
+	margin-bottom: 30px;
 }
 th, td{
 	padding: 10px;
@@ -30,6 +31,35 @@ tr:hover td{
 	background-color: rgb(180, 175, 158);
 	color: white;
 }
+.headboard{
+	display: block;
+	padding: 20px;
+	width: 85vw;
+
+}
+.headboard h2{
+	padding: 20px;
+
+}
+
+a.button{
+	border: solid 1px #4F4737;
+	border-radius: 5px;
+	background-color: #4F4737;
+	color: #ddd;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 5px;
+}
+.end-table{
+	display: flex;
+	justify-content: space-evenly;
+}
+.end-table .more{
+	font-size: 20px;
+	text-decoration: none;
+	color: black;
+}
 @media (min-width: 361px){
 	
 	th.cost{
@@ -39,6 +69,11 @@ tr:hover td{
 	{
 		display: table-cell;
 
+	}
+	.headboard{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 20px;
 	}
 	
 }
@@ -62,6 +97,12 @@ th, td{
 
 .imageProduct img{
     width: 50px;
+}
+.headboard{
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	width: auto;
 }
 
 

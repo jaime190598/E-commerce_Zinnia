@@ -2,15 +2,15 @@ const express = require('express');
 const { dirname } = require('path');
 const path = require('path');
 const server= express();
+const methodOverride= require('method-override');
+const session= require('express-session');
+const cookies= require('cookie-parser');
+const userLoggedM= require('./middlewares/userLoggedMiddleware');
+const PORT = process.env.PORT || 3000;
+//routes
 const mainRoute = require('./routes/main');
 const productsRoute = require('./routes/products');
 const accountsRoute= require('./routes/accounts');
-const PORT = process.env.PORT || 3000;
-const methodOverride= require('method-override');
-const session= require('express-session');
-const userLoggedM= require('./middlewares/userLoggedMiddleware');
-const cookies= require('cookie-parser');
-
 server.use(session({
     secret:"shhh, it's a secret",
     resave:false,

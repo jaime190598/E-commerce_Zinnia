@@ -18,11 +18,13 @@
         <section class="section-popular-ahora"> 
             <div class="headboard">
                 <h2><%= title %></h2>
-                <a href="/formProduct">
-                    <div class="button">
-                        Ingresar producto
-                    </div>
-                </a>
+                <div class="input-search">
+                    <form action="/" method="GET">
+                        <input type="text" placeholder="Buscar producto">
+                        <button type="submit"><i class="fas fa-search-plus"></i></button>
+                    </form>
+                </div>
+                
             </div>
             
             <table>
@@ -44,6 +46,10 @@
                 </tr>
                 <% }) %>                    
             </table>
+           <div class="end-table">
+               <a href="/formProduct" class="button">Ingresar producto</a>
+               <a href="/product/<%= paginado %>/paginado/<%= off %>?" class="more">Siguiente pagina <i class="fas fa-angle-double-right"></i></a>
+            </div> 
         </section>
     </main>
     <!-- FOOTER -->

@@ -28,6 +28,7 @@ router.get('/formProduct',formController.formulario);
 //GET:ID
 router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
 router.get('/product/:id/edit?',formController.geteditform);
+router.get('/product/:pag/paginado/:off?',productosController.paginado);
 //Fin metodos GET
 //Inicio Metodos POST
 router.post('/products', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.addProduct);
