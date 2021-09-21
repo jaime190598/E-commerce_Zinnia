@@ -19,8 +19,8 @@
             <div class="headboard">
                 <h2><%= title %></h2>
                 <div class="input-search">
-                    <form action="/" method="GET">
-                        <input type="text" placeholder="Buscar producto">
+                    <form action="/search/product" method="POST">
+                        <input name="search" type="text" placeholder="Buscar producto">
                         <button type="submit"><i class="fas fa-search-plus"></i></button>
                     </form>
                 </div>
@@ -48,7 +48,9 @@
             </table>
            <div class="end-table">
                <a href="/formProduct" class="button">Ingresar producto</a>
+               <% if(products.length>0){ %>
                <a href="/product/<%= paginado %>/paginado/<%= off %>?" class="more">Siguiente pagina <i class="fas fa-angle-double-right"></i></a>
+               <% } %>
             </div> 
         </section>
     </main>

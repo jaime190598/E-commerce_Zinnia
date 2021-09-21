@@ -32,6 +32,34 @@ const controlador = {
         res.render('listProducts',{products:result, title:title,paginado:limite,off:paginaTotal});
       })
     },
+    searchlist:(req,res)=>{
+      const title='Mis Products';
+      let paginado=2;
+        db.Product.findAll({
+          where:{
+            name:{[db.Sequelize.Op.substring] : req.body.search}
+          }
+        }).then(result=>{
+          console.log(result)
+          res.render('listProducts',{products:result, title:title,paginado,off:paginado});
+        }).catch(error=>{
+          res.status(404).render('404-page');
+        })
+    },
+    searchProduct:(req,res)=>{
+      const title='Mis Products';
+        db.Product.findAll({
+          where:{
+            name:{[db.Sequelize.Op.substring] : req.body.search}
+          },
+          include:[{association:"category"},{association:"clothing_brand"},{association:"size"}]
+        }).then(products=>{
+          console.log(products)
+          res.render('products',{products:products, title:title});
+        }).catch(error=>{
+          res.status(404).render('404-page');
+        })
+    },
     categorys_clothes: (req, res)=>{
         console.log(req.params.id);
         db.Product.findAll({

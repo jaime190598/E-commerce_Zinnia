@@ -28,7 +28,75 @@
             </div>
             <a href="#">
             <div class="user-edit">
-              <p><%= user.email %></p><i class="fas fa-user-edit"></i>
+              <!-- <p><%= user.email %></p><i class="fas fa-user-edit"></i> -->
+              <form action="/user/edit?_method=put" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<%= user && user.iduser? user.iduser:''%>">
+              <input type="hidden" name="image" value="<%= user && user.avatar? user.avatar:''%>">
+                <div class="image-user">
+                  <div class="preview" id="preview"></div>
+                  <p>Nueva foto de perfil</p> 
+                  <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"><br/>
+                  <% if (locals.errors && errors.avatar){ %> 
+                  <p class="text-danger">
+                        <%= errors.avatar.msg %>
+                  </p>
+                  <% } %>
+                </div>
+                <div class="to-name">
+                  <div class="input-name">
+                      <input type="text" name="name" 
+                       class=" <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                      value="<%= user && user.name? user.name: locals.oldData ? oldData.name : null %>">
+                      <% if (locals.errors && errors.name){ %> 
+                        <div class="text-danger">
+                              <%= errors.name.msg %>
+                        </div>
+                      <% } %>
+                  </div>
+                  <div class="input-apellido">
+                      <input type="text" name="last_name" 
+                       class=" <%= locals.errors && errors.last_name ? 'is-invalid': null %>"
+                      value="<%= user && user.last_name? user.last_name: locals.oldData ? oldData.last_name : null %>" >
+                      <% if (locals.errors && errors.last_name){ %> 
+                        <div class="text-danger">
+                              <%= errors.last_name.msg %>
+                        </div>
+                      <% } %>
+                  </div>
+                </div>
+                <div class="input-re">
+                  <input type="text" name="telephone" 
+                  placeholder="Telefono" class=" <%= locals.errors && errors.telephone ? 'is-invalid': null %>"
+                  value="<%= user && user.telephone? user.telephone: locals.oldData ? oldData.telephone : null %>">
+                  <% if (locals.errors && errors.telephone){ %> 
+                    <div class="text-danger">
+                          <%= errors.telephone.msg %>
+                    </div>
+                  <% } %>
+                </div>
+                <div class="input-re">
+                  <input type="email" name="email" 
+                  class=" <%= locals.errors && errors.email ? 'is-invalid': null %>"
+                  value="<%= user && user.email? user.email: locals.oldData ? oldData.email : null %>">
+                  <% if (locals.errors && errors.email){ %> 
+                    <div class="text-danger">
+                          <%= errors.email.msg %>
+                    </div>
+                  <% } %>
+                </div>
+                <div class="input-re">
+                  <input type="password" name="password" 
+                  placeholder="Nueva contraseña" class=" <%= locals.errors && errors.password? 'is-invalid': null %>">
+                  <% if (locals.errors && errors.password){ %> 
+                    <div class="text-danger">
+                          <%= errors.password.msg %>
+                    </div>
+                  <% } %>
+                </div>
+                <div class="button-login">
+                  <button>Actualizar datos</button>
+                </div>
+              </form> 
             </div></a>
       </article>
     </section>

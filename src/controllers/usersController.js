@@ -104,6 +104,7 @@ const controlador = {
        
     },
     profile:(req,res)=>{
+        console.log(req.session.userLogged);
         res.render('userProfile',{
             user: req.session.userLogged
         })
@@ -112,6 +113,46 @@ const controlador = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
+    useredit:(req,res)=>{
+        let image;
+        let id=req.body.id;
+        if(req.file!=undefined){
+            image=req.file.filename;
+            //delete folder public
+        fs.unlink('./public/images/productos/'+req.body.image,(err)=>{
+            if(err){
+                console.log("failed to delete local image :"+ err);
+            }else{
+                console.log('successfully deleted local image');
+            }
+        })
+        }else{
+            image= req.body.image;
+        }
+        let useredit;
+         useredit={
+            id:id,
+            name:req.body.name,
+            last_name:req.body.last_name,
+            telephone:req.body.telephone,
+            email:req.body.email,
+            avatar:image
+        }
+        if(req.body.password!=''){
+            useredit={
+                ...useredit,
+                password:bcryptjs.hashSync(req.body.password,10)
+            }
+        }
+        console.log(useredit);
+         db.User.update(useredit,{
+            where:{iduser:id}
+         });
+         
+         res.redirect("/user/userprofile");
+         alert("los cambios se reflejaran en el siguiente inicio de sesion")
+          
     }
 }
 //join

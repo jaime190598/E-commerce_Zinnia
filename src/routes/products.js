@@ -5,13 +5,14 @@ const productosController=require('../controllers/productosController');
 const detalleMenuController=require('../controllers/detalleMenuController');
 const formController=require('../controllers/formController');
 const productsMiddleware=require('../middlewares/products');
+const rolUserMiddleware= require('../middlewares/rolUserMiddleware');
 //method-override
 router.use(methodOverride('_method', {methods:["POST", "GET"]}));
 
 
 ///////Fin validator
 //Inicio Metodos GET
-router.get('/products', productosController.productos);
+router.get('/products',rolUserMiddleware, productosController.productos);
 router.get('/verano/:id/products?', productosController.categorys_clothes);
 router.get('/otono/:id/products?', productosController.categorys_clothes);
 router.get('/primavera/:id/products?', productosController.categorys_clothes);
@@ -24,14 +25,16 @@ router.get('/pijamas/:id/products?', productosController.categorys_clothes);
 router.get('/mas_vendido/:id/products?', productosController.categorys_clothes);
 router.get('/ofertas/:id/products?', productosController.categorys_clothes);
 router.get('/accesorios/:id/products?', productosController.categorys_clothes);
-router.get('/formProduct',formController.formulario);
+router.get('/formProduct',rolUserMiddleware,formController.formulario);
 //GET:ID
 router.get('/detalleMenu/:id?',detalleMenuController.getIdProduct);
-router.get('/product/:id/edit?',formController.geteditform);
-router.get('/product/:pag/paginado/:off?',productosController.paginado);
+router.get('/product/:id/edit?',rolUserMiddleware,formController.geteditform);
+router.get('/product/:pag/paginado/:off?',rolUserMiddleware,productosController.paginado);
 //Fin metodos GET
 //Inicio Metodos POST
 router.post('/products', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.addProduct);
+router.post('/search/product',productosController.searchlist )
+router.post('/product/search',productosController.searchProduct)
 //Fin metodos POST
 //Inicio Metodo PUT
 router.put('/edit', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.editProduct);
