@@ -83,6 +83,7 @@ input{
     height: 40px;
     border-radius: 5px;
     border: solid 1px rgb(139, 137, 137);
+    outline-color: #4f4737;
 }
 select{
     font-size: 15px;

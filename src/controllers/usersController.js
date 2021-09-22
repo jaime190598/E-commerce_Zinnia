@@ -150,7 +150,7 @@ const controlador = {
             where:{iduser:id}
          });
          
-         res.redirect("/user/userprofile");
+         res.redirect("/logout/");
          alert("los cambios se reflejaran en el siguiente inicio de sesion")
           
     }

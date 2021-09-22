@@ -102,11 +102,11 @@ form div.button-login button{
     background-color:#4f4737;
     border: solid 1px #4f4737;
     border-radius: 10px;
-    color:white;
+    color:#fdf8f2;
 }
 form div.button-login button:hover{
     background-color: #9e9885;
-    color: #fff;
+    color: #fdf8f2;
     cursor: pointer;
 }
 button font{

@@ -75,16 +75,16 @@ form div.image-user img{
 form div.input-re{
     margin: 10px;
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 form div.input-name{
     
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 form div.input-apellido{
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 form div.input-re h1{
   align-content: left;
@@ -93,7 +93,7 @@ input{
     font-size: 15px;
     padding-left: 5px;
     width: 80vw;
-    height: 5vh;
+    height: 45px;
     border-radius: 5px;
     border: solid 1px rgb(139, 137, 137);
 }
@@ -104,12 +104,12 @@ form div.button-login{
 form div.button-login button{
     margin-top: 10px;
     width: 80vw;
-    height: 5vh;
+    height: 45px;
     font-size: 22px;
     font-weight: bold;
     background-color: #4f4737;
     border: solid 1px #4f4737;
-    color: #fff;
+    color: #fdf8f2;
     border-radius: 10px;
 }
 form div.button-login button:hover{
@@ -133,7 +133,6 @@ form div.button-login button:hover{
     }
     form input{
         width: 83vw;
-        height: 6vh;
     }
     form div.button-login button{
         width: 70vw;

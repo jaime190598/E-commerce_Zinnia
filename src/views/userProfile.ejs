@@ -26,10 +26,9 @@
             <div class="avatar">
               <img src="/images/users/<%= user.avatar %>" alt="">
             </div>
-            <a href="#">
             <div class="user-edit">
-              <!-- <p><%= user.email %></p><i class="fas fa-user-edit"></i> -->
-              <form action="/user/edit?_method=put" method="POST" enctype="multipart/form-data">
+              <form  class="edituser" action="/user/edit?_method=put" method="POST" enctype="multipart/form-data">
+              
               <input type="hidden" name="id" value="<%= user && user.iduser? user.iduser:''%>">
               <input type="hidden" name="image" value="<%= user && user.avatar? user.avatar:''%>">
                 <div class="image-user">
@@ -44,7 +43,7 @@
                 </div>
                 <div class="to-name">
                   <div class="input-name">
-                      <input type="text" name="name" 
+                      <input type="text" name="name" id="name"
                        class=" <%= locals.errors && errors.name ? 'is-invalid': null %>"
                       value="<%= user && user.name? user.name: locals.oldData ? oldData.name : null %>">
                       <% if (locals.errors && errors.name){ %> 
@@ -54,7 +53,7 @@
                       <% } %>
                   </div>
                   <div class="input-apellido">
-                      <input type="text" name="last_name" 
+                      <input type="text" name="last_name" id="last_name"
                        class=" <%= locals.errors && errors.last_name ? 'is-invalid': null %>"
                       value="<%= user && user.last_name? user.last_name: locals.oldData ? oldData.last_name : null %>" >
                       <% if (locals.errors && errors.last_name){ %> 
@@ -65,7 +64,7 @@
                   </div>
                 </div>
                 <div class="input-re">
-                  <input type="text" name="telephone" 
+                  <input type="text" name="telephone" id="telephone"
                   placeholder="Telefono" class=" <%= locals.errors && errors.telephone ? 'is-invalid': null %>"
                   value="<%= user && user.telephone? user.telephone: locals.oldData ? oldData.telephone : null %>">
                   <% if (locals.errors && errors.telephone){ %> 
@@ -75,7 +74,7 @@
                   <% } %>
                 </div>
                 <div class="input-re">
-                  <input type="email" name="email" 
+                  <input type="email" name="email" id="email"
                   class=" <%= locals.errors && errors.email ? 'is-invalid': null %>"
                   value="<%= user && user.email? user.email: locals.oldData ? oldData.email : null %>">
                   <% if (locals.errors && errors.email){ %> 
@@ -97,7 +96,7 @@
                   <button>Actualizar datos</button>
                 </div>
               </form> 
-            </div></a>
+            </div>
       </article>
     </section>
    </main>

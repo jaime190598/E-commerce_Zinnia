@@ -57,7 +57,37 @@ article div.user-edit i{
 article div.user-edit:hover{
     color: #4F4738;
 }
-
+form.edituser{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+form.edituser input{
+    width: 90vw;
+    height: 45px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+    border: solid 1px rgb(139, 137, 137);
+    outline-color: #4f4737;
+    font-size: 22px;
+}
+form.edituser button{
+    width: 80vw;
+    height: 45px;
+    background: #4F4738;
+    margin: 15px;
+    border-radius: 10px;
+    border: solid 1px #4f4737;
+    color: #fdf8f2;
+    font-size: 20px;
+    font-weight: bold;
+}
+form.edituser button:hover{
+    background-color: #fdf8f2;
+    color: #9e9885;
+    cursor: pointer;
+}
 @media (min-width: 361px){
     section{
         width: 60vw;
@@ -73,15 +103,47 @@ article div.user-edit:hover{
     article div.user-edit{
         font-size: 18px;
      }
+     form.edituser button{
+        width: 50vw;
+    }
     
 }
 @media (min-width: 1200px){
     section{
-        width: 50vw;
+        width: auto;
     }
     section div.title{
         margin-bottom: 30px;
     }
- 
+    /* form.edituser{
+        display: block;
+    } */
+    article div.user-edit{
+        width: 750px;
+     }
+     form.edituser input{
+        width: 350px;
+        height: 30px;
+        font-size: 18px;
+    }
+    div.to-name{
+        display: flex;
+    }
+    form.edituser input#avatar{
+        width: 450px;
+    }
+    form.edituser input#telephone{
+        width: 350px;
+    }
+    form.edituser input#name{
+        width: 350px;
+    }
+    form.edituser input#last_name{
+        width: 350px;
+    }
+    form.edituser button{
+        width: 350px;
+        height: 35px;
+    }
     
 }
