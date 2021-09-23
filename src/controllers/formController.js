@@ -3,18 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-function getProductsJSON(){
-    //const productsFilePath = path.join(__dirname, '../data/products.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-    return products;
-}
-function getcategorys(){
-    const categorysFilePath = path.join(__dirname, '../data/categorys.json');
-    const categorys = JSON.parse(fs.readFileSync(categorysFilePath, 'utf-8'));
-    return categorys;
-}
-
 const controlador = {
     formulario: (req, res)=>{
         db.Category.findAll().then(categorys=>{

@@ -39,18 +39,21 @@ header div img{
     height: 100%;
     width: 200px ;
     background: #79756aa6;
-    left: 0px;
+    left: -200px;
     top: 140px;
-    z-index: 20;
+    z-index: 19;
 }
 .userresponsive{
     position: fixed;
     width: 200px;
     text-align: center;
     background-color: #79756ae0;
-    left: 0px;
+    left: -200px;
     top: 60px;
-    z-index: 19;
+    z-index: 20;   
+}
+.show-menu{
+    left:0;
 }
 .style-navmenu{
     background: #9e988593 !important;
@@ -138,8 +141,9 @@ div.avatar-user img{
     border-radius: 10px;
     border: solid 1px #9e9885;
 }
+
 div.buttons-section nav{
-    display: flex;
+    display: block;
 }
 div.buttons-section ul, ol {
     list-style:none;
@@ -162,7 +166,7 @@ div.buttons-section nav ul li a:hover{
 
 }
 div.buttons-section nav ul li ul {
-    display:none;
+    display: none;
     position: absolute;
     min-width: 140px;
 }
@@ -172,6 +176,10 @@ div.buttons-section nav ul li:hover >ul{
 div.buttons-section nav ul li ul li{
     position: relative;
     z-index: 10;
+}
+div.buttons-section nav ul li ul li ul{
+    right: -140px;
+    top: 0px;
 }
 /*  */
 
@@ -184,6 +192,7 @@ header div.burger-menu button{
    
 }
 /*  */
+
 header div.buttons-section{
     width: 200px;
     display: grid;

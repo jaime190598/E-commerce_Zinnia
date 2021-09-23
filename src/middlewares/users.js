@@ -18,13 +18,11 @@ const validations=[
     body('last_name').notEmpty().withMessage('Ingresa tu apellido'),
     body('telephone').notEmpty().withMessage('Ingrese numero de telefono'),
     body('email').notEmpty().withMessage('Ingresa un email').bail().isEmail().withMessage('Debes de escribir un correo válido'),
-    body('password').notEmpty().withMessage('Ingresa una contraseña'),
+    body('password').isLength({min:8}).withMessage('La contraseña debe tener un mínimo de 8 caracteres'),
     body('avatar').custom((value,{req})=>{
         let file=req.file;
         let acceptedExtensions=['.jpg', '.png'];
-        if(!file){   
-            throw new Error('Tienes que subir una imagen');
-        }else{
+        if(file){   
             let fileExtension= path.extname(file.originalname);
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error('Las extensiones de archivo no es permitida');

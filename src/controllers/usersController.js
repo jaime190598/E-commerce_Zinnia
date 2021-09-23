@@ -21,7 +21,7 @@ const controlador = {
         db.User.findAll({
             where:{email:req.body.email}
         }).then(result=>{
-            console.log(result[0])
+            
             if(result[0]!=undefined){
                 fs.unlink('./public/images/users/'+req.file.filename,(err)=>{
                     if(err){
@@ -39,13 +39,24 @@ const controlador = {
                     oldData:req.body
                 }) 
             }
-            let newUser={
-                ...req.body,
-                password:bcryptjs.hashSync(req.body.password,10),
-                avatar: req.file.filename,
-                fkidrol:2,
-                fkidlocation:null
-                };
+            let newUser;
+            if(req.file==undefined){
+                newUser={
+                    ...req.body,
+                    password:bcryptjs.hashSync(req.body.password,10),
+                    fkidrol:2,
+                    fkidlocation:null
+                    };
+            }else{
+                newUser={
+                    ...req.body,
+                    password:bcryptjs.hashSync(req.body.password,10),
+                    avatar: req.file.filename,
+                    fkidrol:2,
+                    fkidlocation:null
+                    };
+            }
+            console.log(newUser)
                 db.User.create(newUser).then(()=>{
                         return res.redirect('/user/login');
                 }).catch(e=>{
@@ -63,7 +74,6 @@ const controlador = {
         
     },
     login: (req, res)=>{
-        
         res.render('login');
     },
     loginProcess: (req, res)=>{
@@ -78,10 +88,11 @@ const controlador = {
                 delete userToLogin['password'];
                 req.session.userLogged=userToLogin;
                 if(req.body.remember_user){
-                    res.cookie('userEmail', req.body.email,{maxAge: (1000*60)*2})
+                    res.cookie('userEmail', req.body.email,{maxAge: (1000*60)*5})
                 }
+                
                 return res.redirect('/user/userprofile');
-            console.log(userToLogin);
+            console.log(req.body.remember_user);
             }
             return res.render('login',{
                 errors:{

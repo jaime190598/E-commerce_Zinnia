@@ -182,6 +182,6 @@ insert into rol values (0,'administrador','administrador de aplicacion'),
 						   (0,'general','usuario de compra en linea'),
                            (0,'proveedor','proveedor de productos');
                            
-/*contraseña:123456*/
-insert into user values(0, null,null,'Jaime','Guillen','9191605445','gunsjimmy19@gmail.com','$10$Dl3oJfNpEjB.NT.pki7eUu99kmg//q1Du4Kiri5j.Sj0eGLLYTQ3y','newUsers.png',1,null);
-insert into user values(0, null,null,'Jaime','Guillen','9191605445','guns@gmail.com','$10$Dl3oJfNpEjB.NT.pki7eUu99kmg//q1Du4Kiri5j.Sj0eGLLYTQ3y','newUsers.png',2,null);
+/*contraseña:123456789*/
+insert into user values(0, null,null,'Jaime','Guillen','9191605445','gunsjimmy19@gmail.com','$2a$10$9BW2UzIqZ2CmiVokwiqsHuGsZSYswsMTlh7s9skgnsVX3EW4QTORW','newUsers.png',1,null);
+insert into user values(0, null,null,'Jaime','Guillen','9191605445','guns@gmail.com','$2a$10$9BW2UzIqZ2CmiVokwiqsHuGsZSYswsMTlh7s9skgnsVX3EW4QTORW','newUsers.png',2,null);
