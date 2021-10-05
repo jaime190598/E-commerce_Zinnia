@@ -23,13 +23,14 @@ const controlador = {
         }).then(result=>{
             
             if(result[0]!=undefined){
+                if(req.file!=undefined){
                 fs.unlink('./public/images/users/'+req.file.filename,(err)=>{
                     if(err){
                         console.log("failed to delete local image :"+ err);
                     }else{
                         console.log('successfully deleted local image');
                     }
-                })
+                })}
                 return res.render('checkIn',{
                     errors:{
                         email:{
@@ -106,7 +107,7 @@ const controlador = {
             return res.render('login',{
                 errors:{
                     email:{
-                        msg:'Error de usuario'
+                        msg:'Credenciales inválidas'
                     }
                 }
             })
@@ -126,12 +127,20 @@ const controlador = {
         return res.redirect('/');
     },
     useredit:(req,res)=>{
+        const resulValidation= validationResult(req);
+        if(resulValidation.errors.length >0){
+            return res.render('userProfile',{
+                errors: resulValidation.mapped(),
+                oldData:req.body,
+                user: req.session.userLogged
+            })
+        }
         let image;
         let id=req.body.id;
         if(req.file!=undefined){
             image=req.file.filename;
             //delete folder public
-        fs.unlink('./public/images/productos/'+req.body.image,(err)=>{
+        fs.unlink('./public/images/users/'+req.body.image,(err)=>{
             if(err){
                 console.log("failed to delete local image :"+ err);
             }else{
@@ -162,7 +171,7 @@ const controlador = {
          });
          
          res.redirect("/logout/");
-         alert("los cambios se reflejaran en el siguiente inicio de sesion")
+        /*  alert("los cambios se reflejaran en el siguiente inicio de sesion") */
           
     }
 }

@@ -28,11 +28,10 @@
             <div class="text-form">
                 <p>Crea un nuevo producto o edita alguno</p>
             </div>
-            
-            <form id="frm1" action="/products"  method="POST" enctype="multipart/form-data">   
-         
-            <input type="hidden" name="id" value="<%= product && product.idproduct? product.idproduct:''%>">
-            <input type="hidden" name="image" value="<%= product && product.image? product.image:locals.oldData ? oldData.image:''%>">
+            <form id="frm1" action="/edit?_method=put" method="POST" enctype="multipart/form-data">
+             
+            <input type="hidden" name="id" value="<%= product && product.idproduct? product.idproduct:locals.oldData ? oldData.id: null %>">
+            <input type="hidden" name="image" value="<%= product && product.image? product.image:locals.oldData ? oldData.image:'' %>">
             <div class="input-name">
                 <input type="text" name="code" id="code" placeholder="Codigo del producto" 
                 value="<%= product && product.code? product.code: locals.oldData ? oldData.code : null %>">
@@ -64,9 +63,9 @@
              </div>
              <div class="img">
                 <div class="preview" id="preview">
-                    <% if(product){%>
+                    
                     <img src="/images/productos/<%= product && product.image? product.image: locals.oldData ? oldData.image: null %>" alt="">
-                    <%}%>
+                    
                 </div>
                  <p> Elige la imagen del producto </p>
                  <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
@@ -148,7 +147,7 @@
                 </div>
             </div>
              <div class="button-save">
-                 <button id="button" class="reservar" type="submit">Guardar</button>
+                 <button class="reservar" type="submit">Guardar</button>
              </div>
             </form> 
             <script src="/js/productsValidation.js"></script>  

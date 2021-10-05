@@ -5,6 +5,7 @@ const productosController=require('../controllers/productosController');
 const detalleMenuController=require('../controllers/detalleMenuController');
 const formController=require('../controllers/formController');
 const productsMiddleware=require('../middlewares/products');
+const editProductMiddleware=require('../middlewares/editProducts')
 const rolUserMiddleware= require('../middlewares/rolUserMiddleware');
 //method-override
 router.use(methodOverride('_method', {methods:["POST", "GET"]}));
@@ -37,7 +38,7 @@ router.post('/search/product',productosController.searchlist )
 router.post('/product/search',productosController.searchProduct)
 //Fin metodos POST
 //Inicio Metodo PUT
-router.put('/edit', productsMiddleware.fileUpLoad.single('imgProduct'), productsMiddleware.validations, formController.editProduct);
+router.put('/edit', editProductMiddleware.fileUpLoad.single('imgProduct'), editProductMiddleware.validations, formController.editProduct);
 //final methodo put 
 //Inicio Metodo DELET
 router.delete('/products/:id/:image?',formController.deletProduct)

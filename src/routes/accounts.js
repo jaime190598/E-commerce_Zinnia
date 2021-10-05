@@ -6,6 +6,7 @@ const usersController=require('../controllers/usersController');
 const userMiddleware= require('../middlewares/users');
 const guestMiddleware= require('../middlewares/guestMiddleware');
 const authMiddleware= require('../middlewares/authMiddleware');
+const userEditMiddleware= require('../middlewares/userEdit');
 
 //method-override
 router.use(methodOverride('_method', {methods:["POST", "GET"]}));
@@ -18,5 +19,5 @@ router.get('/logout/',usersController.logout);
 router.post('/user/register', userMiddleware.fileUpLoad.single('avatar'),userMiddleware.validations, usersController.create);
 router.post('/user/login', usersController.loginProcess);
 
-router.put('/user/edit?', userMiddleware.fileUpLoad.single('avatar'),usersController.useredit)
+router.put('/user/edit?', userMiddleware.fileUpLoad.single('avatar'), userEditMiddleware.validation,usersController.useredit)
 module.exports=router;

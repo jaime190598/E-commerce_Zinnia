@@ -1,4 +1,4 @@
-const fs= require('fs');
+/* const fs= require('fs');
 const path = require('path');
 const User={
     fileName: path.join(__dirname, '../data/users.json'),
@@ -44,4 +44,4 @@ const User={
     }
 }
 //console.log(User.create({name:'jaime',lastName:'guillen'}))
-module.exports= User;
+module.exports= User; */

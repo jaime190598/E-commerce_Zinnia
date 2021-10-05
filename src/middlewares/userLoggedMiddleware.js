@@ -1,4 +1,4 @@
-/* const user = require('../models/Users'); */
+
 const db = require("../database/models");
 function userLoggedMiddleware(req,res,next){
     res.locals.isLogged=false;
@@ -20,15 +20,12 @@ function userLoggedMiddleware(req,res,next){
         .then(userFromCookie=>{
             if(userFromCookie){
                 req.session.userLogged= userFromCookie;
-                /* console.log('session')
-                console.log(req.session.userLogged); */
+
             }
             if(req.session && req.session.userLogged){
                 res.locals.isLogged=true;
                 res.locals.userLogged=req.session.userLogged;
-                /* console.log('userlogued')
-                console.log(res.locals.isLogged)
-                console.log(res.locals.userLogged) */
+           
             }
             next();
         }).catch(function(e){
@@ -36,23 +33,11 @@ function userLoggedMiddleware(req,res,next){
         })
         
     }
-    /* let userFromCookie= user.finndByField('email', emailCookie);
-   console.log(userFromCookie)
-    if(userFromCookie){
-        req.session.userLogged= userFromCookie;
-    }
-    if(req.session && req.session.userLogged){
-    res.locals.isLogged=true;
-    res.locals.userLogged=req.session.userLogged;
-    }
- */
+   
     else{
         if(req.session && req.session.userLogged){
             res.locals.isLogged=true;
             res.locals.userLogged=req.session.userLogged;
-            /* console.log('userlogued')
-            console.log(res.locals.isLogged)
-            console.log(res.locals.userLogged) */
         }
     next();}
 }
