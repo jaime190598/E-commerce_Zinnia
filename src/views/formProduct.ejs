@@ -1,164 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zinnia</title>
-    <link rel="stylesheet" href="/css/styles.css"/>
-    <link rel="stylesheet" href="/css/stylesForm.css"/>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/stylesForm.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
 </head>
+
 <body>
     <!--header-->
     <%- include('./partials/header.ejs') %>
-   <main>
-    <section>
-        <div class="text-hello">
-            <h3>
-                ¡Hola Administrador! 
-            </h3>
-        </div>
-        <div class="artic">
-        <article>
-            <div class="text-form">
-                <p>Crea un nuevo producto o edita alguno</p>
-            </div>
-            
-            <form id="frm1" action="/products"  method="POST" enctype="multipart/form-data">   
-         
-            <input type="hidden" name="id" value="<%= product && product.idproduct? product.idproduct:''%>">
-            <input type="hidden" name="image" value="<%= product && product.image? product.image:locals.oldData ? oldData.image:''%>">
-            <div class="input-name">
-                <input type="text" name="code" id="code" placeholder="Codigo del producto" 
-                value="<%= product && product.code? product.code: locals.oldData ? oldData.code : null %>">
-                <% if (locals.errors && errors.code){ %> 
-                    <p class="text-danger">
-                          <%= errors.code.msg %>
-                    </p>
-                <% } %>
-                <p class="text-danger" id="codeError"></p>
-             </div>
-            <div class="input-name">
-                <input type="text" name="name" id="name" placeholder="Nombre del producto" 
-                value="<%= product && product.name? product.name: locals.oldData ? oldData.name : null %>">
-                <% if (locals.errors && errors.name){ %> 
-                    <p class="text-danger">
-                          <%= errors.name.msg %>
-                    </p>
-                <% } %>
-                <p class="text-danger" id="nameError"></p>
-             </div>
-             <div class="input-description">
-                 <textarea type="text" name="description" id="description" cols="20" rows="4" 
-                 placeholder="Descripción del producto"><%= product && product.description? product.description: locals.oldData ? oldData.description: null %></textarea>
-                 <% if (locals.errors && errors.description){ %> 
-                    <p class="text-danger">
-                          <%= errors.description.msg %>
-                    </p>
-                <% } %>
-             </div>
-             <div class="img">
-                <div class="preview" id="preview">
-                    <% if(product){%>
-                    <img src="/images/productos/<%= product && product.image? product.image: locals.oldData ? oldData.image: null %>" alt="">
-                    <%}%>
+        <main>
+            <section>
+                <div class="text-hello">
+                    <h3>
+                        ¡Hola Administrador!
+                    </h3>
                 </div>
-                 <p> Elige la imagen del producto </p>
-                 <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
-                 <% if (locals.errors && errors.imgProduct){ %> 
-                    <p class="text-danger">
-                          <%= errors.imgProduct.msg %>
-                    </p>
-                <% } %>
-             </div>
-             <div class="input-category">
-             <select name="category" id="category" >
-                 <option value="" selected> Categorias</option>
-                   <% categorys.forEach(category=>{ %>
-                    <option value="<%= category.idcategory %>" <%= product && (category.idcategory == product.category.idcategory)?'selected': locals.oldData && ( oldData.category == category.idcategory)?'selected':null %>> <%= category.name %></option>
-                    <% }) %>
-             </select>
-             <% if (locals.errors && errors.category){ %> 
-                <p class="text-danger">
-                      <%= errors.category.msg %>
-                </p>
-            <% } %>
-             </div>
-             <div class="input-category">
-                <select name="clothing_brand" id="clothing_brand" >
-                    <option value="" selected> Marca de ropa</option>
-                      <% clothings_brand.forEach(clothing_brand=>{ %>
-                       <option value="<%= clothing_brand.idclothing_brand %>" <%= product && (clothing_brand.idclothing_brand== product.clothing_brand.idclothing_brand)?'selected': locals.oldData && ( oldData.clothing_brand == clothing_brand.idclothing_brand)?'selected':null %>> <%= clothing_brand.name %></option>
-                       <% }) %>
-                </select>
-                <% if (locals.errors && errors.clothing_brand){ %> 
-                   <p class="text-danger">
-                         <%= errors.clothing_brand.msg %>
-                   </p>
-               <% } %>
+                <div class="artic">
+                    <article>
+                        <div class="text-form">
+                            <p>Crea un nuevo producto o edita alguno</p>
+                        </div>
+
+                        <form id="frm1" action="/products" method="POST" enctype="multipart/form-data">
+
+                            <input type="hidden" name="id"
+                                value="<%= product && product.idproduct? product.idproduct:''%>">
+                            <input type="hidden" name="image"
+                                value="<%= product && product.image? product.image:locals.oldData ? oldData.image:''%>">
+                            <div class="input-name">
+                                <input type="text" name="code" id="code" placeholder="Codigo del producto"
+                                    value="<%= product && product.code? product.code: locals.oldData ? oldData.code : null %>">
+                                <% if (locals.errors && errors.code){ %>
+                                    <p class="text-danger">
+                                        <%= errors.code.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="codeError"></p>
+                            </div>
+                            <div class="input-name">
+                                <input type="text" name="name" id="name" placeholder="Nombre del producto"
+                                    value="<%= product && product.name? product.name: locals.oldData ? oldData.name : null %>">
+                                <% if (locals.errors && errors.name){ %>
+                                    <p class="text-danger">
+                                        <%= errors.name.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="nameError"></p>
+                            </div>
+                            <div class="input-description">
+                                <textarea type="text" name="description" id="description" cols="20" rows="4"
+                                    placeholder="Descripción del producto"><%= product && product.description? product.description: locals.oldData ? oldData.description: null %></textarea>
+                                <% if (locals.errors && errors.description){ %>
+                                    <p class="text-danger">
+                                        <%= errors.description.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="descriptionError"></p>
+                            </div>
+                            <div class="img">
+                                <div class="preview" id="preview">
+                                    <% if(product){%>
+                                        <img src="/images/productos/<%= product && product.image? product.image: locals.oldData ? oldData.image: null %>"
+                                            alt="">
+                                        <%}%>
+                                </div>
+                                <p> Elige la imagen del producto </p>
+                                <input type="file" id="imgProduct" name="imgProduct" accept="image/png, image/jpeg">
+                                <% if (locals.errors && errors.imgProduct){ %>
+                                    <p class="text-danger">
+                                        <%= errors.imgProduct.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="imgProductError"></p>
+                            </div>
+                            <div class="input-category">
+                                <select name="category" id="category">
+                                    <option value="" selected> Categorias</option>
+                                    <% categorys.forEach(category=>{ %>
+                                        <option value="<%= category.idcategory %>" <%=product &&
+                                            (category.idcategory==product.category.idcategory)?'selected':
+                                            locals.oldData && ( oldData.category==category.idcategory)?'selected':null
+                                            %>> <%= category.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <% if (locals.errors && errors.category){ %>
+                                    <p class="text-danger">
+                                        <%= errors.category.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="categoryError"></p>
+                            </div>
+                            <div class="input-category">
+                                <select name="clothing_brand" id="clothing_brand">
+                                    <option value="" selected> Marca de ropa</option>
+                                    <% clothings_brand.forEach(clothing_brand=>{ %>
+                                        <option value="<%= clothing_brand.idclothing_brand %>" <%=product &&
+                                            (clothing_brand.idclothing_brand==product.clothing_brand.idclothing_brand)?'selected':
+                                            locals.oldData && (
+                                            oldData.clothing_brand==clothing_brand.idclothing_brand)?'selected':null %>>
+                                            <%= clothing_brand.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <% if (locals.errors && errors.clothing_brand){ %>
+                                    <p class="text-danger">
+                                        <%= errors.clothing_brand.msg %>
+                                    </p>
+                                    <% } %>
+                                        <p class="text-danger" id="clothing_brandError"></p>
+                            </div>
+                            <div class="salePrice-stock">
+                                <div class="input-cost">
+                                    <input type="number" step="any" name="sale_price" id="sale_price"
+                                        placeholder="Precio de venta"
+                                        value="<%= product && product.sale_price? product.sale_price: locals.oldData ? oldData.sale_price : null %>">
+                                    <% if (locals.errors && errors.sale_price){ %>
+                                        <p class="text-danger">
+                                            <%= errors.sale_price.msg %>
+                                        </p>
+                                        <% } %>
+                                            <p class="text-danger" id="sale_priceError"></p>
+                                </div>
+                                <div class="input-cost">
+                                    <input type="number" name="stock" id="stock" placeholder="stock de venta"
+                                        value="<%= product && product.stock? product.stock: locals.oldData ? oldData.stock : null %>">
+                                    <% if (locals.errors && errors.stock){ %>
+                                        <p class="text-danger">
+                                            <%= errors.stock.msg %>
+                                        </p>
+                                        <% } %>
+                                        <p class="text-danger" id="stockError"></p>
+                                </div>
+                            </div>
+                            <div class="size-color">
+                                <div class="input-size">
+                                    <select name="size" id="size">
+                                        <option value="" selected> Talla</option>
+                                        <% size.forEach(size=>{ %>
+                                            <option value="<%= size.idsize %>" <%=product &&
+                                                (size.idsize==product.size.idsize)?'selected': locals.oldData && (
+                                                oldData.size==size.idsize)?'selected':null %>> <%= size.size %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                    <% if (locals.errors && errors.size){ %>
+                                        <p class="text-danger">
+                                            <%= errors.size.msg %>
+                                        </p>
+                                        <% } %>
+                                        <p class="text-danger" id="sizeError"></p>
+                                </div>
+                                <div class="input-color">
+                                    <input type="texto" name="color" id="color" placeholder="Color"
+                                        value="<%= product && product.color? product.color: locals.oldData ? oldData.color : null %>">
+                                    <% if (locals.errors && errors.color){ %>
+                                        <p class="text-danger">
+                                            <%= errors.color.msg %>
+                                        </p>
+                                        <% } %>
+                                        <p class="text-danger" id="colorError"></p>
+                                </div>
+                            </div>
+                            <div class="button-save">
+                                <button id="button" class="reservar" type="submit">Guardar</button>
+                            </div>
+                        </form>
+                        <script src="/js/productsValidation.js"></script>
+                        <script src="/js/viewProduct.js"></script>
+
+                    </article>
                 </div>
-                <div class="salePrice-stock">
-                    <div class="input-cost">
-                        <input type="number" step="any" name="sale_price" id="sale_price" placeholder="Precio de venta" 
-                        value="<%= product && product.sale_price? product.sale_price: locals.oldData ? oldData.sale_price : null %>" >
-                        <% if (locals.errors && errors.sale_price){ %> 
-                            <p class="text-danger">
-                                <%= errors.sale_price.msg %>
-                            </p>
-                        <% } %>
-                    </div>
-                    <div class="input-cost">
-                        <input type="number" name="stock" id="stock" placeholder="stock de venta" 
-                        value="<%= product && product.stock? product.stock: locals.oldData ? oldData.stock : null %>" >
-                        <% if (locals.errors && errors.stock){ %> 
-                        <p class="text-danger">
-                                <%= errors.stock.msg %>
-                        </p>
-                    <% } %>
-                 </div>
-                </div>
-            <div class="size-color">
-                <div class="input-size">
-                        <select name="size" id="size">
-                            <option value="" selected> Talla</option>
-                              <% size.forEach(size=>{ %>
-                               <option value="<%= size.idsize %>" <%= product && (size.idsize == product.size.idsize)?'selected': locals.oldData && ( oldData.size== size.idsize)?'selected':null %>> <%= size.size %></option>
-                               <% }) %>
-                        </select>
-                        <% if (locals.errors && errors.size){ %> 
-                           <p class="text-danger">
-                                 <%= errors.size.msg %>
-                           </p>
-                       <% } %>
-                    
-                </div>
-                <div class="input-color">
-                    <input type="texto" name="color" id="color" placeholder="Color" 
-                    value="<%= product && product.color? product.color: locals.oldData ? oldData.color : null %>">
-                    <% if (locals.errors && errors.color){ %> 
-                        <p class="text-danger">
-                              <%= errors.color.msg %>
-                        </p>
-                    <% } %>
-                </div>
-            </div>
-             <div class="button-save">
-                 <button id="button" class="reservar" type="submit">Guardar</button>
-             </div>
-            </form> 
-            <script src="/js/productsValidation.js"></script>  
-            <script src="/js/viewProduct.js"></script>
-                        
-        </article>
-    </div>
-    </section>
-   </main>
-  <!--footer-->
-  <%- include('./partials/footer.ejs') %>
+            </section>
+        </main>
+        <!--footer-->
+        <%- include('./partials/footer.ejs') %>
 </body>
+
 </html>

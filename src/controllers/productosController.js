@@ -19,7 +19,7 @@ const controlador = {
        let pagina=parseInt(req.params.off);
        let paginaTotal=limite+pagina;
        const title='Mis Products';
-       console.log(pagina)
+       /* console.log(pagina) */
        db.Product.findAll({
          offset:pagina,
         limit:limite
@@ -35,7 +35,7 @@ const controlador = {
             name:{[db.Sequelize.Op.substring] : req.body.search}
           }
         }).then(result=>{
-          console.log(result)
+          /* console.log(result) */
           res.render('listProducts',{products:result, title:title,paginado,off:paginado});
         }).catch(error=>{
           res.status(404).render('404-page');
@@ -49,7 +49,7 @@ const controlador = {
           },
           include:[{association:"category"},{association:"clothing_brand"},{association:"size"}]
         }).then(products=>{
-          console.log(products)
+          /* console.log(products) */
           res.render('products',{products:products, title:title});
         }).catch(error=>{
           res.status(404).render('404-page');

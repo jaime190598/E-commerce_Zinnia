@@ -33,7 +33,6 @@ const controlador = {
     },
     addProduct: (req, res) => {
         
-        
         db.Category.findAll().then(categorys => {
             db.Clothing_brand.findAll().then(clothings_brand => {
                 db.Size.findAll().then(size => {
@@ -79,8 +78,9 @@ const controlador = {
                         "fkidclothing_brand": req.body.clothing_brand,
                         "fkidsize": req.body.size,
                     }
+                    console.log(newProduct)
                     db.Product.create(newProduct);
-                    res.redirect("/products");
+                    res.redirect('/products');
                 })
             })
         });
