@@ -37,7 +37,7 @@
 
                             <input type="hidden" name="id"
                                 value="<%= product && product.idproduct? product.idproduct:''%>">
-                            <input type="hidden" name="image"
+                            <input type="hidden" name="image" id="imgdb"
                                 value="<%= product && product.image? product.image:locals.oldData ? oldData.image:''%>">
                             <div class="input-name">
                                 <input type="text" name="code" id="code" placeholder="Codigo del producto"

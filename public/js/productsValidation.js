@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
     let inpDescription = document.querySelector("#description");
     let errorDescription = document.querySelector("#descriptionError")
     let inpImg = document.querySelector("#imgProduct");
+    let inpImgDB=document.querySelector("#imgdb");
     let errorImagen = document.querySelector("#imgProductError");
     let selectorCategory= document.querySelector("#category");
     let errorCategory = document.querySelector("#categoryError");
@@ -30,7 +31,7 @@ window.addEventListener("load", function () {
         if (inpCode.value == "") {
             /* errorCode.innerText="Ingrese el codigo del Producto" */
             inpCode.focus();
-            error.code = "Ingrese el codigo del Producto"
+            error.code = "Ingrese el codigo del Producto2"
         } else if (inpCode.value.length < 8) {
             /* errorCode.innerText="Debe de contener minimo 8 caracteres"; */
             error.code = "Debe de contener minimo 8 caracteres"
@@ -47,6 +48,7 @@ window.addEventListener("load", function () {
             error.description = "Debe de ser mayor a 20 caracteres"
         }
          /* input imagen producto */
+        if(inpImgDB.value==""){
         if (inpImg.value != "") {
             let files = inpImg.files[0];
             if (!(/\.(jpg|png|gif)$/i).test(files.name)) {
@@ -58,7 +60,7 @@ window.addEventListener("load", function () {
             }
         } else {
             error.image = "No se adjunto imagen"
-        }
+        }}
          /* select categoria */
          if (selectorCategory.value == "") {
             error.category = "Seleccione una categoria"

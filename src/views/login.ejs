@@ -23,27 +23,29 @@
             </p>
           </div>
             <article class="row">
-                <form action="/user/login" method="POST">                  
+                <form id="form" action="/user/login" method="POST">                  
                   <div class="input-email">
-                       <input type="email" name="email" placeholder="Email">
+                       <input type="email" name="email" id="email" placeholder="Email">
                        <% if (locals.errors && errors.email){ %>
-                         <p class="text-danger">
+                         <p class="text-danger" id="errors">
                            <%= errors.email.msg %>
                          </p>
                       <% } %>
+                      <p class="text-danger" id="emailError"></p>
                   </div>
                   <div class="input-password">
-                    <input type="password" name="password" placeholder="Contraseña">
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <p class="text-danger" id="passwordError"></p>
                   </div>
                   <div class="input-remember">
                     <input type="checkbox" name="remember_user" id="remember_user">Recordar mi usuario
                   </div>
                   <div class="button-login">
-                      <button>Iniciar sesión</button>
+                      <button id="buttonSubmit">Iniciar sesión</button>
                   </div>
                   
                 </form> 
-                  
+                <script src="/js/logInValidation.js"></script> 
             </article>
 
         </section>

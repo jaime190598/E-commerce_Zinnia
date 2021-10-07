@@ -31,7 +31,7 @@
             <form id="frm1" action="/edit?_method=put" method="POST" enctype="multipart/form-data">
              
             <input type="hidden" name="id" value="<%= product && product.idproduct? product.idproduct:locals.oldData ? oldData.id: null %>">
-            <input type="hidden" name="image" value="<%= product && product.image? product.image:locals.oldData ? oldData.image:'' %>">
+            <input type="hidden" name="image" id="imgdb" value="<%= product && product.image? product.image:locals.oldData ? oldData.image:'' %>">
             <div class="input-name">
                 <input type="text" name="code" id="code" placeholder="Codigo del producto" 
                 value="<%= product && product.code? product.code: locals.oldData ? oldData.code : null %>">
@@ -60,6 +60,7 @@
                           <%= errors.description.msg %>
                     </p>
                 <% } %>
+                <p class="text-danger" id="descriptionError"></p>
              </div>
              <div class="img">
                 <div class="preview" id="preview">
@@ -74,6 +75,7 @@
                           <%= errors.imgProduct.msg %>
                     </p>
                 <% } %>
+                <p class="text-danger" id="imgProductError"></p>
              </div>
              <div class="input-category">
              <select name="category" id="category" >
@@ -87,6 +89,7 @@
                       <%= errors.category.msg %>
                 </p>
             <% } %>
+            <p class="text-danger" id="categoryError"></p>
              </div>
              <div class="input-category">
                 <select name="clothing_brand" id="clothing_brand" >
@@ -100,6 +103,7 @@
                          <%= errors.clothing_brand.msg %>
                    </p>
                <% } %>
+               <p class="text-danger" id="clothing_brandError"></p>
                 </div>
                 <div class="salePrice-stock">
                     <div class="input-cost">
@@ -110,6 +114,7 @@
                                 <%= errors.sale_price.msg %>
                             </p>
                         <% } %>
+                        <p class="text-danger" id="sale_priceError"></p>
                     </div>
                     <div class="input-cost">
                         <input type="number" name="stock" id="stock" placeholder="stock de venta" 
@@ -119,6 +124,7 @@
                                 <%= errors.stock.msg %>
                         </p>
                     <% } %>
+                    <p class="text-danger" id="stockError"></p>
                  </div>
                 </div>
             <div class="size-color">
@@ -134,7 +140,7 @@
                                  <%= errors.size.msg %>
                            </p>
                        <% } %>
-                    
+                       <p class="text-danger" id="sizeError"></p>
                 </div>
                 <div class="input-color">
                     <input type="texto" name="color" id="color" placeholder="Color" 
@@ -144,10 +150,11 @@
                               <%= errors.color.msg %>
                         </p>
                     <% } %>
+                    <p class="text-danger" id="colorError"></p>
                 </div>
             </div>
              <div class="button-save">
-                 <button class="reservar" type="submit">Guardar</button>
+                 <button id="button" class="reservar" type="submit">Guardar</button>
              </div>
             </form> 
             <script src="/js/productsValidation.js"></script>  

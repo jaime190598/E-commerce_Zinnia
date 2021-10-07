@@ -27,7 +27,7 @@
             <div class="text-form">
                 <p>Crea tu cuenta para guardar tus prendas favoritas y recibir grandes descuentos.</p>
             </div>
-            <form action="/user/register" method="POST" enctype="multipart/form-data">
+            <form id="form" action="/user/register" method="POST" enctype="multipart/form-data">
               <div class="image-user">
                 <div class="preview" id="preview"></div>
                 <p>Subir foto de perfil</p> 
@@ -37,10 +37,11 @@
                       <%= errors.avatar.msg %>
                 </p>
                 <% } %>
+                <p class="text-danger" id="avatarError"></p>
               </div>
               <div class="to-name">
                 <div class="input-name">
-                    <input type="text" name="name" 
+                    <input type="text" name="name" id="name"
                     placeholder="Nombre" class=" <%= locals.errors && errors.name ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.name : null %>">
                     <% if (locals.errors && errors.name){ %> 
@@ -48,9 +49,10 @@
                             <%= errors.name.msg %>
                       </div>
                     <% } %>
+                    <p class="text-danger" id="nameError"></p>
                 </div>
                 <div class="input-apellido">
-                    <input type="text" name="last_name" 
+                    <input type="text" name="last_name" id="last_name"
                     placeholder="Apellido" class=" <%= locals.errors && errors.last_name ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.last_name : null %>" >
                     <% if (locals.errors && errors.last_name){ %> 
@@ -58,10 +60,11 @@
                             <%= errors.last_name.msg %>
                       </div>
                     <% } %>
+                    <p class="text-danger" id="last_nameError"></p>
                 </div>
               </div>
               <div class="input-re">
-                <input type="text" name="telephone" 
+                <input type="text" name="text" id="telephone" pattern="[0-9]+"
                 placeholder="Telefono" class=" <%= locals.errors && errors.telephone ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.telephone : null %>">
                 <% if (locals.errors && errors.telephone){ %> 
@@ -69,9 +72,10 @@
                         <%= errors.telephone.msg %>
                   </div>
                 <% } %>
+                <p class="text-danger" id="telephoneError"></p>
               </div>
               <div class="input-re">
-                <input type="email" name="email" 
+                <input type="email" name="email" id="email"
                 placeholder="Email" class=" <%= locals.errors && errors.email ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.email : null %>">
                 <% if (locals.errors && errors.email){ %> 
@@ -79,20 +83,23 @@
                         <%= errors.email.msg %>
                   </div>
                 <% } %>
+                <p class="text-danger" id="emailError"></p>
               </div>
               <div class="input-re">
-                <input type="password" name="password" 
+                <input type="password" name="password" id="password"
                 placeholder="Contraseña" class=" <%= locals.errors && errors.password? 'is-invalid': null %>">
                 <% if (locals.errors && errors.password){ %> 
                   <div class="text-danger">
                         <%= errors.password.msg %>
                   </div>
                 <% } %>
+                <p class="text-danger" id="passwordError"></p>
               </div>
               <div class="button-login">
-                <button>Crear cuenta</button>
+                <button id="buttonSubmit">Crear cuenta</button>
               </div>
-            </form>              
+            </form> 
+            <script src="/js/checkInValidation.js"></script>             
             <script src="/js/view.js"></script>
         </article>
     </div>
