@@ -39,3 +39,6 @@ De igual manera, nos hemos comunicado más por WhatsApp para no esperar hasta la
 
 CONCLUSIONES DEL QUINTO SPRINT
 Durante este sprint se trabajó ya con los usuarios que se manejaron en base de datos con los campos que se sugirieron en el sprint anterior (nombre, email, contraseña, etc) y se dividieron los apartados para quienes iniciaron sesión en el sitio y quienes no. Por ejemplo, serán visibles los datos de nombre y usuario para quienes iniciaron sesión en el menu nav fijo.
+
+CONCLUSIONES DEL SEXTO SPRINT
+En el desarrollo del sexto sprint se desarrollaron se implemento el desarrollo de la base de datos, al igual que el de sequelize , por lo que en si no se tuvieron problemas para su implementación, todo marcho conforme los requerimientos, el desarrollo fue más rápido ya que se le tuvo que invertir mas tiempo, de igual forma el desarrollo de la BD no fue difícil y todo se manejó conforme al modelo.

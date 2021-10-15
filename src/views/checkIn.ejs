@@ -64,7 +64,7 @@
                 </div>
               </div>
               <div class="input-re">
-                <input type="text" name="text" id="telephone" pattern="[0-9]+"
+                <input type="text" name="telephone" id="telephone" pattern="[0-9]+"
                 placeholder="Telefono" class=" <%= locals.errors && errors.telephone ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.telephone : null %>">
                 <% if (locals.errors && errors.telephone){ %> 

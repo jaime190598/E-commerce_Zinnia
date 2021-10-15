@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3000;
 const mainRoute = require('./routes/main');
 const productsRoute = require('./routes/products');
 const accountsRoute= require('./routes/accounts');
+const apiAccountsRoute=require('./routes/api/accounts');
+const apiProductsRoute=require('./routes/api/products')
 
 server.use(session({
     secret:"shhh, it's a secret",
@@ -36,10 +38,12 @@ server.use(methodOverride('_method'));
 server.use(mainRoute);
 server.use(productsRoute);
 server.use(accountsRoute);
+server.use('/api',apiAccountsRoute);
+server.use('/api',apiProductsRoute);
 
 //middleware error 404
 server.use((req,res,next)=>{
-    res.status(404).render('404-page');
+    res.status(404).render('./external/404-page');
     next();
 })
 //correr servidor 
