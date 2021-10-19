@@ -13,7 +13,7 @@ const controlador={
                 delete miUser['password']
                 delete miUser['telephone']
                 delete miUser['avatar']
-                miUser={...miUser,urlDetails:'http://localhost:3000/api/users/detail/'+user.dataValues.iduser}
+                miUser={...miUser,urlDetails:'http://localhost:3001/api/users/detail/'+user.dataValues.iduser}
                 dataUser.push(miUser);
             })
             let respuesta={ 
@@ -48,7 +48,7 @@ const controlador={
                 let miUser=user.dataValues
                 delete miUser['password']
                 delete miUser['rol']
-                miUser={...miUser,urlAvatar:'http://localhost:3000/api/users/avatar/'+user.dataValues.avatar}
+                miUser={...miUser,urlAvatar:'http://localhost:3001/api/users/avatar/'+user.dataValues.avatar}
         
             let respuesta={ 
                 meta:{
