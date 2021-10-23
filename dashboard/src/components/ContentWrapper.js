@@ -17,7 +17,6 @@ function ContentWrapper(){
                     <Route exact path="/">
                     <ContentRowTop />
                     <div className="category">
-                        
                     <Detalle />
                     <div className="row"> 
                     <CategorysInDb />

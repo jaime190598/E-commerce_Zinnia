@@ -3,6 +3,10 @@ main{
     background: #000;
     overflow: hidden;
     color:#fdf8f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0%;
 }
 main::before{
     content: ' ';
@@ -135,12 +139,12 @@ button font{
     main section article.row{
         width: 92vw;
     }
-    main{
+   /*  main{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0%;
-    }
+    } */
     section div.text-login p{
         font-size: 50px;
     }

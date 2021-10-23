@@ -6,7 +6,7 @@ const path = require('path');
 const controlador = {
     productos: (req, res)=>{
         const title='Mis Products';
-        let paginado=2;
+        let paginado=5;
       db.Product.findAll({
         limit:paginado
       }).then(result=>{
@@ -29,7 +29,7 @@ const controlador = {
     },
     searchlist:(req,res)=>{
       const title='Mis Products';
-      let paginado=2;
+      let paginado=5;
         db.Product.findAll({
           where:{
             name:{[db.Sequelize.Op.substring] : req.body.search}

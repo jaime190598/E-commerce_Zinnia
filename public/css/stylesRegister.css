@@ -3,6 +3,10 @@ main{
     background: #000;
     overflow: hidden;
     color:#fdf8f2;
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0%;
 }
 
 main::before{
@@ -140,12 +144,12 @@ form div.button-login button:hover{
     main section article.row{
         width: 92vw;
     }
-    main{
+   /*  main{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0%;
-    }
+    } */
     section div.text-register{
         font-size: 5vw;
     }
