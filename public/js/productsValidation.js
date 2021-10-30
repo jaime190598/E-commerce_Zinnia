@@ -54,7 +54,8 @@ window.addEventListener("load", function () {
             if (!(/\.(jpg|png|gif)$/i).test(files.name)) {
                 error.image = "El archivo a adjuntar no es una imagen"
                 /* alert('El archivo a adjuntar no es una imagen'); */
-            } else if (files.size > 20000) {
+            } else if (files.size > 204800) {
+               /*  console.log(files.size) */
                 error.image = "El peso de la imagen no puede exceder los 200kb"
                 /* alert('El peso de la imagen no puede exceder los 200kb') */
             }

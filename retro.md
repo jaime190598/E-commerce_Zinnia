@@ -42,3 +42,9 @@ Durante este sprint se trabajó ya con los usuarios que se manejaron en base de 
 
 CONCLUSIONES DEL SEXTO SPRINT
 En el desarrollo del sexto sprint se desarrollaron se implemento el desarrollo de la base de datos, al igual que el de sequelize , por lo que en si no se tuvieron problemas para su implementación, todo marcho conforme los requerimientos, el desarrollo fue más rápido ya que se le tuvo que invertir mas tiempo, de igual forma el desarrollo de la BD no fue difícil y todo se manejó conforme al modelo.
+
+CONCLUSIONES DEL SEPTIMO SPRINT
+En el séptimo sprint no hay mucho que comentar ya que era trabajo de validación lo cual ya se tenía avanzado en lo que son validaciones, estas son de gran ayuda para checar que la información pase de acuerdo a un formato establecido, acorde a la base de datos o al tipo de dato, de igual forma la forma de ayudar al usuario avisándoles del error que tengan fue muy grata de aprender.
+
+CONCLUSIONES DEL OCTAVO SPRINT
+En este sprint el uso de React para la creación del dashboard fue muy interesante, afortunadamente la implementación me pareció sencilla de aprender y de llevar a cabo, conforme a los requisitos, esto nos lleva a la conclusión que hacer uso de esta biblioteca de javascript es muy bueno ya que agiliza en mucho la navegación y el uso de app.
